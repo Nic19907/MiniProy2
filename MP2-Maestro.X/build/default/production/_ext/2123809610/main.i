@@ -2702,14 +2702,24 @@ void i2c_MasterStart (void);
 
 void i2c_Master_RepeatStart (void);
 
-void i2c_MasterSS (unsigned char b);
+void i2c_MasterStop (void);
 
 
-void i2c_MasterWrite (unsigned char c);
+
+void i2c_MasterSS (uint8_t address);
+
+
+
+
+void i2c_MasterWrite (uint8_t dato);
+
+
+
+void i2c_MW (uint8_t address, uint8_t messege);
+
 
 
 unsigned short i2c_MasterRead (unsigned short d);
-
 
 
 
@@ -2732,23 +2742,25 @@ void i1c_SlaveInit(unsigned char address);
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 56
+# 58
 void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
 
-# 78
+# 86
 void main(void) {
 setup();
 
 while (1){
+i2c_MW(0x50, 0x15);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
 
 }
 return;
 }
 
-# 93
+# 103
 void setup (void){
 config_io();
 config_clock();
@@ -2762,9 +2774,11 @@ void config_io (void) {
 ANSEL = 0;
 ANSELH = 0;
 
+TRISA = 0;
 TRISB = 0;
 TRISD = 0;
 
+PORTA = 0;
 PORTB = 0;
 PORTD = 0;
 

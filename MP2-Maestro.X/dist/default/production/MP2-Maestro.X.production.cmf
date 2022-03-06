@@ -13,22 +13,30 @@
 %PSECTS
 $dist/default/production\MP2-Maestro.X.production.o
 cinit CODE 0 7FC 7FC 4 2
-text1 CODE 0 71E 71E 1D 2
-text2 CODE 0 6CF 6CF 7 2
-text3 CODE 0 73B 73B 24 2
-text4 CODE 0 75F 75F 25 2
-text5 CODE 0 70F 70F F 2
-text6 CODE 0 784 784 29 2
-text7 CODE 0 7AD 7AD 4F 2
-text8 CODE 0 6E7 6E7 C 2
-text9 CODE 0 700 700 F 2
-text10 CODE 0 6F3 6F3 D 2
-text11 CODE 0 6D6 6D6 8 2
-maintext CODE 0 6DE 6DE 9 2
-cstackCOMMON COMMON 1 70 70 7 1
+text1 CODE 0 655 655 1F 2
+text2 CODE 0 709 709 3E 2
+text3 CODE 0 796 796 66 2
+text4 CODE 0 697 697 24 2
+text5 CODE 0 6BB 6BB 25 2
+text6 CODE 0 62E 62E F 2
+text7 CODE 0 6E0 6E0 29 2
+text8 CODE 0 747 747 4F 2
+text9 CODE 0 5F7 5F7 C 2
+text10 CODE 0 61F 61F F 2
+text11 CODE 0 610 610 F 2
+text12 CODE 0 5C7 5C7 8 2
+text13 CODE 0 63D 63D 18 2
+text14 CODE 0 5EC 5EC B 2
+text15 CODE 0 5D8 5D8 9 2
+text16 CODE 0 5CF 5CF 9 2
+text17 CODE 0 5E1 5E1 B 2
+text18 CODE 0 603 603 D 2
+maintext CODE 0 674 674 23 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 B 1
 strings STRING 0 3 3 15 2
 config CONFIG 4 2007 2007 2 2
-$C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
+$C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -37,31 +45,30 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
+RAM 2B-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 20-6F 1
+BANK0 2B-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 18-6CE 2
+CONST 18-5C6 2
 CONST 800-1FFF 2
-ENTRY 18-6CE 2
+ENTRY 18-5C6 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 18-6CE 2
+CODE 18-5C6 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 77-7D 1
 EEDATA 2100-21FF 2
-STRCODE 18-6CE 2
+STRCODE 18-5C6 2
 STRCODE 800-1FFF 2
-STRING 18-6CE 2
+STRING 18-5C6 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -77,98 +84,158 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MP2-Maestro.X.production.o
-7FC cinit CODE >821:C:\Users\nicou\AppData\Local\Temp\xcAsgv8.s
-7FC cinit CODE >824:C:\Users\nicou\AppData\Local\Temp\xcAsgv8.s
-7FC cinit CODE >830:C:\Users\nicou\AppData\Local\Temp\xcAsgv8.s
-7FC cinit CODE >832:C:\Users\nicou\AppData\Local\Temp\xcAsgv8.s
-7FD cinit CODE >833:C:\Users\nicou\AppData\Local\Temp\xcAsgv8.s
-6D6 text11 CODE >115:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6D6 text11 CODE >116:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6DC text11 CODE >117:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6DD text11 CODE >118:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6F3 text10 CODE >102:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6F3 text10 CODE >103:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6F6 text10 CODE >104:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6F7 text10 CODE >106:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6FA text10 CODE >107:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6FB text10 CODE >109:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6FE text10 CODE >110:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6FF text10 CODE >113:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-700 text9 CODE >5:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-700 text9 CODE >6:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-703 text9 CODE >7:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-70B text9 CODE >8:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-70E text9 CODE >9:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-6E7 text8 CODE >12:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-6E8 text8 CODE >13:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-6EB text8 CODE >14:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-6ED text8 CODE >15:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-6F2 text8 CODE >17:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7AD text7 CODE >19:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7AD text7 CODE >20:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7B0 text7 CODE >21:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7B1 text7 CODE >22:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7B2 text7 CODE >23:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7B5 text7 CODE >26:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7BE text7 CODE >27:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7C4 text7 CODE >29:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7CC text7 CODE >30:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7D2 text7 CODE >32:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7D7 text7 CODE >33:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7DD text7 CODE >37:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7E3 text7 CODE >40:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7E9 text7 CODE >43:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7EF text7 CODE >46:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7F5 text7 CODE >49:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7FB text7 CODE >50:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-784 text6 CODE >58:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-785 text6 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-786 text6 CODE >62:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-78F text6 CODE >63:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-790 text6 CODE >67:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-799 text6 CODE >68:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-79A text6 CODE >71:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7A3 text6 CODE >72:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7A4 text6 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7A6 text6 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7A9 text6 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-7AC text6 CODE >74:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-70F text5 CODE >77:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-710 text5 CODE >78:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-713 text5 CODE >79:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-715 text5 CODE >80:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-71A text5 CODE >81:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-71D text5 CODE >83:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-75F text4 CODE >86:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-760 text4 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-763 text4 CODE >89:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-770 text4 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-772 text4 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-77F text4 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-783 text4 CODE >92:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
-73B text3 CODE >121:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-73B text3 CODE >122:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-740 text3 CODE >124:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-748 text3 CODE >125:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-74E text3 CODE >127:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-758 text3 CODE >128:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-75E text3 CODE >129:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6CF text2 CODE >10:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-6CF text2 CODE >11:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-6D2 text2 CODE >13:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-6D3 text2 CODE >14:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-6D4 text2 CODE >15:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-6D5 text2 CODE >16:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-71E text1 CODE >93:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-71E text1 CODE >94:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-723 text1 CODE >95:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-728 text1 CODE >96:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-72D text1 CODE >99:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-73A text1 CODE >100:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6DE maintext CODE >78:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6DE maintext CODE >79:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6E3 maintext CODE >81:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
-6E3 maintext CODE >83:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+7FC cinit CODE >837:C:\Users\nicou\AppData\Local\Temp\xcAsdf8.s
+7FC cinit CODE >840:C:\Users\nicou\AppData\Local\Temp\xcAsdf8.s
+7FC cinit CODE >846:C:\Users\nicou\AppData\Local\Temp\xcAsdf8.s
+7FC cinit CODE >848:C:\Users\nicou\AppData\Local\Temp\xcAsdf8.s
+7FD cinit CODE >849:C:\Users\nicou\AppData\Local\Temp\xcAsdf8.s
+603 text18 CODE >24:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+603 text18 CODE >25:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+60F text18 CODE >26:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5E1 text17 CODE >43:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5E2 text17 CODE >44:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5E7 text17 CODE >45:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5EB text17 CODE >46:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5CF text16 CODE >28:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5CF text16 CODE >29:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5D4 text16 CODE >30:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5D7 text16 CODE >31:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5D8 text15 CODE >38:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5D8 text15 CODE >39:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5DD text15 CODE >40:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5E0 text15 CODE >41:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5EC text14 CODE >48:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5ED text14 CODE >49:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5F2 text14 CODE >50:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5F6 text14 CODE >51:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+63D text13 CODE >53:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+63E text13 CODE >54:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+643 text13 CODE >55:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+649 text13 CODE >56:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+64F text13 CODE >57:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+654 text13 CODE >58:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+5C7 text12 CODE >127:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+5C7 text12 CODE >128:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+5CD text12 CODE >129:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+5CE text12 CODE >130:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+610 text11 CODE >112:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+610 text11 CODE >113:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+613 text11 CODE >114:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+614 text11 CODE >116:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+617 text11 CODE >117:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+618 text11 CODE >118:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+619 text11 CODE >120:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+61C text11 CODE >121:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+61D text11 CODE >122:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+61E text11 CODE >125:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+61F text10 CODE >5:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+61F text10 CODE >6:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+622 text10 CODE >7:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+62A text10 CODE >8:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+62D text10 CODE >9:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+5F7 text9 CODE >12:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+5F8 text9 CODE >13:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+5FB text9 CODE >14:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+5FD text9 CODE >15:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+602 text9 CODE >17:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+747 text8 CODE >19:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+747 text8 CODE >20:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+74A text8 CODE >21:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+74B text8 CODE >22:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+74C text8 CODE >23:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+74F text8 CODE >26:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+758 text8 CODE >27:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+75E text8 CODE >29:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+766 text8 CODE >30:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+76C text8 CODE >32:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+771 text8 CODE >33:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+777 text8 CODE >37:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+77D text8 CODE >40:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+783 text8 CODE >43:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+789 text8 CODE >46:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+78F text8 CODE >49:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+795 text8 CODE >50:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6E0 text7 CODE >58:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6E1 text7 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6E2 text7 CODE >62:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6EB text7 CODE >63:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6EC text7 CODE >67:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6F5 text7 CODE >68:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6F6 text7 CODE >71:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6FF text7 CODE >72:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+700 text7 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+702 text7 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+705 text7 CODE >59:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+708 text7 CODE >74:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+62E text6 CODE >77:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+62F text6 CODE >78:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+632 text6 CODE >79:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+634 text6 CODE >80:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+639 text6 CODE >81:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+63C text6 CODE >83:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6BB text5 CODE >86:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6BC text5 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6BF text5 CODE >89:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6CC text5 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6CE text5 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6DB text5 CODE >88:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+6DF text5 CODE >92:C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
+697 text4 CODE >133:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+697 text4 CODE >134:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+69C text4 CODE >136:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+6A4 text4 CODE >137:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+6AA text4 CODE >139:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+6B4 text4 CODE >140:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+6BA text4 CODE >141:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+796 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+796 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+79E text3 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7A2 text3 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7A6 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7A8 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7A9 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7AB text3 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7B2 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7B6 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7BA text3 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7BC text3 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7C3 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7C5 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7C9 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7CD text3 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7D1 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7D5 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7D8 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7DC text3 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7E0 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7E3 text3 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7E4 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7E5 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7EB text3 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7ED text3 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7F3 text3 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+7FB text3 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+709 text2 CODE >10:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+709 text2 CODE >11:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+70D text2 CODE >13:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+710 text2 CODE >14:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+714 text2 CODE >16:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+717 text2 CODE >18:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+722 text2 CODE >18:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+728 text2 CODE >18:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+744 text2 CODE >20:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+745 text2 CODE >21:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+746 text2 CODE >22:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+655 text1 CODE >103:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+655 text1 CODE >104:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+65A text1 CODE >105:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+65F text1 CODE >106:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+664 text1 CODE >109:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+673 text1 CODE >110:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+674 maintext CODE >86:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+674 maintext CODE >87:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+679 maintext CODE >90:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+685 maintext CODE >91:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -183,54 +250,74 @@ $dist/default/production\MP2-Maestro.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 77 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
+__end_of_i2c_MasterStart BB0 0 CODE 0 text16 dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MasterWrite BEE 0 CODE 0 text14 dist/default/production\MP2-Maestro.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 LCD_CMD@cmd 72 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-_main DBC 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+_main CE8 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-start 0 0 CODE 0 init C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
+start 0 0 CODE 0 init C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+__size_of___lldiv 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __size_of_LCD_CMD 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __size_of_config_lcd 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_i2c_MasterSS BC2 0 CODE 0 text17 dist/default/production\MP2-Maestro.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 LCD_writeString@text 75 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
+_i2c_MasterStart B9E 0 CODE 0 text16 dist/default/production\MP2-Maestro.X.production.o
+_i2c_MasterWrite BD8 0 CODE 0 text14 dist/default/production\MP2-Maestro.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_LCD_writeString F08 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
+__end_of_LCD_writeString DC0 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_config_io E00 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
+__end_of_config_io C3E 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
 __size_of_config_io 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-_config_io DE6 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MasterSS 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_SSPCONbits 14 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_config_io C20 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-___stacklo 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-__end_of_LCD_CMD DE6 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
+i2c_MW@address 72 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
+__end_of___lldiv FF8 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MasterSS BD8 0 CODE 0 text17 dist/default/production\MP2-Maestro.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+___stacklo 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+__end_of_LCD_CMD C06 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
+i2c_MasterWrite@dato 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __size_of_i2c_MasterInit 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-_LCD_writeString EBE 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MasterStop 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MasterWait 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_LCD_writeString D76 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
 __size_of_flip_EN 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MW CAA 0 CODE 0 text13 dist/default/production\MP2-Maestro.X.production.o
+___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MasterStart 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MasterWrite 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 LCD_writeString@i 73 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\MP2-Maestro.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-_LCD_setCursor F08 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
-__end_of_LCD_START FF8 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
+_LCD_setCursor DC0 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
+__end_of_LCD_START F2C 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -239,7 +326,7 @@ __Hcinit 1000 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __stringbase 10 0 STRING 0 strings dist/default/production\MP2-Maestro.X.production.o
 __size_of_LCD_START 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-__end_of_LCD_write E3C 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
+__end_of_LCD_write C7A 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __size_of_LCD_write 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __Hcommon 0 0 ABS 0 common -
@@ -251,7 +338,7 @@ __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit FF8 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-_LCD_START F5A 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
+_LCD_START E8E 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 0 0 CODE 0 init -
@@ -268,79 +355,102 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-_LCD_write E1E 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
+_LCD_write C5C 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
 __size_of_LCD_writeString 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-__end_of_flip_EN E1E 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__end_of_flip_EN C5C 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _RD6 46 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _RD7 47 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __S0 800 0 ABS 0 - -
-__S1 77 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_config_clock DAC 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
+_config_clock B8E 0 CODE 0 text12 dist/default/production\MP2-Maestro.X.production.o
+_i2c_MW C7A 0 CODE 0 text13 dist/default/production\MP2-Maestro.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
+___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __stringtab 6 0 STRING 0 strings dist/default/production\MP2-Maestro.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\nicou\AppData\Local\Temp\xcAsgv8.o
+i2c_MasterSS@address 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\nicou\AppData\Local\Temp\xcAsdf8.o
 __size_of_LCD_setCursor 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-__ptext10 DE6 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
-__ptext11 DAC 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
+__ptext10 C3E 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
+__ptext11 C20 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
+__ptext12 B8E 0 CODE 0 text12 dist/default/production\MP2-Maestro.X.production.o
+__ptext13 C7A 0 CODE 0 text13 dist/default/production\MP2-Maestro.X.production.o
+__ptext14 BD8 0 CODE 0 text14 dist/default/production\MP2-Maestro.X.production.o
+__ptext15 BB0 0 CODE 0 text15 dist/default/production\MP2-Maestro.X.production.o
+__ptext16 B9E 0 CODE 0 text16 dist/default/production\MP2-Maestro.X.production.o
+__ptext17 BC2 0 CODE 0 text17 dist/default/production\MP2-Maestro.X.production.o
+__ptext18 C06 0 CODE 0 text18 dist/default/production\MP2-Maestro.X.production.o
+___lldiv F2C 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
 LCD_setCursor@fila 74 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
-__pmaintext DBC 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
+__pmaintext CE8 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_LCD_CMD DCE 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
+_LCD_CMD BEE 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
 __size_of_config_clock 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-_config_lcd E76 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
-__end_of_LCD_setCursor F5A 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
+_config_lcd D2E 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
+__size_of_i2c_MW 0 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+__end_of_LCD_setCursor E12 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
 __end_of__stringtab 12 0 STRING 0 strings dist/default/production\MP2-Maestro.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_config_clock DBC 0 CODE 0 text11 dist/default/production\MP2-Maestro.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__end_of_config_clock B9E 0 CODE 0 text12 dist/default/production\MP2-Maestro.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\MP2-Maestro.X.production.o
-_i2c_MasterInit D9E 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
+_i2c_MasterInit E12 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
+_i2c_MasterStop BB0 0 CODE 0 text15 dist/default/production\MP2-Maestro.X.production.o
+_i2c_MasterWait C06 0 CODE 0 text18 dist/default/production\MP2-Maestro.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
+?___lldiv 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
-i2c_MasterInit@freq 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
+i2c_MasterInit@freq 20 0 BANK0 1 cstackBANK0 dist/default/production\MP2-Maestro.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-__ptext1 E3C 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
-__ptext2 D9E 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
-__ptext3 E76 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
-__ptext4 EBE 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
-__ptext5 E1E 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
-__ptext6 F08 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
-__ptext7 F5A 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
-__ptext8 DCE 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
-__ptext9 E00 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
-__end_of_config_lcd EBE 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
+__ptext1 CAA 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
+__ptext2 E12 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
+__ptext3 F2C 0 CODE 0 text3 dist/default/production\MP2-Maestro.X.production.o
+__ptext4 D2E 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
+__ptext5 D76 0 CODE 0 text5 dist/default/production\MP2-Maestro.X.production.o
+__ptext6 C5C 0 CODE 0 text6 dist/default/production\MP2-Maestro.X.production.o
+__ptext7 DC0 0 CODE 0 text7 dist/default/production\MP2-Maestro.X.production.o
+__ptext8 E8E 0 CODE 0 text8 dist/default/production\MP2-Maestro.X.production.o
+__ptext9 BEE 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
+__end_of_config_lcd D76 0 CODE 0 text4 dist/default/production\MP2-Maestro.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\MP2-Maestro.X.production.o
-_flip_EN E00 0 CODE 0 text9 dist/default/production\MP2-Maestro.X.production.o
+_flip_EN C3E 0 CODE 0 text10 dist/default/production\MP2-Maestro.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__end_of_i2c_MasterInit DAC 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MasterInit E8E 0 CODE 0 text2 dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MasterStop BC2 0 CODE 0 text15 dist/default/production\MP2-Maestro.X.production.o
+__end_of_i2c_MasterWait C20 0 CODE 0 text18 dist/default/production\MP2-Maestro.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
+i2c_MW@messege 71 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
+___lldiv@quotient 79 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main DCE 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
+__end_of_main D2E 0 CODE 0 maintext dist/default/production\MP2-Maestro.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\MP2-Maestro.X.production.o
-__end_of_setup E76 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
+__end_of_setup CE8 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_setup E3C 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
+_setup CAA 0 CODE 0 text1 dist/default/production\MP2-Maestro.X.production.o
 LCD_setCursor@columna 73 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Maestro.X.production.o
 __initialization FF8 0 CODE 0 cinit dist/default/production\MP2-Maestro.X.production.o
 __pstrings 6 0 STRING 0 strings dist/default/production\MP2-Maestro.X.production.o
@@ -370,19 +480,27 @@ __pstrings 6 0 STRING 0 strings dist/default/production\MP2-Maestro.X.production
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FC FF8 4 2
-text1 0 71E E3C 1D 2
-text2 0 6CF D9E 7 2
-text3 0 73B E76 24 2
-text4 0 75F EBE 25 2
-text5 0 70F E1E F 2
-text6 0 784 F08 29 2
-text7 0 7AD F5A 4F 2
-text8 0 6E7 DCE C 2
-text9 0 700 E00 F 2
-text10 0 6F3 DE6 D 2
-text11 0 6D6 DAC 8 2
-maintext 0 6DE DBC 9 2
-cstackCOMMON 1 70 70 7 1
+text1 0 655 CAA 1F 2
+text2 0 709 E12 3E 2
+text3 0 796 F2C 66 2
+text4 0 697 D2E 24 2
+text5 0 6BB D76 25 2
+text6 0 62E C5C F 2
+text7 0 6E0 DC0 29 2
+text8 0 747 E8E 4F 2
+text9 0 5F7 BEE C 2
+text10 0 61F C3E F 2
+text11 0 610 C20 F 2
+text12 0 5C7 B8E 8 2
+text13 0 63D C7A 18 2
+text14 0 5EC BD8 B 2
+text15 0 5D8 BB0 9 2
+text16 0 5CF B9E 9 2
+text17 0 5E1 BC2 B 2
+text18 0 603 C06 D 2
+maintext 0 674 CE8 23 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 B 1
 reset_vec 0 0 0 3 2
 strings 0 3 6 15 2
 # %NOTES Section

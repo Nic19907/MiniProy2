@@ -5,18 +5,30 @@
 [d frameptr 0 ]
 "10 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
 [v _i2c_MasterInit i2c_MasterInit `(v  1 e 1 0 ]
-"18
+"24
 [v _i2c_MasterWait i2c_MasterWait `(v  1 e 1 0 ]
-"78 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"28
+[v _i2c_MasterStart i2c_MasterStart `(v  1 e 1 0 ]
+"38
+[v _i2c_MasterStop i2c_MasterStop `(v  1 e 1 0 ]
+"43
+[v _i2c_MasterSS i2c_MasterSS `(v  1 e 1 0 ]
+"48
+[v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
+"53
+[v _i2c_MW i2c_MW `(v  1 e 1 0 ]
+"86 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"93
+"103
 [v _setup setup `(v  1 e 1 0 ]
-"102
+"112
 [v _config_io config_io `(v  1 e 1 0 ]
-"115
+"127
 [v _config_clock config_clock `(v  1 e 1 0 ]
-"121
+"133
 [v _config_lcd config_lcd `(v  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
@@ -37,7 +49,9 @@
 [v _LCD_write LCD_write `(v  1 e 1 0 ]
 "86
 [v _LCD_writeString LCD_writeString `(v  1 e 1 0 ]
-"228 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
@@ -45,9 +59,25 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+[s S145 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"870
+[s S151 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S156 . 1 `S145 1 . 1 0 `S151 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES156  1 e 1 @20 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S136 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S173 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -57,27 +87,27 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S145 . 1 `S136 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES145  1 e 1 @135 ]
+[u S182 . 1 `S173 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES182  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S49 . 1 `uc 1 SCS 1 0 :1:0 
+[s S63 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S55 . 1 `uc 1 . 1 0 :4:0 
+[s S69 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S60 . 1 `S49 1 . 1 0 `S55 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES60  1 e 1 @143 ]
+[u S74 . 1 `S63 1 . 1 0 `S69 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES74  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S157 . 1 `uc 1 SEN 1 0 :1:0 
+[s S194 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -87,8 +117,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S166 . 1 `S157 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES166  1 e 1 @145 ]
+[u S203 . 1 `S194 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES203  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -101,26 +131,38 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "4202
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
-"78 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"86 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"85
+"95
 } 0
-"93
+"103
 [v _setup setup `(v  1 e 1 0 ]
 {
-"100
+"110
 } 0
 "10 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
 [v _i2c_MasterInit i2c_MasterInit `(v  1 e 1 0 ]
 {
 [v i2c_MasterInit@freq freq `ul  1 p 4 0 ]
-"16
+"22
 } 0
-"121 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"133 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_lcd config_lcd `(v  1 e 1 0 ]
 {
-"129
+"141
 } 0
 "86 C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
 [v _LCD_writeString LCD_writeString `(v  1 e 1 0 ]
@@ -169,13 +211,53 @@
 {
 "9
 } 0
-"102 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"112 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_io config_io `(v  1 e 1 0 ]
 {
-"113
+"125
 } 0
-"115
+"127
 [v _config_clock config_clock `(v  1 e 1 0 ]
 {
-"118
+"130
+} 0
+"53 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+[v _i2c_MW i2c_MW `(v  1 e 1 0 ]
+{
+[v i2c_MW@address address `uc  1 a 1 wreg ]
+[v i2c_MW@address address `uc  1 a 1 wreg ]
+[v i2c_MW@messege messege `uc  1 p 1 1 ]
+[v i2c_MW@address address `uc  1 a 1 2 ]
+"58
+} 0
+"48
+[v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
+{
+[v i2c_MasterWrite@dato dato `uc  1 a 1 wreg ]
+[v i2c_MasterWrite@dato dato `uc  1 a 1 wreg ]
+[v i2c_MasterWrite@dato dato `uc  1 a 1 0 ]
+"51
+} 0
+"38
+[v _i2c_MasterStop i2c_MasterStop `(v  1 e 1 0 ]
+{
+"41
+} 0
+"28
+[v _i2c_MasterStart i2c_MasterStart `(v  1 e 1 0 ]
+{
+"31
+} 0
+"43
+[v _i2c_MasterSS i2c_MasterSS `(v  1 e 1 0 ]
+{
+[v i2c_MasterSS@address address `uc  1 a 1 wreg ]
+[v i2c_MasterSS@address address `uc  1 a 1 wreg ]
+[v i2c_MasterSS@address address `uc  1 a 1 0 ]
+"46
+} 0
+"24
+[v _i2c_MasterWait i2c_MasterWait `(v  1 e 1 0 ]
+{
+"26
 } 0

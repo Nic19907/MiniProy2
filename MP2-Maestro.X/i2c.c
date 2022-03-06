@@ -8,9 +8,15 @@
 #include "i2c.h"
 
 void i2c_MasterInit (unsigned long freq){
+    SSPSTAT = 0b10000000;
+    
+    SSPCONbits.SSPEN = 1;
+    SSPCONbits.SSPM = 0b1000;
+    
     SSPCON2 = 0;
-    //SSPADD = (_XTAL_FREQ/(4*freq))-1;
-    SSPSTAT = 0;
+    
+    SSPADD = (_XTAL_FREQ/(4*freq))-1;
+    
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
 }
@@ -34,15 +40,23 @@ void i2c_MasterStop() {
     SSPCON2bits.PEN = 1;    //detiene la comunicacion i2c
 }
 
-void i2c_MasterSS(unsigned char b) {
+void i2c_MasterSS(uint8_t address) {
     i2c_MasterWait();   //espera
-    SSPBUF = b;
+    SSPBUF = address;
 }
 
-void i2c_MasterWrite(unsigned char c) {
+void i2c_MasterWrite(uint8_t dato) {
     i2c_MasterWait();   //espera
-    SSPBUF = c;
+    SSPBUF = dato;
 }
+
+void i2c_MW (uint8_t address, uint8_t messege){
+    i2c_MasterStart();
+    i2c_MasterSS(address);
+    i2c_MasterWrite(messege);
+    i2c_MasterStop();
+}
+
 
 unsigned short i2c_MasterRead (unsigned short d){
     unsigned short temp;

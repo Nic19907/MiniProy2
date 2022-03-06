@@ -2588,14 +2588,24 @@ void i2c_MasterStart (void);
 
 void i2c_Master_RepeatStart (void);
 
-void i2c_MasterSS (unsigned char b);
+void i2c_MasterStop (void);
 
 
-void i2c_MasterWrite (unsigned char c);
+
+void i2c_MasterSS (uint8_t address);
+
+
+
+
+void i2c_MasterWrite (uint8_t dato);
+
+
+
+void i2c_MW (uint8_t address, uint8_t messege);
+
 
 
 unsigned short i2c_MasterRead (unsigned short d);
-
 
 
 
@@ -2603,9 +2613,15 @@ void i1c_SlaveInit(unsigned char address);
 
 # 10 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
 void i2c_MasterInit (unsigned long freq){
+SSPSTAT = 0b10000000;
+
+SSPCONbits.SSPEN = 1;
+SSPCONbits.SSPM = 0b1000;
+
 SSPCON2 = 0;
 
-SSPSTAT = 0;
+SSPADD = (4000000/(4*freq))-1;
+
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
 }
@@ -2629,15 +2645,23 @@ i2c_MasterWait();
 SSPCON2bits.PEN = 1;
 }
 
-void i2c_MasterSS(unsigned char b) {
+void i2c_MasterSS(uint8_t address) {
 i2c_MasterWait();
-SSPBUF = b;
+SSPBUF = address;
 }
 
-void i2c_MasterWrite(unsigned char c) {
+void i2c_MasterWrite(uint8_t dato) {
 i2c_MasterWait();
-SSPBUF = c;
+SSPBUF = dato;
 }
+
+void i2c_MW (uint8_t address, uint8_t messege){
+i2c_MasterStart();
+i2c_MasterSS(address);
+i2c_MasterWrite(messege);
+i2c_MasterStop();
+}
+
 
 unsigned short i2c_MasterRead (unsigned short d){
 unsigned short temp;

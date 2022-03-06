@@ -1,12 +1,18 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"56 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"58 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _setup `(v ~T0 @X0 0 ef ]
-"57
+"46 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h
+[v _i2c_MW `(v ~T0 @X0 0 ef2`uc`uc ]
+[v F1258 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1258 ~T0 @X0 0 e ]
+[p i __delay ]
+"59 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_io `(v ~T0 @X0 0 ef ]
-"58
+"60
 [v _config_clock `(v ~T0 @X0 0 ef ]
-"59
+"61
 [v _config_lcd `(v ~T0 @X0 0 ef ]
 "23 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h
 [v _i2c_MasterInit `(v ~T0 @X0 0 ef1`ul ]
@@ -14,10 +20,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1416
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "1478
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1602
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"166
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "228
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "352
@@ -1620,10 +1630,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.h: 26: void i2c_MasterWait(void);
 [; ;i2c.h: 29: void i2c_MasterStart (void);
 [; ;i2c.h: 31: void i2c_Master_RepeatStart (void);
-[; ;i2c.h: 33: void i2c_MasterSS (unsigned char b);
-[; ;i2c.h: 36: void i2c_MasterWrite (unsigned char c);
-[; ;i2c.h: 39: unsigned short i2c_MasterRead (unsigned short d);
-[; ;i2c.h: 44: void i1c_SlaveInit(unsigned char address);
+[; ;i2c.h: 33: void i2c_MasterStop (void);
+[; ;i2c.h: 37: void i2c_MasterSS (uint8_t address);
+[; ;i2c.h: 42: void i2c_MasterWrite (uint8_t dato);
+[; ;i2c.h: 46: void i2c_MW (uint8_t address, uint8_t messege);
+[; ;i2c.h: 50: unsigned short i2c_MasterRead (unsigned short d);
+[; ;i2c.h: 54: void i1c_SlaveInit(unsigned char address);
 "21 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [p x FOSC=INTRC_NOCLKOUT ]
 "22
@@ -1648,127 +1660,139 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x BOR4V=BOR40V ]
 "34
 [p x WRT=OFF ]
-[; ;main.c: 56: void setup (void);
-[; ;main.c: 57: void config_io (void);
-[; ;main.c: 58: void config_clock (void);
-[; ;main.c: 59: void config_lcd (void);
+[; ;main.c: 58: void setup (void);
+[; ;main.c: 59: void config_io (void);
+[; ;main.c: 60: void config_clock (void);
+[; ;main.c: 61: void config_lcd (void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"78
+"86
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 78: void main(void) {
+[; ;main.c: 86: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 79: setup();
-"79
+[; ;main.c: 87: setup();
+"87
 [e ( _setup ..  ]
-[; ;main.c: 81: while (1){
-"81
+[; ;main.c: 89: while (1){
+"89
 [e :U 141 ]
 {
-"83
+[; ;main.c: 90: i2c_MW(0x50, 0x15);
+"90
+[e ( _i2c_MW (2 , -> -> 80 `i `uc -> -> 21 `i `uc ]
+[; ;main.c: 91: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"91
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"93
 }
 [e :U 140 ]
-"81
+"89
 [e $U 141  ]
 [e :U 142 ]
-[; ;main.c: 83: }
-[; ;main.c: 84: return;
-"84
+[; ;main.c: 93: }
+[; ;main.c: 94: return;
+"94
 [e $UE 139  ]
-[; ;main.c: 85: }
-"85
+[; ;main.c: 95: }
+"95
 [e :UE 139 ]
 }
-"93
+"103
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 93: void setup (void){
+[; ;main.c: 103: void setup (void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 94: config_io();
-"94
+[; ;main.c: 104: config_io();
+"104
 [e ( _config_io ..  ]
-[; ;main.c: 95: config_clock();
-"95
+[; ;main.c: 105: config_clock();
+"105
 [e ( _config_clock ..  ]
-[; ;main.c: 96: config_lcd();
-"96
+[; ;main.c: 106: config_lcd();
+"106
 [e ( _config_lcd ..  ]
-[; ;main.c: 99: i2c_MasterInit(100000);
-"99
+[; ;main.c: 109: i2c_MasterInit(100000);
+"109
 [e ( _i2c_MasterInit (1 -> -> 100000 `l `ul ]
-[; ;main.c: 100: }
-"100
+[; ;main.c: 110: }
+"110
 [e :UE 143 ]
 }
-"102
+"112
 [v _config_io `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 102: void config_io (void) {
+[; ;main.c: 112: void config_io (void) {
 [e :U _config_io ]
 [f ]
-[; ;main.c: 103: ANSEL = 0;
-"103
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 104: ANSELH = 0;
-"104
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;main.c: 106: TRISB = 0;
-"106
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 107: TRISD = 0;
-"107
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 109: PORTB = 0;
-"109
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 110: PORTD = 0;
-"110
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 113: }
+[; ;main.c: 113: ANSEL = 0;
 "113
+[e = _ANSEL -> -> 0 `i `uc ]
+[; ;main.c: 114: ANSELH = 0;
+"114
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;main.c: 116: TRISA = 0;
+"116
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 117: TRISB = 0;
+"117
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 118: TRISD = 0;
+"118
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 120: PORTA = 0;
+"120
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 121: PORTB = 0;
+"121
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 122: PORTD = 0;
+"122
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;main.c: 125: }
+"125
 [e :UE 144 ]
 }
-"115
+"127
 [v _config_clock `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 115: void config_clock (void){
+[; ;main.c: 127: void config_clock (void){
 [e :U _config_clock ]
 [f ]
-[; ;main.c: 116: OSCCONbits.IRCF = 0b110;
-"116
+[; ;main.c: 128: OSCCONbits.IRCF = 0b110;
+"128
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-[; ;main.c: 117: OSCCONbits.SCS = 1;
-"117
+[; ;main.c: 129: OSCCONbits.SCS = 1;
+"129
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 118: }
-"118
+[; ;main.c: 130: }
+"130
 [e :UE 145 ]
 }
-"121
+"133
 [v _config_lcd `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 121: void config_lcd (void){
+[; ;main.c: 133: void config_lcd (void){
 [e :U _config_lcd ]
 [f ]
-[; ;main.c: 122: LCD_START();
-"122
+[; ;main.c: 134: LCD_START();
+"134
 [e ( _LCD_START ..  ]
-[; ;main.c: 124: LCD_setCursor (1,1);
-"124
+[; ;main.c: 136: LCD_setCursor (1,1);
+"136
 [e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 125: LCD_writeString ("Gesto");
-"125
+[; ;main.c: 137: LCD_writeString ("Gesto");
+"137
 [e ( _LCD_writeString (1 -> :s 1C `*uc ]
-[; ;main.c: 127: LCD_setCursor (1,9);
-"127
+[; ;main.c: 139: LCD_setCursor (1,9);
+"139
 [e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 128: LCD_writeString ("Semaforo");
-"128
+[; ;main.c: 140: LCD_writeString ("Semaforo");
+"140
 [e ( _LCD_writeString (1 -> :s 2C `*uc ]
-[; ;main.c: 129: }
-"129
+[; ;main.c: 141: }
+"141
 [e :UE 146 ]
 }
 [a 1C 71 101 115 116 111 0 ]

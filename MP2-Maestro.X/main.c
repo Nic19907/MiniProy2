@@ -41,6 +41,8 @@
  */
 #define _XTAL_FREQ 4000000
 
+#define PICslave 0x50
+
 /*
 --------------------------------------------------------------------------------
  *                              Variables
@@ -58,6 +60,9 @@ void config_io      (void);
 void config_clock   (void);
 void config_lcd     (void);
 
+//trabajos
+
+
 /*
 --------------------------------------------------------------------------------
  *                              Interrupcion
@@ -70,6 +75,9 @@ void config_lcd     (void);
 --------------------------------------------------------------------------------
  */
 
+
+
+
 /*
 --------------------------------------------------------------------------------
  *                                 Main/loop
@@ -79,6 +87,8 @@ void main(void) {
     setup();
     
     while (1){ //loop
+        i2c_MW(PICslave, 0x15);
+        __delay_ms(1000);
         
     }
     return;
@@ -103,9 +113,11 @@ void config_io (void) {
     ANSEL = 0;
     ANSELH = 0;
     
+    TRISA = 0;
     TRISB = 0;
     TRISD = 0;
     
+    PORTA = 0;
     PORTB = 0;
     PORTD = 0;
     

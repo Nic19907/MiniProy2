@@ -29,15 +29,25 @@ void i2c_MasterWait(void);
 void i2c_MasterStart (void);
 
 void i2c_Master_RepeatStart (void);
+
+void i2c_MasterStop (void);
+
+
 //funcion para seleccionar el esclavo
-void i2c_MasterSS (unsigned char b);
+void i2c_MasterSS (uint8_t address);
+
+
 
 //funcion para escribir al esclavo
-void i2c_MasterWrite (unsigned char c);
+void i2c_MasterWrite (uint8_t dato);
+
+
+//funcion para escribir ya simplificada
+void i2c_MW (uint8_t address, uint8_t messege);//incluir un delay al final
+
 
 //funcion para leer del esclavo
 unsigned short i2c_MasterRead (unsigned short d);
-
 
 
 //funcion para inciar el eslcavo
