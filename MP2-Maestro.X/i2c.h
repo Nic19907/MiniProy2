@@ -20,7 +20,7 @@
 #endif
 
 //inicializar el i2c
-void i2c_MasterInit(const unsigned long a);
+void i2c_MasterInit(unsigned long freq);
 
 //funcion de espera
 void i2c_MasterWait(void);
@@ -42,7 +42,4 @@ unsigned short i2c_MasterRead (unsigned short d);
 
 //funcion para inciar el eslcavo
 void i1c_SlaveInit(unsigned char address);
-
-
-
 #endif

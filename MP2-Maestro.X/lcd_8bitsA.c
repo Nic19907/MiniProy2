@@ -83,7 +83,7 @@ void LCD_write (char value){
 }
 
 //mandar texto a la LCD
-void LCD_writeString (char *text) {
+void LCD_writeString (char text[]) {
     int i;
     for (i = 0; text[i] != '\0'; i++){
         LCD_write(text[i]);

@@ -10,10 +10,12 @@
 #include <xc.h>
 #include <pic16f887.h>
 #include <stdint.h>
-
+#include <stdio.h>
+#include <string.h>
 
 //librerias personalizadas
 #include "lcd_8bitsA.h"
+#include "i2c.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -44,7 +46,6 @@
  *                              Variables
 --------------------------------------------------------------------------------
  */
-
 
 /*
 --------------------------------------------------------------------------------
@@ -93,6 +94,9 @@ void setup (void){
     config_io();
     config_clock();   
     config_lcd();
+    
+    //steup del idc
+    i2c_MasterInit(100000);    //la comunicacion es de 100,000Hz
 }
 
 void config_io (void) {
@@ -112,6 +116,7 @@ void config_clock (void){
     OSCCONbits.IRCF = 0b110;    //4MHz
     OSCCONbits.SCS  = 1;    //reloj interno
 }
+
 
 void config_lcd (void){
     LCD_START();

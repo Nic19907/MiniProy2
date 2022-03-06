@@ -7,9 +7,9 @@
 
 #include "i2c.h"
 
-void i2c_MasterInit (const unsigned long a){
+void i2c_MasterInit (unsigned long freq){
     SSPCON2 = 0;
-    SSPADD = (_XTAL_FREQ/(4*a))-1;
+    //SSPADD = (_XTAL_FREQ/(4*freq))-1;
     SSPSTAT = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
@@ -71,8 +71,4 @@ void i2c_SlaveInit(unsigned char address){
     SSPCON2 = 0x01;     // 0b00000001
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
-    GIE = 1;
-    PEIE = 1;
-    SSPIF = 0;
-    SSPIE = 1;
 }
