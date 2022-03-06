@@ -2599,15 +2599,13 @@ void i2c_MasterSS (uint8_t address);
 
 void i2c_MasterWrite (uint8_t dato);
 
+# 49
+unsigned short i2c_MasterRead (unsigned short d);
 
 
 void i2c_MW (uint8_t address, uint8_t messege);
 
-
-
-unsigned short i2c_MasterRead (unsigned short d);
-
-
+void i2c_MR (uint8_t address, uint8_t *value);
 
 void i1c_SlaveInit(unsigned char address);
 
@@ -2655,12 +2653,7 @@ i2c_MasterWait();
 SSPBUF = dato;
 }
 
-void i2c_MW (uint8_t address, uint8_t messege){
-i2c_MasterStart();
-i2c_MasterSS(address);
-i2c_MasterWrite(messege);
-i2c_MasterStop();
-}
+
 
 
 unsigned short i2c_MasterRead (unsigned short d){
@@ -2682,6 +2675,24 @@ SSPCON2bits.ACKDT = 1;
 SSPCON2bits.ACKEN = 1;
 return temp;
 }
+
+void i2c_MW (uint8_t address, uint8_t messege){
+i2c_MasterStart();
+i2c_MasterSS(address);
+i2c_MasterWrite(messege);
+i2c_MasterStop();
+}
+
+void i2c_MR (uint8_t address, uint8_t *value){
+uint8_t temp;
+temp = address;
+temp |= 0b1;
+i2c_MasterStart();
+i2c_MasterSS(temp);
+*value = i2c_MasterRead(0);
+i2c_MasterStop();
+}
+
 
 void i2c_SlaveInit(unsigned char address){
 SSPADD = address;

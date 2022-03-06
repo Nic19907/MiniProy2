@@ -2713,15 +2713,13 @@ void i2c_MasterSS (uint8_t address);
 
 void i2c_MasterWrite (uint8_t dato);
 
+# 49
+unsigned short i2c_MasterRead (unsigned short d);
 
 
 void i2c_MW (uint8_t address, uint8_t messege);
 
-
-
-unsigned short i2c_MasterRead (unsigned short d);
-
-
+void i2c_MR (uint8_t address, uint8_t *value);
 
 void i1c_SlaveInit(unsigned char address);
 
@@ -2742,25 +2740,36 @@ void i1c_SlaveInit(unsigned char address);
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 58
+# 52
+struct informacion {
+uint8_t send;
+uint8_t read;
+}data;
+
+# 63
 void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
 
-# 86
+# 91
 void main(void) {
 setup();
+data.send = 0x15;
 
 while (1){
-i2c_MW(0x50, 0x15);
+i2c_MW(0x50, data.send);
 _delay((unsigned long)((1000)*(4000000/4000.0)));
+
+i2c_MR(0x50, &data.read);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+
 
 }
 return;
 }
 
-# 103
+# 113
 void setup (void){
 config_io();
 config_clock();

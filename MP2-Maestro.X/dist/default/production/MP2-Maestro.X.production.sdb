@@ -15,17 +15,21 @@
 [v _i2c_MasterSS i2c_MasterSS `(v  1 e 1 0 ]
 "48
 [v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
-"53
+"56
+[v _i2c_MasterRead i2c_MasterRead `(us  1 e 2 0 ]
+"76
 [v _i2c_MW i2c_MW `(v  1 e 1 0 ]
-"86 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"83
+[v _i2c_MR i2c_MR `(v  1 e 1 0 ]
+"91 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"103
+"113
 [v _setup setup `(v  1 e 1 0 ]
-"112
+"122
 [v _config_io config_io `(v  1 e 1 0 ]
-"127
+"137
 [v _config_clock config_clock `(v  1 e 1 0 ]
-"133
+"143
 [v _config_lcd config_lcd `(v  1 e 1 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -59,25 +63,25 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S145 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S157 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S151 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S163 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S156 . 1 `S145 1 . 1 0 `S151 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES156  1 e 1 @20 ]
+[u S168 . 1 `S157 1 . 1 0 `S163 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES168  1 e 1 @20 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S173 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S185 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -87,27 +91,27 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S182 . 1 `S173 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES182  1 e 1 @135 ]
+[u S194 . 1 `S185 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES194  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S63 . 1 `uc 1 SCS 1 0 :1:0 
+[s S72 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S69 . 1 `uc 1 . 1 0 :4:0 
+[s S78 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S74 . 1 `S63 1 . 1 0 `S69 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES74  1 e 1 @143 ]
+[u S83 . 1 `S72 1 . 1 0 `S78 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES83  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S194 . 1 `uc 1 SEN 1 0 :1:0 
+[s S206 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -117,8 +121,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S203 . 1 `S194 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES203  1 e 1 @145 ]
+[u S215 . 1 `S206 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES215  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -131,15 +135,18 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "4202
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
-"86 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+[s S22 informacion 2 `uc 1 send 1 0 `uc 1 read 1 1 ]
+"55 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+[v _data data `S22  1 e 2 0 ]
+"91
 [v _main main `(v  1 e 1 0 ]
 {
-"95
+"105
 } 0
-"103
+"113
 [v _setup setup `(v  1 e 1 0 ]
 {
-"110
+"120
 } 0
 "10 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
 [v _i2c_MasterInit i2c_MasterInit `(v  1 e 1 0 ]
@@ -159,10 +166,10 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
 } 0
-"133 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"143 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_lcd config_lcd `(v  1 e 1 0 ]
 {
-"141
+"151
 } 0
 "86 C:\Users\nicou\OneDrive\Documents\2022\1er_semestre\Digital_2\MiniProy2\MP2-Maestro.X\lcd_8bitsA.c
 [v _LCD_writeString LCD_writeString `(v  1 e 1 0 ]
@@ -211,24 +218,24 @@
 {
 "9
 } 0
-"112 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"122 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_io config_io `(v  1 e 1 0 ]
 {
-"125
+"135
 } 0
-"127
+"137
 [v _config_clock config_clock `(v  1 e 1 0 ]
 {
-"130
+"140
 } 0
-"53 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+"76 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
 [v _i2c_MW i2c_MW `(v  1 e 1 0 ]
 {
 [v i2c_MW@address address `uc  1 a 1 wreg ]
 [v i2c_MW@address address `uc  1 a 1 wreg ]
 [v i2c_MW@messege messege `uc  1 p 1 1 ]
 [v i2c_MW@address address `uc  1 a 1 2 ]
-"58
+"81
 } 0
 "48
 [v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
@@ -237,6 +244,19 @@
 [v i2c_MasterWrite@dato dato `uc  1 a 1 wreg ]
 [v i2c_MasterWrite@dato dato `uc  1 a 1 0 ]
 "51
+} 0
+"83
+[v _i2c_MR i2c_MR `(v  1 e 1 0 ]
+{
+[v i2c_MR@address address `uc  1 a 1 wreg ]
+"84
+[v i2c_MR@temp temp `uc  1 a 1 9 ]
+"83
+[v i2c_MR@address address `uc  1 a 1 wreg ]
+[v i2c_MR@value value `*.4uc  1 p 1 6 ]
+"85
+[v i2c_MR@address address `uc  1 a 1 8 ]
+"91
 } 0
 "38
 [v _i2c_MasterStop i2c_MasterStop `(v  1 e 1 0 ]
@@ -255,6 +275,15 @@
 [v i2c_MasterSS@address address `uc  1 a 1 wreg ]
 [v i2c_MasterSS@address address `uc  1 a 1 0 ]
 "46
+} 0
+"56
+[v _i2c_MasterRead i2c_MasterRead `(us  1 e 2 0 ]
+{
+"57
+[v i2c_MasterRead@temp temp `us  1 a 2 4 ]
+"56
+[v i2c_MasterRead@d d `us  1 p 2 0 ]
+"74
 } 0
 "24
 [v _i2c_MasterWait i2c_MasterWait `(v  1 e 1 0 ]

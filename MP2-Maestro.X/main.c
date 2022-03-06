@@ -49,6 +49,11 @@
 --------------------------------------------------------------------------------
  */
 
+struct informacion {
+    uint8_t send;
+    uint8_t read;
+}data;
+
 /*
 --------------------------------------------------------------------------------
  *                       Prototipo de funciones
@@ -85,10 +90,17 @@ void config_lcd     (void);
  */
 void main(void) {
     setup();
+    data.send = 0x15;
+    
     
     while (1){ //loop
-        i2c_MW(PICslave, 0x15);
+        i2c_MW(PICslave, data.send);
         __delay_ms(1000);
+        
+        //leer solo para el sensor
+        i2c_MR(PICslave, &data.read);
+        __delay_ms(1000);
+        
         
     }
     return;

@@ -50,12 +50,7 @@ void i2c_MasterWrite(uint8_t dato) {
     SSPBUF = dato;
 }
 
-void i2c_MW (uint8_t address, uint8_t messege){
-    i2c_MasterStart();
-    i2c_MasterSS(address);
-    i2c_MasterWrite(messege);
-    i2c_MasterStop();
-}
+
 
 
 unsigned short i2c_MasterRead (unsigned short d){
@@ -77,6 +72,24 @@ unsigned short i2c_MasterRead (unsigned short d){
     SSPCON2bits.ACKEN = 1;
     return temp; //regresa el valor leido
 }
+
+void i2c_MW (uint8_t address, uint8_t messege){
+    i2c_MasterStart();
+    i2c_MasterSS(address);
+    i2c_MasterWrite(messege);
+    i2c_MasterStop();
+}
+
+void i2c_MR (uint8_t address, uint8_t *value){
+    uint8_t temp;
+    temp = address;
+    temp |= 0b1; //bit0 = 1 para indicar lectura
+    i2c_MasterStart();
+    i2c_MasterSS(temp);
+    *value = i2c_MasterRead(0);
+    i2c_MasterStop();
+}
+
 
 void i2c_SlaveInit(unsigned char address){
     SSPADD = address;
