@@ -12,7 +12,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <xc.h>
-#include "lcd.h"
 
 
 /*Configures I2C communications and initializes registers to defaults*/
@@ -21,7 +20,7 @@ bool initialize()
     
     unsigned char id=0;
     /* Initialize I2C */
-    InitI2C();
+    //InitI2C();
 
       
     /* Read ID register and check against known values for APDS-9960 */
@@ -843,7 +842,7 @@ int wireReadDataBlock(   uint8_t reg, uint8_t *val, unsigned int len)
 {
   unsigned char j = 0;
   
-    I2C_Start();
+  i2c_MasterStart();
     I2C_Write_Byte((APDS9960_I2C_ADDR << 1 )| 0x00); // Slave address + Write command 
     
      I2C_Write_Byte(reg); // write the location
@@ -861,6 +860,12 @@ int wireReadDataBlock(   uint8_t reg, uint8_t *val, unsigned int len)
     I2C_Stop();
     
     return (int)j;
+}
+
+int wireReadDataBlock(   uint8_t reg, uint8_t *val, unsigned int len){
+    unsigned char j = 0;
+    
+    
 }
 
 /*Writes a single byte to the I2C device and specified register*/

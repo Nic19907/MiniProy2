@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"58 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"59 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [s S138 `uc 1 `uc 1 ]
 [n S138 informacion send read ]
 [p mainexit ]
-"69
+"70
 [v _setup `(v ~T0 @X0 0 ef ]
 "38 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/lcd_8bitsA.h
 [v _LCD_setCursor `(v ~T0 @X0 0 ef2`uc`uc ]
@@ -23,11 +23,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1258 ~T0 @X0 0 e ]
 [p i __delay ]
-"70 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"71 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _config_io `(v ~T0 @X0 0 ef ]
-"71
-[v _config_clock `(v ~T0 @X0 0 ef ]
 "72
+[v _config_clock `(v ~T0 @X0 0 ef ]
+"73
 [v _config_lcd `(v ~T0 @X0 0 ef ]
 "23 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h
 [v _i2c_MasterInit `(v ~T0 @X0 0 ef1`ul ]
@@ -1616,257 +1616,257 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.h: 52: void i2c_MW (uint8_t address, uint8_t messege);
 [; ;i2c.h: 54: void i2c_MR (uint8_t address, uint8_t *value);
 [; ;i2c.h: 56: void i2c_SlaveInit(uint8_t address);
-"56 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
+"57 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _semaforo `uc ~T0 @X0 1 e ]
-[; ;main.c: 56: uint8_t semaforo;
-"61
+[; ;main.c: 57: uint8_t semaforo;
+"62
 [v _data `S138 ~T0 @X0 1 e ]
-[; ;main.c: 58: struct informacion {
-[; ;main.c: 59: uint8_t send;
-[; ;main.c: 60: uint8_t read;
-[; ;main.c: 61: }data;
-[; ;main.c: 69: void setup (void);
-[; ;main.c: 70: void config_io (void);
-[; ;main.c: 71: void config_clock (void);
-[; ;main.c: 72: void config_lcd (void);
+[; ;main.c: 59: struct informacion {
+[; ;main.c: 60: uint8_t send;
+[; ;main.c: 61: uint8_t read;
+[; ;main.c: 62: }data;
+[; ;main.c: 70: void setup (void);
+[; ;main.c: 71: void config_io (void);
+[; ;main.c: 72: void config_clock (void);
+[; ;main.c: 73: void config_lcd (void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"94
+"95
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 94: void main(void) {
+[; ;main.c: 95: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 95: setup();
-"95
+[; ;main.c: 96: setup();
+"96
 [e ( _setup ..  ]
-[; ;main.c: 98: while (1){
-"98
+[; ;main.c: 99: while (1){
+"99
 [e :U 141 ]
 {
-[; ;main.c: 99: switch (semaforo) {
-"99
+[; ;main.c: 100: switch (semaforo) {
+"100
 [e $U 144  ]
 {
-[; ;main.c: 100: case 0:
-"100
-[e :U 145 ]
-[; ;main.c: 101: data.send = 0b001;
+[; ;main.c: 101: case 0:
 "101
-[e = . _data 0 -> -> 1 `i `uc ]
-[; ;main.c: 102: LCD_setCursor (2,9);
+[e :U 145 ]
+[; ;main.c: 102: data.send = 0b001;
 "102
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 103: LCD_writeString ("Verde ");
+[e = . _data 0 -> -> 1 `i `uc ]
+[; ;main.c: 103: LCD_setCursor (2,9);
 "103
-[e ( _LCD_writeString (1 -> :s 1C `*uc ]
-[; ;main.c: 104: i2c_MW(0x50, data.send);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+[; ;main.c: 104: LCD_writeString ("Verde ");
 "104
+[e ( _LCD_writeString (1 -> :s 1C `*uc ]
+[; ;main.c: 105: i2c_MW(0x50, data.send);
+"105
 [e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-[; ;main.c: 106: semaforo = 1;
-"106
-[e = _semaforo -> -> 1 `i `uc ]
-[; ;main.c: 107: break;
+[; ;main.c: 107: semaforo = 1;
 "107
-[e $U 143  ]
-[; ;main.c: 109: case 1:
-"109
-[e :U 146 ]
-[; ;main.c: 110: data.send = 0b010;
-"110
-[e = . _data 0 -> -> 2 `i `uc ]
-[; ;main.c: 111: LCD_setCursor (2,9);
-"111
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 112: LCD_writeString ("Yellow");
-"112
-[e ( _LCD_writeString (1 -> :s 2C `*uc ]
-[; ;main.c: 115: i2c_MasterStart();
-"115
-[e ( _i2c_MasterStart ..  ]
-[; ;main.c: 116: i2c_MasterSS(0x50);
-"116
-[e ( _i2c_MasterSS (1 -> -> 80 `i `ui ]
-[; ;main.c: 117: i2c_MasterWrite(data.send);
-"117
-[e ( _i2c_MasterWrite (1 -> . _data 0 `ui ]
-[; ;main.c: 118: i2c_MasterStop();
-"118
-[e ( _i2c_MasterStop ..  ]
-[; ;main.c: 120: semaforo = 2;
-"120
-[e = _semaforo -> -> 2 `i `uc ]
-[; ;main.c: 121: break;
-"121
-[e $U 143  ]
-[; ;main.c: 123: case 2:
-"123
-[e :U 147 ]
-[; ;main.c: 124: data.send = 0b100;
-"124
-[e = . _data 0 -> -> 4 `i `uc ]
-[; ;main.c: 125: LCD_setCursor (2,9);
-"125
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 126: LCD_writeString ("Rojo   ");
-"126
-[e ( _LCD_writeString (1 -> :s 3C `*uc ]
-[; ;main.c: 128: i2c_MW(0x50, data.send);
-"128
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-[; ;main.c: 130: semaforo = 0;
-"130
-[e = _semaforo -> -> 0 `i `uc ]
-[; ;main.c: 131: break;
-"131
-[e $U 143  ]
-[; ;main.c: 133: default:
-"133
-[e :U 148 ]
-[; ;main.c: 134: data.send = 0b111;
-"134
-[e = . _data 0 -> -> 7 `i `uc ]
-[; ;main.c: 135: LCD_setCursor (2,9);
-"135
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 136: LCD_writeString ("Error ");
-"136
-[e ( _LCD_writeString (1 -> :s 4C `*uc ]
-[; ;main.c: 138: i2c_MW(0x50, data.send);
-"138
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-[; ;main.c: 140: semaforo = 1;
-"140
 [e = _semaforo -> -> 1 `i `uc ]
-[; ;main.c: 141: break;
+[; ;main.c: 108: break;
+"108
+[e $U 143  ]
+[; ;main.c: 110: case 1:
+"110
+[e :U 146 ]
+[; ;main.c: 111: data.send = 0b010;
+"111
+[e = . _data 0 -> -> 2 `i `uc ]
+[; ;main.c: 112: LCD_setCursor (2,9);
+"112
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+[; ;main.c: 113: LCD_writeString ("Yellow");
+"113
+[e ( _LCD_writeString (1 -> :s 2C `*uc ]
+[; ;main.c: 116: i2c_MasterStart();
+"116
+[e ( _i2c_MasterStart ..  ]
+[; ;main.c: 117: i2c_MasterSS(0x50);
+"117
+[e ( _i2c_MasterSS (1 -> -> 80 `i `ui ]
+[; ;main.c: 118: i2c_MasterWrite(data.send);
+"118
+[e ( _i2c_MasterWrite (1 -> . _data 0 `ui ]
+[; ;main.c: 119: i2c_MasterStop();
+"119
+[e ( _i2c_MasterStop ..  ]
+[; ;main.c: 121: semaforo = 2;
+"121
+[e = _semaforo -> -> 2 `i `uc ]
+[; ;main.c: 122: break;
+"122
+[e $U 143  ]
+[; ;main.c: 124: case 2:
+"124
+[e :U 147 ]
+[; ;main.c: 125: data.send = 0b100;
+"125
+[e = . _data 0 -> -> 4 `i `uc ]
+[; ;main.c: 126: LCD_setCursor (2,9);
+"126
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+[; ;main.c: 127: LCD_writeString ("Rojo   ");
+"127
+[e ( _LCD_writeString (1 -> :s 3C `*uc ]
+[; ;main.c: 129: i2c_MW(0x50, data.send);
+"129
+[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
+[; ;main.c: 131: semaforo = 0;
+"131
+[e = _semaforo -> -> 0 `i `uc ]
+[; ;main.c: 132: break;
+"132
+[e $U 143  ]
+[; ;main.c: 134: default:
+"134
+[e :U 148 ]
+[; ;main.c: 135: data.send = 0b111;
+"135
+[e = . _data 0 -> -> 7 `i `uc ]
+[; ;main.c: 136: LCD_setCursor (2,9);
+"136
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+[; ;main.c: 137: LCD_writeString ("Error ");
+"137
+[e ( _LCD_writeString (1 -> :s 4C `*uc ]
+[; ;main.c: 139: i2c_MW(0x50, data.send);
+"139
+[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
+[; ;main.c: 141: semaforo = 1;
 "141
+[e = _semaforo -> -> 1 `i `uc ]
+[; ;main.c: 142: break;
+"142
 [e $U 143  ]
-"143
+"144
 }
-[; ;main.c: 143: }
+[; ;main.c: 144: }
 [e $U 143  ]
-"99
+"100
 [e :U 144 ]
 [e [\ _semaforo , $ -> -> 0 `i `uc 145
  , $ -> -> 1 `i `uc 146
  , $ -> -> 2 `i `uc 147
  148 ]
-"143
+"144
 [e :U 143 ]
-[; ;main.c: 146: _delay((unsigned long)((200)*(4000000/4000.0)));
-"146
+[; ;main.c: 147: _delay((unsigned long)((200)*(4000000/4000.0)));
+"147
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"154
+"155
 }
 [e :U 140 ]
-"98
+"99
 [e $U 141  ]
 [e :U 142 ]
-[; ;main.c: 154: }
-[; ;main.c: 155: return;
-"155
-[e $UE 139  ]
-[; ;main.c: 156: }
+[; ;main.c: 155: }
+[; ;main.c: 156: return;
 "156
+[e $UE 139  ]
+[; ;main.c: 157: }
+"157
 [e :UE 139 ]
 }
-"164
+"165
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 164: void setup (void){
+[; ;main.c: 165: void setup (void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 165: config_io();
-"165
-[e ( _config_io ..  ]
-[; ;main.c: 166: config_clock();
+[; ;main.c: 166: config_io();
 "166
-[e ( _config_clock ..  ]
-[; ;main.c: 167: config_lcd();
+[e ( _config_io ..  ]
+[; ;main.c: 167: config_clock();
 "167
+[e ( _config_clock ..  ]
+[; ;main.c: 168: config_lcd();
+"168
 [e ( _config_lcd ..  ]
-[; ;main.c: 170: i2c_MasterInit(400000);
-"170
-[e ( _i2c_MasterInit (1 -> -> 400000 `l `ul ]
-[; ;main.c: 171: return;
+[; ;main.c: 171: i2c_MasterInit(400000);
 "171
-[e $UE 149  ]
-[; ;main.c: 172: }
+[e ( _i2c_MasterInit (1 -> -> 400000 `l `ul ]
+[; ;main.c: 172: return;
 "172
+[e $UE 149  ]
+[; ;main.c: 173: }
+"173
 [e :UE 149 ]
 }
-"174
+"175
 [v _config_io `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 174: void config_io (void) {
+[; ;main.c: 175: void config_io (void) {
 [e :U _config_io ]
 [f ]
-[; ;main.c: 175: ANSEL = 0;
-"175
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 176: ANSELH = 0;
+[; ;main.c: 176: ANSEL = 0;
 "176
+[e = _ANSEL -> -> 0 `i `uc ]
+[; ;main.c: 177: ANSELH = 0;
+"177
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;main.c: 178: TRISA = 0;
-"178
-[e = _TRISA -> -> 0 `i `uc ]
-[; ;main.c: 179: TRISB = 0;
+[; ;main.c: 179: TRISA = 0;
 "179
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 180: TRISD = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 180: TRISB = 0;
 "180
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 181: TRISD = 0;
+"181
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 182: PORTA = 0;
-"182
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 183: PORTB = 0;
+[; ;main.c: 183: PORTA = 0;
 "183
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 184: PORTD = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 184: PORTB = 0;
 "184
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 185: PORTD = 0;
+"185
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 187: }
-"187
+[; ;main.c: 188: }
+"188
 [e :UE 150 ]
 }
-"189
+"190
 [v _config_clock `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 189: void config_clock (void){
+[; ;main.c: 190: void config_clock (void){
 [e :U _config_clock ]
 [f ]
-[; ;main.c: 190: OSCCONbits.IRCF = 0b110;
-"190
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-[; ;main.c: 191: OSCCONbits.SCS = 1;
+[; ;main.c: 191: OSCCONbits.IRCF = 0b110;
 "191
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 192: }
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+[; ;main.c: 192: OSCCONbits.SCS = 1;
 "192
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 193: }
+"193
 [e :UE 151 ]
 }
-"195
+"196
 [v _config_lcd `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 195: void config_lcd (void){
+[; ;main.c: 196: void config_lcd (void){
 [e :U _config_lcd ]
 [f ]
-[; ;main.c: 196: LCD_START();
-"196
+[; ;main.c: 197: LCD_START();
+"197
 [e ( _LCD_START ..  ]
-[; ;main.c: 198: LCD_setCursor (1,1);
-"198
-[e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 199: LCD_writeString ("Gesto");
+[; ;main.c: 199: LCD_setCursor (1,1);
 "199
+[e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 200: LCD_writeString ("Gesto");
+"200
 [e ( _LCD_writeString (1 -> :s 5C `*uc ]
-[; ;main.c: 201: LCD_setCursor (1,9);
-"201
-[e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 9 `i `uc ]
-[; ;main.c: 202: LCD_writeString ("Semaforo");
+[; ;main.c: 202: LCD_setCursor (1,9);
 "202
-[e ( _LCD_writeString (1 -> :s 6C `*uc ]
-[; ;main.c: 203: }
+[e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 9 `i `uc ]
+[; ;main.c: 203: LCD_writeString ("Semaforo");
 "203
+[e ( _LCD_writeString (1 -> :s 6C `*uc ]
+[; ;main.c: 204: }
+"204
 [e :UE 152 ]
 }
 [a 2C 89 101 108 108 111 119 0 ]

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Mar 07 11:42:23 2022
+                                                                                               Mon Mar 07 11:47:57 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -687,7 +687,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    673 ;;
    674 ;; *************** function _main *****************
    675 ;; Defined at:
-   676 ;;		line 94 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+   676 ;;		line 95 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
    677 ;; Parameters:    Size  Location     Type
    678 ;;		None
    679 ;; Auto vars:     Size  Location     Type
@@ -729,19 +729,19 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    715                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    716                           
    717                           
-   718                           ;main.c: 95: setup();
+   718                           ;main.c: 96: setup();
    719  072D  120A  118A  2588  120A  118A  	fcall	_setup
    720  0732  2FD7               	goto	l1251
    721  0733                     l57:	
-   722                           ;main.c: 100: case 0:
+   722                           ;main.c: 101: case 0:
    723                           
    724                           
-   725                           ;main.c: 101: data.send = 0b001;
+   725                           ;main.c: 102: data.send = 0b001;
    726  0733  01AB               	clrf	_data
    727  0734  0AAB               	incf	_data,f
    728  0735                     l1209:
    729                           
-   730                           ;main.c: 102: LCD_setCursor (2,9);
+   730                           ;main.c: 103: LCD_setCursor (2,9);
    731  0735  3009               	movlw	9
    732  0736  00A8               	movwf	??_main
    733  0737  0828               	movf	??_main,w
@@ -749,12 +749,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    735  0739  3002               	movlw	2
    736  073A  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
    737                           
-   738                           ;main.c: 103: LCD_writeString ("Verde ");
+   738                           ;main.c: 104: LCD_writeString ("Verde ");
    739  073F  3012               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
    740  0740  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
    741  0745                     l1211:
    742                           
-   743                           ;main.c: 104: i2c_MW(0x50, data.send);
+   743                           ;main.c: 105: i2c_MW(0x50, data.send);
    744  0745  1283               	bcf	3,5	;RP0=0, select bank0
    745  0746  1303               	bcf	3,6	;RP1=0, select bank0
    746  0747  082B               	movf	_data,w
@@ -765,24 +765,24 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    751  074C  120A  118A  25A7  120A  118A  	fcall	_i2c_MW
    752  0751                     l1213:
    753                           
-   754                           ;main.c: 106: semaforo = 1;
+   754                           ;main.c: 107: semaforo = 1;
    755  0751  1283               	bcf	3,5	;RP0=0, select bank0
    756  0752  1303               	bcf	3,6	;RP1=0, select bank0
    757  0753  01AD               	clrf	_semaforo
    758  0754  0AAD               	incf	_semaforo,f
    759                           
-   760                           ;main.c: 107: break;
+   760                           ;main.c: 108: break;
    761  0755  2FE4               	goto	l1253
    762  0756                     l1215:
    763                           
-   764                           ;main.c: 110: data.send = 0b010;
+   764                           ;main.c: 111: data.send = 0b010;
    765  0756  3002               	movlw	2
    766  0757  00A8               	movwf	??_main
    767  0758  0828               	movf	??_main,w
    768  0759  00AB               	movwf	_data
    769  075A                     l1217:
    770                           
-   771                           ;main.c: 111: LCD_setCursor (2,9);
+   771                           ;main.c: 112: LCD_setCursor (2,9);
    772  075A  3009               	movlw	9
    773  075B  00A8               	movwf	??_main
    774  075C  0828               	movf	??_main,w
@@ -791,16 +791,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    777  075F  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
    778  0764                     l1219:
    779                           
-   780                           ;main.c: 112: LCD_writeString ("Yellow");
+   780                           ;main.c: 113: LCD_writeString ("Yellow");
    781  0764  3020               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
    782  0765  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
    783  076A                     l1221:
    784                           
-   785                           ;main.c: 115: i2c_MasterStart();
+   785                           ;main.c: 116: i2c_MasterStart();
    786  076A  120A  118A  250A  120A  118A  	fcall	_i2c_MasterStart
    787  076F                     l1223:
    788                           
-   789                           ;main.c: 116: i2c_MasterSS(0x50);
+   789                           ;main.c: 117: i2c_MasterSS(0x50);
    790  076F  3050               	movlw	80
    791  0770  00F2               	movwf	i2c_MasterSS@address
    792  0771  3000               	movlw	0
@@ -808,7 +808,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    794  0773  120A  118A  251C  120A  118A  	fcall	_i2c_MasterSS
    795  0778                     l1225:
    796                           
-   797                           ;main.c: 117: i2c_MasterWrite(data.send);
+   797                           ;main.c: 118: i2c_MasterWrite(data.send);
    798  0778  1283               	bcf	3,5	;RP0=0, select bank0
    799  0779  1303               	bcf	3,6	;RP1=0, select bank0
    800  077A  082B               	movf	_data,w
@@ -821,10 +821,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    807  0781  120A  118A  2526  120A  118A  	fcall	_i2c_MasterWrite
    808  0786                     l1227:
    809                           
-   810                           ;main.c: 118: i2c_MasterStop();
+   810                           ;main.c: 119: i2c_MasterStop();
    811  0786  120A  118A  2513  120A  118A  	fcall	_i2c_MasterStop
    812                           
-   813                           ;main.c: 120: semaforo = 2;
+   813                           ;main.c: 121: semaforo = 2;
    814  078B  3002               	movlw	2
    815  078C  1283               	bcf	3,5	;RP0=0, select bank0
    816  078D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -832,18 +832,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    818  078F  0828               	movf	??_main,w
    819  0790  00AD               	movwf	_semaforo
    820                           
-   821                           ;main.c: 121: break;
+   821                           ;main.c: 122: break;
    822  0791  2FE4               	goto	l1253
    823  0792                     l1229:
    824                           
-   825                           ;main.c: 124: data.send = 0b100;
+   825                           ;main.c: 125: data.send = 0b100;
    826  0792  3004               	movlw	4
    827  0793  00A8               	movwf	??_main
    828  0794  0828               	movf	??_main,w
    829  0795  00AB               	movwf	_data
    830  0796                     l1231:
    831                           
-   832                           ;main.c: 125: LCD_setCursor (2,9);
+   832                           ;main.c: 126: LCD_setCursor (2,9);
    833  0796  3009               	movlw	9
    834  0797  00A8               	movwf	??_main
    835  0798  0828               	movf	??_main,w
@@ -852,12 +852,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    838  079B  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
    839  07A0                     l1233:
    840                           
-   841                           ;main.c: 126: LCD_writeString ("Rojo   ");
+   841                           ;main.c: 127: LCD_writeString ("Rojo   ");
    842  07A0  300A               	movlw	(low ((STR_3-__stringbase)| (0+32768)))& (0+255)
    843  07A1  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
    844  07A6                     l1235:
    845                           
-   846                           ;main.c: 128: i2c_MW(0x50, data.send);
+   846                           ;main.c: 129: i2c_MW(0x50, data.send);
    847  07A6  1283               	bcf	3,5	;RP0=0, select bank0
    848  07A7  1303               	bcf	3,6	;RP1=0, select bank0
    849  07A8  082B               	movf	_data,w
@@ -868,23 +868,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    854  07AD  120A  118A  25A7  120A  118A  	fcall	_i2c_MW
    855  07B2                     l1237:
    856                           
-   857                           ;main.c: 130: semaforo = 0;
+   857                           ;main.c: 131: semaforo = 0;
    858  07B2  1283               	bcf	3,5	;RP0=0, select bank0
    859  07B3  1303               	bcf	3,6	;RP1=0, select bank0
    860  07B4  01AD               	clrf	_semaforo
    861                           
-   862                           ;main.c: 131: break;
+   862                           ;main.c: 132: break;
    863  07B5  2FE4               	goto	l1253
    864  07B6                     l1239:
    865                           
-   866                           ;main.c: 134: data.send = 0b111;
+   866                           ;main.c: 135: data.send = 0b111;
    867  07B6  3007               	movlw	7
    868  07B7  00A8               	movwf	??_main
    869  07B8  0828               	movf	??_main,w
    870  07B9  00AB               	movwf	_data
    871  07BA                     l1241:
    872                           
-   873                           ;main.c: 135: LCD_setCursor (2,9);
+   873                           ;main.c: 136: LCD_setCursor (2,9);
    874  07BA  3009               	movlw	9
    875  07BB  00A8               	movwf	??_main
    876  07BC  0828               	movf	??_main,w
@@ -893,12 +893,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    879  07BF  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
    880  07C4                     l1243:
    881                           
-   882                           ;main.c: 136: LCD_writeString ("Error ");
+   882                           ;main.c: 137: LCD_writeString ("Error ");
    883  07C4  3019               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
    884  07C5  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
    885  07CA                     l1245:
    886                           
-   887                           ;main.c: 138: i2c_MW(0x50, data.send);
+   887                           ;main.c: 139: i2c_MW(0x50, data.send);
    888  07CA  1283               	bcf	3,5	;RP0=0, select bank0
    889  07CB  1303               	bcf	3,6	;RP1=0, select bank0
    890  07CC  082B               	movf	_data,w
@@ -933,7 +933,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    919  07E3  2FB6               	goto	l1239
    920  07E4                     l1253:
    921                           
-   922                           ;main.c: 146: _delay((unsigned long)((200)*(4000000/4000.0)));
+   922                           ;main.c: 147: _delay((unsigned long)((200)*(4000000/4000.0)));
    923  07E4  3002               	movlw	2
    924  07E5  1283               	bcf	3,5	;RP0=0, select bank0
    925  07E6  1303               	bcf	3,6	;RP1=0, select bank0
@@ -958,7 +958,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    944  0588                     __ptext1:	
    945 ;; *************** function _setup *****************
    946 ;; Defined at:
-   947 ;;		line 164 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+   947 ;;		line 165 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
    948 ;; Parameters:    Size  Location     Type
    949 ;;		None
    950 ;; Auto vars:     Size  Location     Type
@@ -997,19 +997,19 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    983                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    984                           
    985                           
-   986                           ;main.c: 165: config_io();
+   986                           ;main.c: 166: config_io();
    987  0588  120A  118A  253C  120A  118A  	fcall	_config_io
    988  058D                     l1181:
    989                           
-   990                           ;main.c: 166: config_clock();
+   990                           ;main.c: 167: config_clock();
    991  058D  120A  118A  2502  120A  118A  	fcall	_config_clock
    992  0592                     l1183:
    993                           
-   994                           ;main.c: 167: config_lcd();
+   994                           ;main.c: 168: config_lcd();
    995  0592  120A  118A  25CB  120A  118A  	fcall	_config_lcd
    996  0597                     l1185:
    997                           
-   998                           ;main.c: 170: i2c_MasterInit(400000);
+   998                           ;main.c: 171: i2c_MasterInit(400000);
    999  0597  3000               	movlw	0
   1000  0598  1283               	bcf	3,5	;RP0=0, select bank0
   1001  0599  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1314,7 +1314,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1300  05CB                     __ptext4:	
   1301 ;; *************** function _config_lcd *****************
   1302 ;; Defined at:
-  1303 ;;		line 195 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+  1303 ;;		line 196 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
   1304 ;; Parameters:    Size  Location     Type
   1305 ;;		None
   1306 ;; Auto vars:     Size  Location     Type
@@ -1352,23 +1352,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1338                           ; Regs used in _config_lcd: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   1339                           
   1340                           
-  1341                           ;main.c: 196: LCD_START();
+  1341                           ;main.c: 197: LCD_START();
   1342  05CB  120A  118A  2678  120A  118A  	fcall	_LCD_START
   1343  05D0                     l1159:
   1344                           
-  1345                           ;main.c: 198: LCD_setCursor (1,1);
+  1345                           ;main.c: 199: LCD_setCursor (1,1);
   1346  05D0  01F3               	clrf	LCD_setCursor@columna
   1347  05D1  0AF3               	incf	LCD_setCursor@columna,f
   1348  05D2  3001               	movlw	1
   1349  05D3  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
   1350  05D8                     l1161:
   1351                           
-  1352                           ;main.c: 199: LCD_writeString ("Gesto");
+  1352                           ;main.c: 200: LCD_writeString ("Gesto");
   1353  05D8  3027               	movlw	(low ((STR_5-__stringbase)| (0+32768)))& (0+255)
   1354  05D9  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
   1355  05DE                     l1163:
   1356                           
-  1357                           ;main.c: 201: LCD_setCursor (1,9);
+  1357                           ;main.c: 202: LCD_setCursor (1,9);
   1358  05DE  3009               	movlw	9
   1359  05DF  00F6               	movwf	??_config_lcd
   1360  05E0  0876               	movf	??_config_lcd,w
@@ -1377,7 +1377,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1363  05E3  120A  118A  2614  120A  118A  	fcall	_LCD_setCursor
   1364  05E8                     l1165:
   1365                           
-  1366                           ;main.c: 202: LCD_writeString ("Semaforo");
+  1366                           ;main.c: 203: LCD_writeString ("Semaforo");
   1367  05E8  3001               	movlw	(low ((STR_6-__stringbase)| (0+32768)))& (0+255)
   1368  05E9  120A  118A  25EF  120A  118A  	fcall	_LCD_writeString
   1369  05EE                     l76:
@@ -1900,7 +1900,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1886  053C                     __ptext11:	
   1887 ;; *************** function _config_io *****************
   1888 ;; Defined at:
-  1889 ;;		line 174 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+  1889 ;;		line 175 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
   1890 ;; Parameters:    Size  Location     Type
   1891 ;;		None
   1892 ;; Auto vars:     Size  Location     Type
@@ -1935,34 +1935,34 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1921                           ; Regs used in _config_io: [status,2]
   1922                           
   1923                           
-  1924                           ;main.c: 175: ANSEL = 0;
+  1924                           ;main.c: 176: ANSEL = 0;
   1925  053C  1683               	bsf	3,5	;RP0=1, select bank3
   1926  053D  1703               	bsf	3,6	;RP1=1, select bank3
   1927  053E  0188               	clrf	8	;volatile
   1928                           
-  1929                           ;main.c: 176: ANSELH = 0;
+  1929                           ;main.c: 177: ANSELH = 0;
   1930  053F  0189               	clrf	9	;volatile
   1931                           
-  1932                           ;main.c: 178: TRISA = 0;
+  1932                           ;main.c: 179: TRISA = 0;
   1933  0540  1683               	bsf	3,5	;RP0=1, select bank1
   1934  0541  1303               	bcf	3,6	;RP1=0, select bank1
   1935  0542  0185               	clrf	5	;volatile
   1936                           
-  1937                           ;main.c: 179: TRISB = 0;
+  1937                           ;main.c: 180: TRISB = 0;
   1938  0543  0186               	clrf	6	;volatile
   1939                           
-  1940                           ;main.c: 180: TRISD = 0;
+  1940                           ;main.c: 181: TRISD = 0;
   1941  0544  0188               	clrf	8	;volatile
   1942                           
-  1943                           ;main.c: 182: PORTA = 0;
+  1943                           ;main.c: 183: PORTA = 0;
   1944  0545  1283               	bcf	3,5	;RP0=0, select bank0
   1945  0546  1303               	bcf	3,6	;RP1=0, select bank0
   1946  0547  0185               	clrf	5	;volatile
   1947                           
-  1948                           ;main.c: 183: PORTB = 0;
+  1948                           ;main.c: 184: PORTB = 0;
   1949  0548  0186               	clrf	6	;volatile
   1950                           
-  1951                           ;main.c: 184: PORTD = 0;
+  1951                           ;main.c: 185: PORTD = 0;
   1952  0549  0188               	clrf	8	;volatile
   1953  054A                     l70:
   1954  054A  0008               	return
@@ -1972,7 +1972,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1958  0502                     __ptext12:	
   1959 ;; *************** function _config_clock *****************
   1960 ;; Defined at:
-  1961 ;;		line 189 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+  1961 ;;		line 190 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
   1962 ;; Parameters:    Size  Location     Type
   1963 ;;		None
   1964 ;; Auto vars:     Size  Location     Type
@@ -2007,7 +2007,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1993                           ; Regs used in _config_clock: [wreg+status,2+status,0]
   1994                           
   1995                           
-  1996                           ;main.c: 190: OSCCONbits.IRCF = 0b110;
+  1996                           ;main.c: 191: OSCCONbits.IRCF = 0b110;
   1997  0502  1683               	bsf	3,5	;RP0=1, select bank1
   1998  0503  1303               	bcf	3,6	;RP1=0, select bank1
   1999  0504  080F               	movf	15,w	;volatile
@@ -2016,7 +2016,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2002  0507  008F               	movwf	15	;volatile
   2003  0508                     l1155:
   2004                           
-  2005                           ;main.c: 191: OSCCONbits.SCS = 1;
+  2005                           ;main.c: 192: OSCCONbits.SCS = 1;
   2006  0508  140F               	bsf	15,0	;volatile
   2007  0509                     l73:
   2008  0509  0008               	return
@@ -2026,7 +2026,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2012  05A7                     __ptext13:	
   2013 ;; *************** function _i2c_MW *****************
   2014 ;; Defined at:
-  2015 ;;		line 99 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2015 ;;		line 84 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2016 ;; Parameters:    Size  Location     Type
   2017 ;;  address         1    wreg     unsigned char 
   2018 ;;  messege         1    4[COMMON] unsigned char 
@@ -2068,10 +2068,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2054  05A7  00F7               	movwf	i2c_MW@address
   2055  05A8                     l1189:
   2056                           
-  2057                           ;i2c.c: 100: i2c_MasterStart();
+  2057                           ;i2c.c: 85: i2c_MasterStart();
   2058  05A8  120A  118A  250A  120A  118A  	fcall	_i2c_MasterStart
   2059                           
-  2060                           ;i2c.c: 101: i2c_MasterSS(address);
+  2060                           ;i2c.c: 86: i2c_MasterSS(address);
   2061  05AD  0877               	movf	i2c_MW@address,w
   2062  05AE  00F5               	movwf	??_i2c_MW
   2063  05AF  01F6               	clrf	??_i2c_MW+1
@@ -2081,7 +2081,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2067  05B3  00F3               	movwf	i2c_MasterSS@address+1
   2068  05B4  120A  118A  251C  120A  118A  	fcall	_i2c_MasterSS
   2069                           
-  2070                           ;i2c.c: 102: i2c_MasterWrite(messege);
+  2070                           ;i2c.c: 87: i2c_MasterWrite(messege);
   2071  05B9  0874               	movf	i2c_MW@messege,w
   2072  05BA  00F5               	movwf	??_i2c_MW
   2073  05BB  01F6               	clrf	??_i2c_MW+1
@@ -2091,7 +2091,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2077  05BF  00F3               	movwf	i2c_MasterWrite@dato+1
   2078  05C0  120A  118A  2526  120A  118A  	fcall	_i2c_MasterWrite
   2079                           
-  2080                           ;i2c.c: 103: i2c_MasterStop();
+  2080                           ;i2c.c: 88: i2c_MasterStop();
   2081  05C5  120A  118A  2513  120A  118A  	fcall	_i2c_MasterStop
   2082  05CA                     l173:
   2083  05CA  0008               	return
@@ -2101,7 +2101,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2087  0526                     __ptext14:	
   2088 ;; *************** function _i2c_MasterWrite *****************
   2089 ;; Defined at:
-  2090 ;;		line 71 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2090 ;;		line 56 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2091 ;; Parameters:    Size  Location     Type
   2092 ;;  dato            2    2[COMMON] unsigned int 
   2093 ;; Auto vars:     Size  Location     Type
@@ -2138,11 +2138,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2124                           ; Regs used in _i2c_MasterWrite: [wreg+status,2+status,0+pclath+cstack]
   2125                           
   2126                           
-  2127                           ;i2c.c: 72: i2c_MasterWait();
+  2127                           ;i2c.c: 57: i2c_MasterWait();
   2128  0526  120A  118A  2569  120A  118A  	fcall	_i2c_MasterWait
   2129  052B                     l1145:
   2130                           
-  2131                           ;i2c.c: 73: SSPBUF = dato;
+  2131                           ;i2c.c: 58: SSPBUF = dato;
   2132  052B  0872               	movf	i2c_MasterWrite@dato,w
   2133  052C  1283               	bcf	3,5	;RP0=0, select bank0
   2134  052D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2155,7 +2155,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2141  0513                     __ptext15:	
   2142 ;; *************** function _i2c_MasterStop *****************
   2143 ;; Defined at:
-  2144 ;;		line 61 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2144 ;;		line 46 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2145 ;; Parameters:    Size  Location     Type
   2146 ;;		None
   2147 ;; Auto vars:     Size  Location     Type
@@ -2193,11 +2193,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2179                           ; Regs used in _i2c_MasterStop: [wreg+status,2+status,0+pclath+cstack]
   2180                           
   2181                           
-  2182                           ;i2c.c: 62: i2c_MasterWait();
+  2182                           ;i2c.c: 47: i2c_MasterWait();
   2183  0513  120A  118A  2569  120A  118A  	fcall	_i2c_MasterWait
   2184  0518                     l1149:
   2185                           
-  2186                           ;i2c.c: 63: SSPCON2bits.PEN = 1;
+  2186                           ;i2c.c: 48: SSPCON2bits.PEN = 1;
   2187  0518  1683               	bsf	3,5	;RP0=1, select bank1
   2188  0519  1303               	bcf	3,6	;RP1=0, select bank1
   2189  051A  1511               	bsf	17,2	;volatile
@@ -2209,7 +2209,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2195  050A                     __ptext16:	
   2196 ;; *************** function _i2c_MasterStart *****************
   2197 ;; Defined at:
-  2198 ;;		line 51 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2198 ;;		line 36 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2199 ;; Parameters:    Size  Location     Type
   2200 ;;		None
   2201 ;; Auto vars:     Size  Location     Type
@@ -2247,11 +2247,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2233                           ; Regs used in _i2c_MasterStart: [wreg+status,2+status,0+pclath+cstack]
   2234                           
   2235                           
-  2236                           ;i2c.c: 52: i2c_MasterWait();
+  2236                           ;i2c.c: 37: i2c_MasterWait();
   2237  050A  120A  118A  2569  120A  118A  	fcall	_i2c_MasterWait
   2238  050F                     l1137:
   2239                           
-  2240                           ;i2c.c: 53: SSPCON2bits.SEN = 1;
+  2240                           ;i2c.c: 38: SSPCON2bits.SEN = 1;
   2241  050F  1683               	bsf	3,5	;RP0=1, select bank1
   2242  0510  1303               	bcf	3,6	;RP1=0, select bank1
   2243  0511  1411               	bsf	17,0	;volatile
@@ -2263,7 +2263,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2249  051C                     __ptext17:	
   2250 ;; *************** function _i2c_MasterSS *****************
   2251 ;; Defined at:
-  2252 ;;		line 66 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2252 ;;		line 51 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2253 ;; Parameters:    Size  Location     Type
   2254 ;;  address         2    2[COMMON] unsigned int 
   2255 ;; Auto vars:     Size  Location     Type
@@ -2301,11 +2301,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2287                           ; Regs used in _i2c_MasterSS: [wreg+status,2+status,0+pclath+cstack]
   2288                           
   2289                           
-  2290                           ;i2c.c: 67: i2c_MasterWait();
+  2290                           ;i2c.c: 52: i2c_MasterWait();
   2291  051C  120A  118A  2569  120A  118A  	fcall	_i2c_MasterWait
   2292  0521                     l1141:
   2293                           
-  2294                           ;i2c.c: 68: SSPBUF = address;
+  2294                           ;i2c.c: 53: SSPBUF = address;
   2295  0521  0872               	movf	i2c_MasterSS@address,w
   2296  0522  1283               	bcf	3,5	;RP0=0, select bank0
   2297  0523  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2318,7 +2318,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2304  0569                     __ptext18:	
   2305 ;; *************** function _i2c_MasterWait *****************
   2306 ;; Defined at:
-  2307 ;;		line 40 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+  2307 ;;		line 25 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
   2308 ;; Parameters:    Size  Location     Type
   2309 ;;		None
   2310 ;; Auto vars:     Size  Location     Type
@@ -2358,11 +2358,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2344                           ; Regs used in _i2c_MasterWait: [wreg+status,2+status,0]
   2345                           
   2346                           
-  2347                           ;i2c.c: 43: while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)){
+  2347                           ;i2c.c: 28: while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)){
   2348  0569  2D7B               	goto	l1107
   2349  056A                     l1105:
   2350                           
-  2351                           ;i2c.c: 44: PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
+  2351                           ;i2c.c: 29: PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
   2352  056A  0C14               	rrf	20,w	;volatile
   2353  056B  00F0               	movwf	??_i2c_MasterWait
   2354  056C  0C70               	rrf	??_i2c_MasterWait,w
@@ -2648,7 +2648,7 @@ DATA                 0      0      1C      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Mar 07 11:42:23 2022
+Symbol Table                                                                                   Mon Mar 07 11:47:57 2022
 
                        pc 0002               _SSPSTATbits 0094                        l70 054A  
                       l73 0509                        l57 0733                        l67 05A6  

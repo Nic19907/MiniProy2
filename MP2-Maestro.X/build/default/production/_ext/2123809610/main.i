@@ -2645,7 +2645,7 @@ void i2c_MR (uint8_t address, uint8_t *value);
 
 void i2c_SlaveInit(uint8_t address);
 
-# 56 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+# 57 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
 uint8_t semaforo;
 
 struct informacion {
@@ -2653,13 +2653,13 @@ uint8_t send;
 uint8_t read;
 }data;
 
-# 69
+# 70
 void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
 
-# 94
+# 95
 void main(void) {
 setup();
 
@@ -2714,12 +2714,12 @@ break;
 
 _delay((unsigned long)((200)*(4000000/4000.0)));
 
-# 154
+# 155
 }
 return;
 }
 
-# 164
+# 165
 void setup (void){
 config_io();
 config_clock();
