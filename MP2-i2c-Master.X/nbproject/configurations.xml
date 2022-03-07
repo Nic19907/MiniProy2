@@ -17,7 +17,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>lcd_8bitsA.c</itemPath>
-      <itemPath>UART.c</itemPath>
       <itemPath>C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c</itemPath>
       <itemPath>C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/APDS9960.c</itemPath>
       <itemPath>i2c.c</itemPath>
