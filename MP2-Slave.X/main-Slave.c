@@ -70,7 +70,7 @@ void config_clock   (void);
 void __interrupt() isr(void){
    PORTA++;
 
-   if(PIR1bits.SSPIF){ 
+   if(PIR1bits.SSPIF == 1){ 
 
         SSPCONbits.CKP = 0;
        
@@ -81,7 +81,7 @@ void __interrupt() isr(void){
             SSPCONbits.CKP = 1;         // Enables SCL (Clock)
         }
 
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {//escribiendo al esclavo
+        else if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {//escribiendo al esclavo
             //__delay_us(7);
             trash = SSPBUF;             // Lectura del SSBUF para limpiar el buffer y la bandera BF
             

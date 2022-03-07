@@ -1575,9 +1575,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.c: 14: SSPCONbits.SSPM = 0b1000;
 "14
 [e = . . _SSPCONbits 0 0 -> -> 8 `i `uc ]
-[; ;i2c.c: 16: SSPCON2 = 0b1;
+[; ;i2c.c: 16: SSPCON2 = 0b0;
 "16
-[e = _SSPCON2 -> -> 1 `i `uc ]
+[e = _SSPCON2 -> -> 0 `i `uc ]
 [; ;i2c.c: 18: SSPADD = (4000000/(4*freq))-1;
 "18
 [e = _SSPADD -> - / -> -> 4000000 `l `ul * -> -> -> 4 `i `l `ul _freq -> -> -> 1 `i `l `ul `uc ]
@@ -1715,9 +1715,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.c: 64: i2c_MasterWait();
 "64
 [e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 65: if (d){
+[; ;i2c.c: 65: if (d==1){
 "65
-[e $ ! != -> _d `ui -> -> -> 0 `i `us `ui 149  ]
+[e $ ! == -> _d `ui -> -> 1 `i `ui 149  ]
 {
 [; ;i2c.c: 66: SSPCON2bits.ACKDT = 0;
 "66

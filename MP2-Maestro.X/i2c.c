@@ -13,7 +13,7 @@ void i2c_MasterInit (unsigned long freq){
     SSPCONbits.SSPEN = 1;
     SSPCONbits.SSPM = 0b1000;
     
-    SSPCON2 = 0b1;
+    SSPCON2 = 0b0;
     
     SSPADD = (_XTAL_FREQ/(4*freq))-1;
     
@@ -62,7 +62,7 @@ unsigned short i2c_MasterRead (unsigned short d){
     temp = SSPBUF;
     
     i2c_MasterWait();   //espera
-    if (d){
+    if (d==1){
         SSPCON2bits.ACKDT = 0;
     }
     

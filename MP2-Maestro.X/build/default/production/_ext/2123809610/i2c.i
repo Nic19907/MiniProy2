@@ -2616,7 +2616,7 @@ SSPSTAT = 0b10000000;
 SSPCONbits.SSPEN = 1;
 SSPCONbits.SSPM = 0b1000;
 
-SSPCON2 = 0b1;
+SSPCON2 = 0b0;
 
 SSPADD = (4000000/(4*freq))-1;
 
@@ -2665,7 +2665,7 @@ i2c_MasterWait();
 temp = SSPBUF;
 
 i2c_MasterWait();
-if (d){
+if (d==1){
 SSPCON2bits.ACKDT = 0;
 }
 
