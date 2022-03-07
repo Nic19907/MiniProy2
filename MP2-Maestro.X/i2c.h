@@ -53,5 +53,5 @@ void i2c_MW (uint8_t address, uint8_t messege);//incluir un delay al final
 
 void i2c_MR (uint8_t address, uint8_t *value);
 //funcion para inciar el eslcavo
-void i1c_SlaveInit(unsigned char address);
+void i2c_SlaveInit(unsigned char address);
 #endif

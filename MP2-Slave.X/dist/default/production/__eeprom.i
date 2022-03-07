@@ -1,5 +1,5 @@
 
-# 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+# 1 "C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c"
 
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2491,214 +2491,175 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 13 "C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\stdint.h"
-typedef signed char int8_t;
+# 5 "C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c"
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+{
+volatile unsigned char *cp = to;
 
-# 20
-typedef signed int int16_t;
+while (EECON1bits.WR) continue;
+EEADR = (unsigned char)from;
+while(size--) {
+while (EECON1bits.WR) continue;
 
-# 28
-typedef __int24 int24_t;
+EECON1 &= 0x7F;
+
+EECON1bits.RD = 1;
+*cp++ = EEDATA;
+++EEADR;
+}
 
 # 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 23 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h"
-void i2c_MasterInit(unsigned long freq);
-
-
-void i2c_MasterWait(void);
-
-
-void i2c_MasterStart (void);
-
-void i2c_Master_RepeatStart (void);
-
-void i2c_MasterStop (void);
-
-
-
-void i2c_MasterSS (uint8_t address);
-
-
-
-
-void i2c_MasterWrite (uint8_t dato);
-
-# 49
-unsigned short i2c_MasterRead (unsigned short d);
-
-
-void i2c_MW (uint8_t address, uint8_t messege);
-
-void i2c_MR (uint8_t address, uint8_t *value);
-
-void i2c_SlaveInit(unsigned char address);
-
-# 10 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
-void i2c_MasterInit (unsigned long freq){
-SSPSTAT = 0b10000000;
-
-SSPCONbits.SSPEN = 1;
-SSPCONbits.SSPM = 0b1000;
-
-SSPCON2 = 0;
-
-SSPADD = (4000000/(4*freq))-1;
-
-TRISCbits.TRISC3 = 1;
-TRISCbits.TRISC4 = 1;
 }
 
-void i2c_MasterWait (void){
-while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+{
+const unsigned char *ptr =from;
+
+while (EECON1bits.WR) continue;
+EEADR = (unsigned char)to - 1U;
+
+EECON1 &= 0x7F;
+
+while(size--) {
+while (EECON1bits.WR) {
+continue;
+}
+EEDATA = *ptr++;
+++EEADR;
+STATUSbits.CARRY = 0;
+if (INTCONbits.GIE) {
+STATUSbits.CARRY = 1;
+}
+INTCONbits.GIE = 0;
+EECON1bits.WREN = 1;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+EECON1bits.WREN = 0;
+if (STATUSbits.CARRY) {
+INTCONbits.GIE = 1;
+}
 }
 
-void i2c_MasterStart (){
-i2c_MasterWait();
-SSPCON2bits.SEN = 1;
+# 101
 }
 
-void i2c_Master_RepeatStart (){
-i2c_MasterWait();
-SSPCON2bits.RSEN = 1;
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+unsigned char data;
+__eecpymem((unsigned char *) &data,addr,1);
+return data;
 }
 
-void i2c_MasterStop() {
-i2c_MasterWait();
-SSPCON2bits.PEN = 1;
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+unsigned int data;
+__eecpymem((unsigned char *) &data,addr,2);
+return data;
 }
 
-void i2c_MasterSS(uint8_t address) {
-i2c_MasterWait();
-SSPBUF = address;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+__uint24 data;
+__eecpymem((unsigned char *) &data,addr,3);
+return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+unsigned long data;
+__eecpymem((unsigned char *) &data,addr,4);
+return data;
 }
 
-void i2c_MasterWrite(uint8_t dato) {
-i2c_MasterWait();
-SSPBUF = dato;
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+unsigned long long data;
+__eecpymem((unsigned char *) &data,addr,8);
+return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+__memcpyee(addr,(unsigned char *) &data,1);
+return data;
 }
 
-
-
-
-unsigned short i2c_MasterRead (unsigned short d){
-unsigned short temp;
-i2c_MasterWait();
-SSPCON2bits.RCEN = 1;
-
-i2c_MasterWait();
-temp = SSPBUF;
-
-i2c_MasterWait();
-if (d){
-SSPCON2bits.ACKDT = 0;
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+__memcpyee(addr,(unsigned char *) &data,2);
+return data;
 }
 
-else {
-SSPCON2bits.ACKDT = 1;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+__memcpyee(addr,(unsigned char *) &data,3);
+return data;
 }
-SSPCON2bits.ACKEN = 1;
-return temp;
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+__memcpyee(addr,(unsigned char *) &data,4);
+return data;
 }
 
-void i2c_MW (uint8_t address, uint8_t messege){
-i2c_MasterStart();
-i2c_MasterSS(address);
-i2c_MasterWrite(messege);
-i2c_MasterStop();
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+__memcpyee(addr,(unsigned char *) &data,8);
+return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+float data;
+__eecpymem((unsigned char *) &data,addr,3);
+return data;
 }
 
-void i2c_MR (uint8_t address, uint8_t *value){
-uint8_t temp;
-temp = address;
-temp |= 0b1;
-i2c_MasterStart();
-i2c_MasterSS(temp);
-*value = i2c_MasterRead(0);
-i2c_MasterStop();
+double
+__eetofl(__eeprom void *addr)
+{
+double data;
+__eecpymem((unsigned char *) &data,addr,4);
+return data;
 }
 
-
-void i2c_SlaveInit(unsigned char address){
-SSPADD = address;
-SSPCON = 0x36;
-SSPSTAT = 0x80;
-SSPCON2 = 0x01;
-TRISCbits.TRISC3 = 1;
-TRISCbits.TRISC4 = 1;
+float
+__fttoee(__eeprom void *addr, float data)
+{
+__memcpyee(addr,(unsigned char *) &data,3);
+return data;
 }
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+__memcpyee(addr,(unsigned char *) &data,4);
+return data;
+}
+

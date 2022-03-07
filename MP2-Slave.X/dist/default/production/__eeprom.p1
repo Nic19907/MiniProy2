@@ -1,41 +1,45 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2177 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
-"856
-[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
-"863
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"855
-[u S29 `S30 1 `S31 1 ]
-[n S29 . . . ]
-"870
-[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
-"1979
-[v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
-"2048
-[v _SSPADD `Vuc ~T0 @X0 0 e@147 ]
-"1546
-[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1545
-[u S56 `S57 1 ]
-[n S56 . . ]
-"1557
-[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
-"1985
-[s S76 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S76 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"1984
-[u S75 `S76 1 ]
-[n S75 . . ]
-"1996
-[v _SSPCON2bits `VS75 ~T0 @X0 0 e@145 ]
-"843
-[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
-"850
-[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
+"3505 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S137 . RD WR WREN WRERR . EEPGD ]
+"3504
+[u S136 `S137 1 ]
+[n S136 . . ]
+"3514
+[v _EECON1bits `VS136 ~T0 @X0 0 e@396 ]
+"3257
+[v _EEADR `Vuc ~T0 @X0 0 e@269 ]
+"3499
+[v _EECON1 `Vuc ~T0 @X0 0 e@396 ]
+"3245
+[v _EEDATA `Vuc ~T0 @X0 0 e@268 ]
+"79
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S2 . C DC Z nPD nTO RP IRP ]
+"88
+[s S3 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . . RP0 RP1 ]
+"93
+[s S4 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S4 . CARRY . ZERO ]
+"78
+[u S1 `S2 1 `S3 1 `S4 1 ]
+[n S1 . . . . ]
+"99
+[v _STATUSbits `VS1 ~T0 @X0 0 e@3 ]
+"465
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"3544
+[v _EECON2 `Vuc ~T0 @X0 0 e@397 ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1520,317 +1524,554 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;xc8\pic\include\pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 139: extern __bank0 __bit __timeout;
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef __int24 int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 52: typedef unsigned char uint8_t;
-[; ;stdint.h: 58: typedef unsigned int uint16_t;
-[; ;stdint.h: 65: typedef __uint24 uint24_t;
-[; ;stdint.h: 72: typedef unsigned long int uint32_t;
-[; ;stdint.h: 88: typedef signed char int_least8_t;
-[; ;stdint.h: 96: typedef signed int int_least16_t;
-[; ;stdint.h: 109: typedef __int24 int_least24_t;
-[; ;stdint.h: 118: typedef signed long int int_least32_t;
-[; ;stdint.h: 136: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 143: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 154: typedef __uint24 uint_least24_t;
-[; ;stdint.h: 162: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 181: typedef signed char int_fast8_t;
-[; ;stdint.h: 188: typedef signed int int_fast16_t;
-[; ;stdint.h: 200: typedef __int24 int_fast24_t;
-[; ;stdint.h: 208: typedef signed long int int_fast32_t;
-[; ;stdint.h: 224: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 230: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 240: typedef __uint24 uint_fast24_t;
-[; ;stdint.h: 247: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 268: typedef int32_t intmax_t;
-[; ;stdint.h: 282: typedef uint32_t uintmax_t;
-[; ;stdint.h: 289: typedef int16_t intptr_t;
-[; ;stdint.h: 294: typedef uint16_t uintptr_t;
-[; ;i2c.h: 23: void i2c_MasterInit(unsigned long freq);
-[; ;i2c.h: 26: void i2c_MasterWait(void);
-[; ;i2c.h: 29: void i2c_MasterStart (void);
-[; ;i2c.h: 31: void i2c_Master_RepeatStart (void);
-[; ;i2c.h: 33: void i2c_MasterStop (void);
-[; ;i2c.h: 37: void i2c_MasterSS (uint8_t address);
-[; ;i2c.h: 42: void i2c_MasterWrite (uint8_t dato);
-[; ;i2c.h: 49: unsigned short i2c_MasterRead (unsigned short d);
-[; ;i2c.h: 52: void i2c_MW (uint8_t address, uint8_t messege);
-[; ;i2c.h: 54: void i2c_MR (uint8_t address, uint8_t *value);
-[; ;i2c.h: 56: void i2c_SlaveInit(unsigned char address);
-"10 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-[v _i2c_MasterInit `(v ~T0 @X0 1 ef1`ul ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem `(v ~T0 @X0 1 ef3`*Vuc`*Euc`uc ]
+"7
 {
-[; ;i2c.c: 10: void i2c_MasterInit (unsigned long freq){
-[e :U _i2c_MasterInit ]
-[v _freq `ul ~T0 @X0 1 r1 ]
+[; ;__eeprom.c: 5: void
+[; ;__eeprom.c: 6: __eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+[; ;__eeprom.c: 7: {
+[e :U ___eecpymem ]
+"6
+[v _to `*Vuc ~T0 @X0 1 r1 ]
+[v _from `*Euc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"7
 [f ]
-[; ;i2c.c: 11: SSPSTAT = 0b10000000;
+"8
+[v _cp `*Vuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 8: volatile unsigned char *cp = to;
+[e = _cp _to ]
+[; ;__eeprom.c: 10: while (EECON1bits.WR) continue;
+"10
+[e $U 139  ]
+[e :U 140 ]
+[e $U 139  ]
+[e :U 139 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 140  ]
+[e :U 141 ]
+[; ;__eeprom.c: 11: EEADR = (unsigned char)from;
 "11
-[e = _SSPSTAT -> -> 128 `i `uc ]
-[; ;i2c.c: 13: SSPCONbits.SSPEN = 1;
+[e = _EEADR -> _from `uc ]
+[; ;__eeprom.c: 12: while(size--) {
+"12
+[e $U 142  ]
+[e :U 143 ]
+{
+[; ;__eeprom.c: 13: while (EECON1bits.WR) continue;
 "13
-[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-[; ;i2c.c: 14: SSPCONbits.SSPM = 0b1000;
-"14
-[e = . . _SSPCONbits 0 0 -> -> 8 `i `uc ]
-[; ;i2c.c: 16: SSPCON2 = 0;
-"16
-[e = _SSPCON2 -> -> 0 `i `uc ]
-[; ;i2c.c: 18: SSPADD = (4000000/(4*freq))-1;
+[e $U 145  ]
+[e :U 146 ]
+[e $U 145  ]
+[e :U 145 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 146  ]
+[e :U 147 ]
+[; ;__eeprom.c: 15: EECON1 &= 0x7F;
+"15
+[e =& _EECON1 -> -> 127 `i `uc ]
+[; ;__eeprom.c: 17: EECON1bits.RD = 1;
+"17
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 18: *cp++ = EEDATA;
 "18
-[e = _SSPADD -> - / -> -> 4000000 `l `ul * -> -> -> 4 `i `l `ul _freq -> -> -> 1 `i `l `ul `uc ]
-[; ;i2c.c: 20: TRISCbits.TRISC3 = 1;
+[e = *U ++ _cp * -> -> 1 `i `x -> -> # *U _cp `i `x _EEDATA ]
+[; ;__eeprom.c: 19: ++EEADR;
+"19
+[e =+ _EEADR -> -> 1 `i `uc ]
 "20
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-[; ;i2c.c: 21: TRISCbits.TRISC4 = 1;
-"21
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-[; ;i2c.c: 22: }
-"22
+}
+[e :U 142 ]
+"12
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 143  ]
+[e :U 144 ]
+[; ;__eeprom.c: 20: }
+[; ;__eeprom.c: 36: }
+"36
 [e :UE 138 ]
 }
-"24
-[v _i2c_MasterWait `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c.c: 24: void i2c_MasterWait (void){
-[e :U _i2c_MasterWait ]
-[f ]
-[; ;i2c.c: 25: while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-"25
-[e $U 140  ]
-[e :U 141 ]
-[e :U 140 ]
-[e $ || != & -> _SSPSTAT `i -> 4 `i -> 0 `i != & -> _SSPCON2 `i -> 31 `i -> 0 `i 141  ]
-[e :U 142 ]
-[; ;i2c.c: 26: }
-"26
-[e :UE 139 ]
-}
-"28
-[v _i2c_MasterStart `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c.c: 28: void i2c_MasterStart (){
-[e :U _i2c_MasterStart ]
-[f ]
-[; ;i2c.c: 29: i2c_MasterWait();
-"29
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 30: SSPCON2bits.SEN = 1;
-"30
-[e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
-[; ;i2c.c: 31: }
-"31
-[e :UE 143 ]
-}
-"33
-[v _i2c_Master_RepeatStart `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c.c: 33: void i2c_Master_RepeatStart (){
-[e :U _i2c_Master_RepeatStart ]
-[f ]
-[; ;i2c.c: 34: i2c_MasterWait();
-"34
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 35: SSPCON2bits.RSEN = 1;
-"35
-[e = . . _SSPCON2bits 0 1 -> -> 1 `i `uc ]
-[; ;i2c.c: 36: }
-"36
-[e :UE 144 ]
-}
-"38
-[v _i2c_MasterStop `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c.c: 38: void i2c_MasterStop() {
-[e :U _i2c_MasterStop ]
-[f ]
-[; ;i2c.c: 39: i2c_MasterWait();
 "39
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 40: SSPCON2bits.PEN = 1;
+[v ___memcpyee `(v ~T0 @X0 1 ef3`*Euc`*Cuc`uc ]
 "40
-[e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
-[; ;i2c.c: 41: }
+{
+[; ;__eeprom.c: 38: void
+[; ;__eeprom.c: 39: __memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+[; ;__eeprom.c: 40: {
+[e :U ___memcpyee ]
+"39
+[v _to `*Euc ~T0 @X0 1 r1 ]
+[v _from `*Cuc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"40
+[f ]
 "41
-[e :UE 145 ]
-}
+[v _ptr `*Cuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 41: const unsigned char *ptr =from;
+[e = _ptr _from ]
+[; ;__eeprom.c: 43: while (EECON1bits.WR) continue;
 "43
-[v _i2c_MasterSS `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;i2c.c: 43: void i2c_MasterSS(uint8_t address) {
-[e :U _i2c_MasterSS ]
-[v _address `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;i2c.c: 44: i2c_MasterWait();
+[e $U 149  ]
+[e :U 150 ]
+[e $U 149  ]
+[e :U 149 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 150  ]
+[e :U 151 ]
+[; ;__eeprom.c: 44: EEADR = (unsigned char)to - 1U;
 "44
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 45: SSPBUF = address;
-"45
-[e = _SSPBUF _address ]
-[; ;i2c.c: 46: }
+[e = _EEADR -> - -> -> _to `uc `ui -> 1 `ui `uc ]
+[; ;__eeprom.c: 46: EECON1 &= 0x7F;
 "46
-[e :UE 146 ]
-}
+[e =& _EECON1 -> -> 127 `i `uc ]
+[; ;__eeprom.c: 48: while(size--) {
 "48
-[v _i2c_MasterWrite `(v ~T0 @X0 1 ef1`uc ]
+[e $U 152  ]
+[e :U 153 ]
 {
-[; ;i2c.c: 48: void i2c_MasterWrite(uint8_t dato) {
-[e :U _i2c_MasterWrite ]
-[v _dato `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;i2c.c: 49: i2c_MasterWait();
+[; ;__eeprom.c: 49: while (EECON1bits.WR) {
 "49
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 50: SSPBUF = dato;
+[e $U 155  ]
+[e :U 156 ]
+{
+[; ;__eeprom.c: 50: continue;
 "50
-[e = _SSPBUF _dato ]
-[; ;i2c.c: 51: }
+[e $U 155  ]
 "51
-[e :UE 147 ]
 }
+[e :U 155 ]
+"49
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 156  ]
+[e :U 157 ]
+[; ;__eeprom.c: 51: }
+[; ;__eeprom.c: 52: EEDATA = *ptr++;
+"52
+[e = _EEDATA *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[; ;__eeprom.c: 53: ++EEADR;
+"53
+[e =+ _EEADR -> -> 1 `i `uc ]
+[; ;__eeprom.c: 54: STATUSbits.CARRY = 0;
+"54
+[e = . . _STATUSbits 2 0 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 55: if (INTCONbits.GIE) {
+"55
+[e $ ! != -> . . _INTCONbits 0 7 `i -> -> -> 0 `i `Vuc `i 158  ]
+{
+[; ;__eeprom.c: 56: STATUSbits.CARRY = 1;
 "56
-[v _i2c_MasterRead `(us ~T0 @X0 1 ef1`us ]
-{
-[; ;i2c.c: 56: unsigned short i2c_MasterRead (unsigned short d){
-[e :U _i2c_MasterRead ]
-[v _d `us ~T0 @X0 1 r1 ]
-[f ]
+[e = . . _STATUSbits 2 0 -> -> 1 `i `uc ]
 "57
-[v _temp `us ~T0 @X0 1 a ]
-[; ;i2c.c: 57: unsigned short temp;
-[; ;i2c.c: 58: i2c_MasterWait();
+}
+[e :U 158 ]
+[; ;__eeprom.c: 57: }
+[; ;__eeprom.c: 58: INTCONbits.GIE = 0;
 "58
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 59: SSPCON2bits.RCEN = 1;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 59: EECON1bits.WREN = 1;
 "59
-[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
-[; ;i2c.c: 61: i2c_MasterWait();
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 60: EECON2 = 0x55;
+"60
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;__eeprom.c: 61: EECON2 = 0xAA;
 "61
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 62: temp = SSPBUF;
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;__eeprom.c: 62: EECON1bits.WR = 1;
 "62
-[e = _temp -> _SSPBUF `us ]
-[; ;i2c.c: 64: i2c_MasterWait();
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 63: EECON1bits.WREN = 0;
+"63
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 64: if (STATUSbits.CARRY) {
 "64
-[e ( _i2c_MasterWait ..  ]
-[; ;i2c.c: 65: if (d){
-"65
-[e $ ! != -> _d `ui -> -> -> 0 `i `us `ui 149  ]
+[e $ ! != -> . . _STATUSbits 2 0 `i -> -> -> 0 `i `Vuc `i 159  ]
 {
-[; ;i2c.c: 66: SSPCON2bits.ACKDT = 0;
+[; ;__eeprom.c: 65: INTCONbits.GIE = 1;
+"65
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "66
-[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 159 ]
 "67
 }
-[; ;i2c.c: 67: }
-[e $U 150  ]
-"69
-[e :U 149 ]
-[; ;i2c.c: 69: else {
-{
-[; ;i2c.c: 70: SSPCON2bits.ACKDT = 1;
-"70
-[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
-"71
-}
-[e :U 150 ]
-[; ;i2c.c: 71: }
-[; ;i2c.c: 72: SSPCON2bits.ACKEN = 1;
-"72
-[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
-[; ;i2c.c: 73: return temp;
-"73
-[e ) _temp ]
-[e $UE 148  ]
-[; ;i2c.c: 74: }
-"74
+[e :U 152 ]
+"48
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 153  ]
+[e :U 154 ]
+[; ;__eeprom.c: 66: }
+[; ;__eeprom.c: 67: }
+[; ;__eeprom.c: 101: }
+"101
 [e :UE 148 ]
 }
-"76
-[v _i2c_MW `(v ~T0 @X0 1 ef2`uc`uc ]
+"104
+[v ___eetoc `(uc ~T0 @X0 1 ef1`*Ev ]
+"105
 {
-[; ;i2c.c: 76: void i2c_MW (uint8_t address, uint8_t messege){
-[e :U _i2c_MW ]
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _messege `uc ~T0 @X0 1 r2 ]
+[; ;__eeprom.c: 103: unsigned char
+[; ;__eeprom.c: 104: __eetoc(__eeprom void *addr)
+[; ;__eeprom.c: 105: {
+[e :U ___eetoc ]
+"104
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"105
 [f ]
-[; ;i2c.c: 77: i2c_MasterStart();
-"77
-[e ( _i2c_MasterStart ..  ]
-[; ;i2c.c: 78: i2c_MasterSS(address);
-"78
-[e ( _i2c_MasterSS (1 _address ]
-[; ;i2c.c: 79: i2c_MasterWrite(messege);
-"79
-[e ( _i2c_MasterWrite (1 _messege ]
-[; ;i2c.c: 80: i2c_MasterStop();
-"80
-[e ( _i2c_MasterStop ..  ]
-[; ;i2c.c: 81: }
-"81
-[e :UE 151 ]
+"106
+[v _data `uc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 106: unsigned char data;
+[; ;__eeprom.c: 107: __eecpymem((unsigned char *) &data,addr,1);
+"107
+[e ( ___eecpymem (3 , , -> &U _data `*Vuc -> _addr `*Euc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 108: return data;
+"108
+[e ) _data ]
+[e $UE 160  ]
+[; ;__eeprom.c: 109: }
+"109
+[e :UE 160 ]
 }
-"83
-[v _i2c_MR `(v ~T0 @X0 1 ef2`uc`*uc ]
+"112
+[v ___eetoi `(ui ~T0 @X0 1 ef1`*Ev ]
+"113
 {
-[; ;i2c.c: 83: void i2c_MR (uint8_t address, uint8_t *value){
-[e :U _i2c_MR ]
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _value `*uc ~T0 @X0 1 r2 ]
+[; ;__eeprom.c: 111: unsigned int
+[; ;__eeprom.c: 112: __eetoi(__eeprom void *addr)
+[; ;__eeprom.c: 113: {
+[e :U ___eetoi ]
+"112
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"113
 [f ]
-"84
-[v _temp `uc ~T0 @X0 1 a ]
-[; ;i2c.c: 84: uint8_t temp;
-[; ;i2c.c: 85: temp = address;
-"85
-[e = _temp _address ]
-[; ;i2c.c: 86: temp |= 0b1;
-"86
-[e =| _temp -> -> 1 `i `uc ]
-[; ;i2c.c: 87: i2c_MasterStart();
-"87
-[e ( _i2c_MasterStart ..  ]
-[; ;i2c.c: 88: i2c_MasterSS(temp);
-"88
-[e ( _i2c_MasterSS (1 _temp ]
-[; ;i2c.c: 89: *value = i2c_MasterRead(0);
-"89
-[e = *U _value -> ( _i2c_MasterRead (1 -> -> 0 `i `us `uc ]
-[; ;i2c.c: 90: i2c_MasterStop();
-"90
-[e ( _i2c_MasterStop ..  ]
-[; ;i2c.c: 91: }
-"91
-[e :UE 152 ]
+"114
+[v _data `ui ~T0 @X0 1 a ]
+[; ;__eeprom.c: 114: unsigned int data;
+[; ;__eeprom.c: 115: __eecpymem((unsigned char *) &data,addr,2);
+"115
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 116: return data;
+"116
+[e ) _data ]
+[e $UE 161  ]
+[; ;__eeprom.c: 117: }
+"117
+[e :UE 161 ]
 }
-"94
-[v _i2c_SlaveInit `(v ~T0 @X0 1 ef1`uc ]
+"119
+[p k ]
+"120
+[p n 2040 ]
+"122
+[v ___eetom `(um ~T0 @X0 1 ef1`*Ev ]
+"123
 {
-[; ;i2c.c: 94: void i2c_SlaveInit(unsigned char address){
-[e :U _i2c_SlaveInit ]
-[v _address `uc ~T0 @X0 1 r1 ]
+[; ;__eeprom.c: 121: __uint24
+[; ;__eeprom.c: 122: __eetom(__eeprom void *addr)
+[; ;__eeprom.c: 123: {
+[e :U ___eetom ]
+"122
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"123
 [f ]
-[; ;i2c.c: 95: SSPADD = address;
-"95
-[e = _SSPADD _address ]
-[; ;i2c.c: 96: SSPCON = 0x36;
-"96
-[e = _SSPCON -> -> 54 `i `uc ]
-[; ;i2c.c: 97: SSPSTAT = 0x80;
-"97
-[e = _SSPSTAT -> -> 128 `i `uc ]
-[; ;i2c.c: 98: SSPCON2 = 0x01;
-"98
-[e = _SSPCON2 -> -> 1 `i `uc ]
-[; ;i2c.c: 99: TRISCbits.TRISC3 = 1;
-"99
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-[; ;i2c.c: 100: TRISCbits.TRISC4 = 1;
-"100
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-[; ;i2c.c: 101: }
-"101
-[e :UE 153 ]
+"124
+[v _data `um ~T0 @X0 1 a ]
+[; ;__eeprom.c: 124: __uint24 data;
+[; ;__eeprom.c: 125: __eecpymem((unsigned char *) &data,addr,3);
+"125
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 126: return data;
+"126
+[e ) _data ]
+[e $UE 162  ]
+[; ;__eeprom.c: 127: }
+"127
+[e :UE 162 ]
+}
+"128
+[p o ]
+"131
+[v ___eetol `(ul ~T0 @X0 1 ef1`*Ev ]
+"132
+{
+[; ;__eeprom.c: 130: unsigned long
+[; ;__eeprom.c: 131: __eetol(__eeprom void *addr)
+[; ;__eeprom.c: 132: {
+[e :U ___eetol ]
+"131
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"132
+[f ]
+"133
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 133: unsigned long data;
+[; ;__eeprom.c: 134: __eecpymem((unsigned char *) &data,addr,4);
+"134
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 135: return data;
+"135
+[e ) _data ]
+[e $UE 163  ]
+[; ;__eeprom.c: 136: }
+"136
+[e :UE 163 ]
+}
+"138
+[p k ]
+"139
+[p n 1516 ]
+"141
+[v ___eetoo `(ul ~T0 @X0 1 ef1`*Ev ]
+"142
+{
+[; ;__eeprom.c: 140: unsigned long long
+[; ;__eeprom.c: 141: __eetoo(__eeprom void *addr)
+[; ;__eeprom.c: 142: {
+[e :U ___eetoo ]
+"141
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"142
+[f ]
+"143
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 143: unsigned long long data;
+[; ;__eeprom.c: 144: __eecpymem((unsigned char *) &data,addr,8);
+"144
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 145: return data;
+"145
+[e ) _data ]
+[e $UE 164  ]
+[; ;__eeprom.c: 146: }
+"146
+[e :UE 164 ]
+}
+"147
+[p o ]
+"150
+[v ___ctoee `(uc ~T0 @X0 1 ef2`*Ev`uc ]
+"151
+{
+[; ;__eeprom.c: 149: unsigned char
+[; ;__eeprom.c: 150: __ctoee(__eeprom void *addr, unsigned char data)
+[; ;__eeprom.c: 151: {
+[e :U ___ctoee ]
+"150
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"151
+[f ]
+[; ;__eeprom.c: 152: __memcpyee(addr,(unsigned char *) &data,1);
+"152
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> &U _data `*Cuc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 153: return data;
+"153
+[e ) _data ]
+[e $UE 165  ]
+[; ;__eeprom.c: 154: }
+"154
+[e :UE 165 ]
+}
+"157
+[v ___itoee `(ui ~T0 @X0 1 ef2`*Ev`ui ]
+"158
+{
+[; ;__eeprom.c: 156: unsigned int
+[; ;__eeprom.c: 157: __itoee(__eeprom void *addr, unsigned int data)
+[; ;__eeprom.c: 158: {
+[e :U ___itoee ]
+"157
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ui ~T0 @X0 1 r2 ]
+"158
+[f ]
+[; ;__eeprom.c: 159: __memcpyee(addr,(unsigned char *) &data,2);
+"159
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 160: return data;
+"160
+[e ) _data ]
+[e $UE 166  ]
+[; ;__eeprom.c: 161: }
+"161
+[e :UE 166 ]
+}
+"163
+[p k ]
+"164
+[p n 2040 ]
+"166
+[v ___mtoee `(um ~T0 @X0 1 ef2`*Ev`um ]
+"167
+{
+[; ;__eeprom.c: 165: __uint24
+[; ;__eeprom.c: 166: __mtoee(__eeprom void *addr, __uint24 data)
+[; ;__eeprom.c: 167: {
+[e :U ___mtoee ]
+"166
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `um ~T0 @X0 1 r2 ]
+"167
+[f ]
+[; ;__eeprom.c: 168: __memcpyee(addr,(unsigned char *) &data,3);
+"168
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 169: return data;
+"169
+[e ) _data ]
+[e $UE 167  ]
+[; ;__eeprom.c: 170: }
+"170
+[e :UE 167 ]
+}
+"171
+[p o ]
+"174
+[v ___ltoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"175
+{
+[; ;__eeprom.c: 173: unsigned long
+[; ;__eeprom.c: 174: __ltoee(__eeprom void *addr, unsigned long data)
+[; ;__eeprom.c: 175: {
+[e :U ___ltoee ]
+"174
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"175
+[f ]
+[; ;__eeprom.c: 176: __memcpyee(addr,(unsigned char *) &data,4);
+"176
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 177: return data;
+"177
+[e ) _data ]
+[e $UE 168  ]
+[; ;__eeprom.c: 178: }
+"178
+[e :UE 168 ]
+}
+"180
+[p k ]
+"181
+[p n 1516 ]
+"183
+[v ___otoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"184
+{
+[; ;__eeprom.c: 182: unsigned long long
+[; ;__eeprom.c: 183: __otoee(__eeprom void *addr, unsigned long long data)
+[; ;__eeprom.c: 184: {
+[e :U ___otoee ]
+"183
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"184
+[f ]
+[; ;__eeprom.c: 185: __memcpyee(addr,(unsigned char *) &data,8);
+"185
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 186: return data;
+"186
+[e ) _data ]
+[e $UE 169  ]
+[; ;__eeprom.c: 187: }
+"187
+[e :UE 169 ]
+}
+"188
+[p o ]
+"191
+[v ___eetoft `(f ~T0 @X0 1 ef1`*Ev ]
+"192
+{
+[; ;__eeprom.c: 190: float
+[; ;__eeprom.c: 191: __eetoft(__eeprom void *addr)
+[; ;__eeprom.c: 192: {
+[e :U ___eetoft ]
+"191
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"192
+[f ]
+"193
+[v _data `f ~T0 @X0 1 a ]
+[; ;__eeprom.c: 193: float data;
+[; ;__eeprom.c: 194: __eecpymem((unsigned char *) &data,addr,3);
+"194
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 195: return data;
+"195
+[e ) _data ]
+[e $UE 170  ]
+[; ;__eeprom.c: 196: }
+"196
+[e :UE 170 ]
+}
+"199
+[v ___eetofl `(d ~T0 @X0 1 ef1`*Ev ]
+"200
+{
+[; ;__eeprom.c: 198: double
+[; ;__eeprom.c: 199: __eetofl(__eeprom void *addr)
+[; ;__eeprom.c: 200: {
+[e :U ___eetofl ]
+"199
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"200
+[f ]
+"201
+[v _data `d ~T0 @X0 1 a ]
+[; ;__eeprom.c: 201: double data;
+[; ;__eeprom.c: 202: __eecpymem((unsigned char *) &data,addr,4);
+"202
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 203: return data;
+"203
+[e ) _data ]
+[e $UE 171  ]
+[; ;__eeprom.c: 204: }
+"204
+[e :UE 171 ]
+}
+"207
+[v ___fttoee `(f ~T0 @X0 1 ef2`*Ev`f ]
+"208
+{
+[; ;__eeprom.c: 206: float
+[; ;__eeprom.c: 207: __fttoee(__eeprom void *addr, float data)
+[; ;__eeprom.c: 208: {
+[e :U ___fttoee ]
+"207
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `f ~T0 @X0 1 r2 ]
+"208
+[f ]
+[; ;__eeprom.c: 209: __memcpyee(addr,(unsigned char *) &data,3);
+"209
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 210: return data;
+"210
+[e ) _data ]
+[e $UE 172  ]
+[; ;__eeprom.c: 211: }
+"211
+[e :UE 172 ]
+}
+"214
+[v ___fltoee `(d ~T0 @X0 1 ef2`*Ev`d ]
+"215
+{
+[; ;__eeprom.c: 213: double
+[; ;__eeprom.c: 214: __fltoee(__eeprom void *addr, double data)
+[; ;__eeprom.c: 215: {
+[e :U ___fltoee ]
+"214
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `d ~T0 @X0 1 r2 ]
+"215
+[f ]
+[; ;__eeprom.c: 216: __memcpyee(addr,(unsigned char *) &data,4);
+"216
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 217: return data;
+"217
+[e ) _data ]
+[e $UE 173  ]
+[; ;__eeprom.c: 218: }
+"218
+[e :UE 173 ]
 }

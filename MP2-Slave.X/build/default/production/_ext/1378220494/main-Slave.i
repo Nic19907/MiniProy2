@@ -1,5 +1,5 @@
 
-# 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+# 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c"
 
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2577,7 +2577,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 23 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h"
+# 23 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/../MP2-Maestro.X/i2c.h"
 void i2c_MasterInit(unsigned long freq);
 
 
@@ -2609,96 +2609,111 @@ void i2c_MR (uint8_t address, uint8_t *value);
 
 void i2c_SlaveInit(unsigned char address);
 
-# 10 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
-void i2c_MasterInit (unsigned long freq){
-SSPSTAT = 0b10000000;
 
-SSPCONbits.SSPEN = 1;
-SSPCONbits.SSPM = 0b1000;
+# 19 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c"
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
 
-SSPCON2 = 0;
 
-SSPADD = (4000000/(4*freq))-1;
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
 
-TRISCbits.TRISC3 = 1;
-TRISCbits.TRISC4 = 1;
+# 48
+struct informacion {
+uint8_t send;
+uint8_t read;
+}data;
+
+uint8_t trash;
+
+# 61
+void setup (void);
+void config_io (void);
+void config_clock (void);
+
+# 70
+void __interrupt() isr(void){
+if(PIR1bits.SSPIF == 1){
+
+SSPCONbits.CKP = 0;
+
+if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+trash = SSPBUF;
+SSPCONbits.SSPOV = 0;
+SSPCONbits.WCOL = 0;
+SSPCONbits.CKP = 1;
 }
 
-void i2c_MasterWait (void){
-while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+trash = SSPBUF;
+
+PIR1bits.SSPIF = 0;
+SSPCONbits.CKP = 1;
+while(!SSPSTATbits.BF);
+data.read = SSPBUF;
+_delay((unsigned long)((250)*(4000000/4000000.0)));
+
+}else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+trash = SSPBUF;
+BF = 0;
+SSPBUF = data.send;
+SSPCONbits.CKP = 1;
+_delay((unsigned long)((250)*(4000000/4000000.0)));
+while(SSPSTATbits.BF);
 }
 
-void i2c_MasterStart (){
-i2c_MasterWait();
-SSPCON2bits.SEN = 1;
+PIR1bits.SSPIF = 0;
+}
 }
 
-void i2c_Master_RepeatStart (){
-i2c_MasterWait();
-SSPCON2bits.RSEN = 1;
+# 118
+void main(void) {
+setup();
+
+while (1){
+PORTD = data.read;
+
+}
+return;
 }
 
-void i2c_MasterStop() {
-i2c_MasterWait();
-SSPCON2bits.PEN = 1;
-}
+# 134
+void setup (void){
+config_io();
+config_clock();
 
-void i2c_MasterSS(uint8_t address) {
-i2c_MasterWait();
-SSPBUF = address;
-}
-
-void i2c_MasterWrite(uint8_t dato) {
-i2c_MasterWait();
-SSPBUF = dato;
-}
-
-
-
-
-unsigned short i2c_MasterRead (unsigned short d){
-unsigned short temp;
-i2c_MasterWait();
-SSPCON2bits.RCEN = 1;
-
-i2c_MasterWait();
-temp = SSPBUF;
-
-i2c_MasterWait();
-if (d){
-SSPCON2bits.ACKDT = 0;
-}
-
-else {
-SSPCON2bits.ACKDT = 1;
-}
-SSPCON2bits.ACKEN = 1;
-return temp;
-}
-
-void i2c_MW (uint8_t address, uint8_t messege){
-i2c_MasterStart();
-i2c_MasterSS(address);
-i2c_MasterWrite(messege);
-i2c_MasterStop();
-}
-
-void i2c_MR (uint8_t address, uint8_t *value){
-uint8_t temp;
-temp = address;
-temp |= 0b1;
-i2c_MasterStart();
-i2c_MasterSS(temp);
-*value = i2c_MasterRead(0);
-i2c_MasterStop();
+i2c_SlaveInit(0x50);
 }
 
 
-void i2c_SlaveInit(unsigned char address){
-SSPADD = address;
-SSPCON = 0x36;
-SSPSTAT = 0x80;
-SSPCON2 = 0x01;
-TRISCbits.TRISC3 = 1;
-TRISCbits.TRISC4 = 1;
+void config_io (void) {
+ANSEL = 0;
+ANSELH = 0;
+
+TRISD = 0;
+
+PORTD = 0;
+
+
+}
+
+void config_clock (void){
+OSCCONbits.IRCF = 0b110;
+OSCCONbits.SCS = 1;
+}
+
+void config_ie (void){
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
+
+PIE1bits.SSPIE = 1;
 }
