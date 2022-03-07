@@ -1575,9 +1575,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.c: 14: SSPCONbits.SSPM = 0b1000;
 "14
 [e = . . _SSPCONbits 0 0 -> -> 8 `i `uc ]
-[; ;i2c.c: 16: SSPCON2 = 0;
+[; ;i2c.c: 16: SSPCON2 = 0b1;
 "16
-[e = _SSPCON2 -> -> 0 `i `uc ]
+[e = _SSPCON2 -> -> 1 `i `uc ]
 [; ;i2c.c: 18: SSPADD = (4000000/(4*freq))-1;
 "18
 [e = _SSPADD -> - / -> -> 4000000 `l `ul * -> -> -> 4 `i `l `ul _freq -> -> -> 1 `i `l `ul `uc ]

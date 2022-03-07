@@ -90,15 +90,15 @@ void main(void) {
     
     
     while (1){ //loop
-        i2c_MW(PICslave, data.send);
-        __delay_ms(1000);
+        //i2c_MW(PICslave, data.send);
+        //__delay_ms(1000);
         //PORTA++;
         
         //leer solo para el sensor
-        //i2c_MR(PICslave, &data.read);
-        //__delay_ms(1000);
-        PORTA++;
+        i2c_MR(PICslave, &data.read);
+        __delay_ms(1000);
         
+        PORTA = data.read;
     }
     return;
 }

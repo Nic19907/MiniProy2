@@ -2664,12 +2664,12 @@ data.send = 0x15;
 
 
 while (1){
-i2c_MW(0x50, data.send);
+
+# 98
+i2c_MR(0x50, &data.read);
 _delay((unsigned long)((1000)*(4000000/4000.0)));
 
-# 100
-PORTA++;
-
+PORTA = data.read;
 }
 return;
 }

@@ -11,18 +11,18 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+$C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\MP2-Slave.X.production.o
 cinit CODE 0 F F 7 2
-text1 CODE 0 8B 8B 11 2
-text2 CODE 0 79 79 12 2
-text3 CODE 0 A9 A9 B 2
-text4 CODE 0 B4 B4 8 2
-text5 CODE 0 16 16 63 2
-maintext CODE 0 9C 9C D 2
+text1 CODE 0 8D 8D 11 2
+text2 CODE 0 7B 7B 12 2
+text3 CODE 0 9E 9E D 2
+text4 CODE 0 B6 B6 8 2
+text5 CODE 0 16 16 65 2
+maintext CODE 0 AB AB B 2
 cstackCOMMON COMMON 1 70 70 4 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 74 74 3 1
@@ -42,13 +42,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST BC-1FFF 2
+CONST BE-1FFF 2
 ENTRY 3-3 2
-ENTRY BC-1FFF 2
+ENTRY BE-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE BC-1FFF 2
+CODE BE-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -56,9 +56,9 @@ SFR3 180-18F 1
 COMMON 77-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE BC-1FFF 2
+STRCODE BE-1FFF 2
 STRING 3-3 2
-STRING BC-1FFF 2
+STRING BE-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -73,65 +73,70 @@ STRING BC-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MP2-Slave.X.production.o
-F cinit CODE >625:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-F cinit CODE >628:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-F cinit CODE >642:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-10 cinit CODE >643:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-11 cinit CODE >644:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-12 cinit CODE >650:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-12 cinit CODE >652:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
-13 cinit CODE >653:C:\Users\nicou\AppData\Local\Temp\xcAs3t0.s
+F cinit CODE >629:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+F cinit CODE >632:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+F cinit CODE >646:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+10 cinit CODE >647:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+11 cinit CODE >648:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+12 cinit CODE >654:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+12 cinit CODE >656:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
+13 cinit CODE >657:C:\Users\nicou\AppData\Local\Temp\xcAsjq4.s
 4 intentry CODE >70:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
 16 text5 CODE >70:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
 16 text5 CODE >71:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
 1C text5 CODE >73:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-1D text5 CODE >75:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-25 text5 CODE >76:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-29 text5 CODE >77:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-2A text5 CODE >78:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-2B text5 CODE >79:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-2C text5 CODE >82:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-36 text5 CODE >84:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-3C text5 CODE >86:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-3D text5 CODE >87:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-3E text5 CODE >88:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-44 text5 CODE >89:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-4A text5 CODE >90:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-4E text5 CODE >92:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-57 text5 CODE >93:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-5D text5 CODE >94:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-60 text5 CODE >95:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-64 text5 CODE >96:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-65 text5 CODE >97:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-69 text5 CODE >98:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-6F text5 CODE >101:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-72 text5 CODE >103:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-B4 text4 CODE >153:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-B4 text4 CODE >154:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-BA text4 CODE >155:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-BB text4 CODE >156:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-A9 text3 CODE >142:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-A9 text3 CODE >143:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-AC text3 CODE >144:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-AD text3 CODE >146:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-B0 text3 CODE >148:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-B3 text3 CODE >151:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-79 text2 CODE >94:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-7A text2 CODE >95:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-7E text2 CODE >96:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-82 text2 CODE >97:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-86 text2 CODE >98:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-88 text2 CODE >99:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-89 text2 CODE >100:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-8A text2 CODE >101:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-8B text1 CODE >134:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-8B text1 CODE >135:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-90 text1 CODE >136:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-95 text1 CODE >138:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-9B text1 CODE >139:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-9C maintext CODE >118:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-9C maintext CODE >119:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
-A1 maintext CODE >122:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+20 text5 CODE >75:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+21 text5 CODE >77:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+29 text5 CODE >78:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+2D text5 CODE >79:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+2E text5 CODE >80:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+2F text5 CODE >81:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+30 text5 CODE >84:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+3A text5 CODE >86:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+40 text5 CODE >90:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+41 text5 CODE >91:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+42 text5 CODE >92:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+48 text5 CODE >93:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+4C text5 CODE >95:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+50 text5 CODE >97:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+59 text5 CODE >98:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+5F text5 CODE >99:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+62 text5 CODE >100:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+66 text5 CODE >101:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+67 text5 CODE >102:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+6B text5 CODE >103:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+71 text5 CODE >106:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+74 text5 CODE >108:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+B6 text4 CODE >161:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+B6 text4 CODE >162:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+BC text4 CODE >163:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+BD text4 CODE >164:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+9E text3 CODE >147:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+9E text3 CODE >148:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+A1 text3 CODE >149:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+A2 text3 CODE >151:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+A5 text3 CODE >152:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+A6 text3 CODE >155:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+A9 text3 CODE >156:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+AA text3 CODE >159:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+7B text2 CODE >94:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+7C text2 CODE >95:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+80 text2 CODE >96:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+84 text2 CODE >97:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+88 text2 CODE >98:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+8A text2 CODE >99:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+8B text2 CODE >100:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+8C text2 CODE >101:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+8D text1 CODE >139:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+8D text1 CODE >140:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+92 text1 CODE >141:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+97 text1 CODE >143:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+9D text1 CODE >144:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+AB maintext CODE >123:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+AB maintext CODE >124:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+B0 maintext CODE >125:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+B2 maintext CODE >126:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
+B2 maintext CODE >129:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -145,7 +150,7 @@ A1 maintext CODE >122:C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digita
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__Hspace_0 BC 0 ABS 0 - -
+__Hspace_0 BE 0 ABS 0 - -
 __Hspace_1 77 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -153,35 +158,35 @@ __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _BF 4A0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+___sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 _data 74 0 COMMON 1 bssCOMMON dist/default/production\MP2-Slave.X.production.o
-_main 138 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
+_main 156 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-start 18 0 CODE 0 init C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+start 18 0 CODE 0 init C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_i2c_SlaveInit 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_config_io 168 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
+__end_of_config_io 156 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
 __size_of_config_io 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__end_of_i2c_SlaveInit 116 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
-_config_io 152 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
+__end_of_i2c_SlaveInit 11A 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
+_config_io 13C 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
-___stacklo 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+___stackhi 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
+___stacklo 0 0 ABS 0 - C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\MP2-Slave.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
@@ -189,7 +194,7 @@ _SSPADD 93 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 i2c_SlaveInit@address 73 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Slave.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+___int_sp 0 0 STACK 2 stack C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -223,18 +228,18 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 BC 0 ABS 0 - -
+__S0 BE 0 ABS 0 - -
 __S1 77 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _isr 2C 0 CODE 0 text5 dist/default/production\MP2-Slave.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__end_of_isr F2 0 CODE 0 text5 dist/default/production\MP2-Slave.X.production.o
-_config_clock 168 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
+__end_of_isr F6 0 CODE 0 text5 dist/default/production\MP2-Slave.X.production.o
+_config_clock 16C 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\nicou\AppData\Local\Temp\xcAs3t0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\nicou\AppData\Local\Temp\xcAsjq4.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__pmaintext 138 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
+__pmaintext 156 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __size_of_config_clock 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
@@ -244,7 +249,7 @@ __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __pbssCOMMON 74 0 COMMON 1 bssCOMMON dist/default/production\MP2-Slave.X.production.o
-__end_of_config_clock 178 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
+__end_of_config_clock 17C 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
 _PIR1bits C 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
@@ -253,10 +258,10 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__ptext1 116 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
-__ptext2 F2 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
-__ptext3 152 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
-__ptext4 168 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
+__ptext1 11A 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
+__ptext2 F6 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
+__ptext3 13C 0 CODE 0 text3 dist/default/production\MP2-Slave.X.production.o
+__ptext4 16C 0 CODE 0 text4 dist/default/production\MP2-Slave.X.production.o
 __ptext5 2C 0 CODE 0 text5 dist/default/production\MP2-Slave.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -268,17 +273,19 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\MP2-Slave.X.p
 _SSPCON2 91 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 152 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
+__end_of_main 16C 0 CODE 0 maintext dist/default/production\MP2-Slave.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
-__end_of_setup 138 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
+__end_of_setup 13C 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\MP2-Slave.X.production.o
-_setup 116 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
+_setup 11A 0 CODE 0 text1 dist/default/production\MP2-Slave.X.production.o
 _trash 76 0 COMMON 1 bssCOMMON dist/default/production\MP2-Slave.X.production.o
-_i2c_SlaveInit F2 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
+_i2c_SlaveInit F6 0 CODE 0 text2 dist/default/production\MP2-Slave.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MP2-Slave.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\MP2-Slave.X.production.o
@@ -309,7 +316,7 @@ __initialization 1E 0 CODE 0 cinit dist/default/production\MP2-Slave.X.productio
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 7 1
-intentry 0 4 8 B8 2
+intentry 0 4 8 BA 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

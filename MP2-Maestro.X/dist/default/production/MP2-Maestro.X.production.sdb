@@ -17,8 +17,8 @@
 [v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
 "56
 [v _i2c_MasterRead i2c_MasterRead `(us  1 e 2 0 ]
-"76
-[v _i2c_MW i2c_MW `(v  1 e 1 0 ]
+"83
+[v _i2c_MR i2c_MR `(v  1 e 1 0 ]
 "87 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c
 [v _main main `(v  1 e 1 0 ]
 "112
@@ -226,22 +226,18 @@
 {
 "139
 } 0
-"76 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-[v _i2c_MW i2c_MW `(v  1 e 1 0 ]
+"83 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
+[v _i2c_MR i2c_MR `(v  1 e 1 0 ]
 {
-[v i2c_MW@address address `uc  1 a 1 wreg ]
-[v i2c_MW@address address `uc  1 a 1 wreg ]
-[v i2c_MW@messege messege `uc  1 p 1 1 ]
-[v i2c_MW@address address `uc  1 a 1 2 ]
-"81
-} 0
-"48
-[v _i2c_MasterWrite i2c_MasterWrite `(v  1 e 1 0 ]
-{
-[v i2c_MasterWrite@dato dato `uc  1 a 1 wreg ]
-[v i2c_MasterWrite@dato dato `uc  1 a 1 wreg ]
-[v i2c_MasterWrite@dato dato `uc  1 a 1 0 ]
-"51
+[v i2c_MR@address address `uc  1 a 1 wreg ]
+"84
+[v i2c_MR@temp temp `uc  1 a 1 9 ]
+"83
+[v i2c_MR@address address `uc  1 a 1 wreg ]
+[v i2c_MR@value value `*.4uc  1 p 1 6 ]
+"85
+[v i2c_MR@address address `uc  1 a 1 8 ]
+"91
 } 0
 "38
 [v _i2c_MasterStop i2c_MasterStop `(v  1 e 1 0 ]
@@ -260,6 +256,15 @@
 [v i2c_MasterSS@address address `uc  1 a 1 wreg ]
 [v i2c_MasterSS@address address `uc  1 a 1 0 ]
 "46
+} 0
+"56
+[v _i2c_MasterRead i2c_MasterRead `(us  1 e 2 0 ]
+{
+"57
+[v i2c_MasterRead@temp temp `us  1 a 2 4 ]
+"56
+[v i2c_MasterRead@d d `us  1 p 2 0 ]
+"74
 } 0
 "24
 [v _i2c_MasterWait i2c_MasterWait `(v  1 e 1 0 ]

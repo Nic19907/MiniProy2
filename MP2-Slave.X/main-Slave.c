@@ -68,7 +68,9 @@ void config_clock   (void);
 --------------------------------------------------------------------------------
  */
 void __interrupt() isr(void){
-   if(PIR1bits.SSPIF == 1){ 
+   PORTA++;
+
+   if(PIR1bits.SSPIF){ 
 
         SSPCONbits.CKP = 0;
        
@@ -82,11 +84,14 @@ void __interrupt() isr(void){
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {//escribiendo al esclavo
             //__delay_us(7);
             trash = SSPBUF;             // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            
+            
             //__delay_us(2);
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            data.read = SSPBUF;         // Guardar en el PORTD el valor del buffer de recepción
+            PORTD = SSPBUF;         // Guardar en el PORTD el valor del buffer de recepción
+            
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //leyendo al esclavo
@@ -117,9 +122,9 @@ void __interrupt() isr(void){
 
 void main(void) {
     setup();
-    
+    data.send = 1;
     while (1){
-        PORTD = data.read;
+        //PORTD = data.read;
         
     }
     return;
@@ -143,8 +148,11 @@ void config_io (void) {
     ANSEL = 0;
     ANSELH = 0;
     
+    TRISA = 0;
     TRISD = 0;
     
+    
+    PORTA = 0;
     PORTD = 0;
     
     
@@ -158,6 +166,6 @@ void config_clock (void){
 void config_ie (void){
     INTCONbits.GIE  = 1; //interrupciones gobales
     INTCONbits.PEIE = 1; //interrupciones perifericas
-    
-    PIE1bits.SSPIE = 1;
+    //sspov
+    PIE1bits.SSPIE = 1; //bandera de i2c
 }

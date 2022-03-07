@@ -2512,22 +2512,22 @@ void LCD_shiftL (void);
 
 # 5 "lcd_8bitsA.c"
 void flip_EN (void) {
-RD6 = 1;
+RD7 = 1;
 _delay((unsigned long)((5)*(4000000/4000.0)));
-RD6 = 0;
+RD7 = 0;
 }
 
 
 void LCD_CMD (char cmd){
-RD7 = 0;
+RD6 = 0;
 PORTB = cmd;
 flip_EN ();
 return;
 }
 
 void LCD_START(void){
-RD6 = 0;
 RD7 = 0;
+RD6 = 0;
 PORTB = 0;
 TRISB = 0;
 
@@ -2584,10 +2584,10 @@ break;
 
 
 void LCD_write (char value){
-RD7 = 1;
+RD6 = 1;
 PORTB = value;
 flip_EN();
-RD7 = 0;
+RD6 = 0;
 return;
 }
 

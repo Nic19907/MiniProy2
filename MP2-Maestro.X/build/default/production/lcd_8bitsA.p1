@@ -1,12 +1,12 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"4199 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _RD6 `Vb ~T0 @X0 0 e@70 ]
+"4202 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _RD7 `Vb ~T0 @X0 0 e@71 ]
 [v F1258 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1258 ~T0 @X0 0 e ]
 [p i __delay ]
-"4202 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _RD7 `Vb ~T0 @X0 0 e@71 ]
+"4199 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _RD6 `Vb ~T0 @X0 0 e@70 ]
 "228
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1478
@@ -1510,15 +1510,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd_8bitsA.c: 5: void flip_EN (void) {
 [e :U _flip_EN ]
 [f ]
-[; ;lcd_8bitsA.c: 6: RD6 = 1;
+[; ;lcd_8bitsA.c: 6: RD7 = 1;
 "6
-[e = _RD6 -> -> 1 `i `b ]
+[e = _RD7 -> -> 1 `i `b ]
 [; ;lcd_8bitsA.c: 7: _delay((unsigned long)((5)*(4000000/4000.0)));
 "7
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;lcd_8bitsA.c: 8: RD6 = 0;
+[; ;lcd_8bitsA.c: 8: RD7 = 0;
 "8
-[e = _RD6 -> -> 0 `i `b ]
+[e = _RD7 -> -> 0 `i `b ]
 [; ;lcd_8bitsA.c: 9: }
 "9
 [e :UE 138 ]
@@ -1530,9 +1530,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _LCD_CMD ]
 [v _cmd `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;lcd_8bitsA.c: 13: RD7 = 0;
+[; ;lcd_8bitsA.c: 13: RD6 = 0;
 "13
-[e = _RD7 -> -> 0 `i `b ]
+[e = _RD6 -> -> 0 `i `b ]
 [; ;lcd_8bitsA.c: 14: PORTB = cmd;
 "14
 [e = _PORTB _cmd ]
@@ -1552,12 +1552,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd_8bitsA.c: 19: void LCD_START(void){
 [e :U _LCD_START ]
 [f ]
-[; ;lcd_8bitsA.c: 20: RD6 = 0;
+[; ;lcd_8bitsA.c: 20: RD7 = 0;
 "20
-[e = _RD6 -> -> 0 `i `b ]
-[; ;lcd_8bitsA.c: 21: RD7 = 0;
-"21
 [e = _RD7 -> -> 0 `i `b ]
+[; ;lcd_8bitsA.c: 21: RD6 = 0;
+"21
+[e = _RD6 -> -> 0 `i `b ]
 [; ;lcd_8bitsA.c: 22: PORTB = 0;
 "22
 [e = _PORTB -> -> 0 `i `uc ]
@@ -1675,18 +1675,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _LCD_write ]
 [v _value `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;lcd_8bitsA.c: 78: RD7 = 1;
+[; ;lcd_8bitsA.c: 78: RD6 = 1;
 "78
-[e = _RD7 -> -> 1 `i `b ]
+[e = _RD6 -> -> 1 `i `b ]
 [; ;lcd_8bitsA.c: 79: PORTB = value;
 "79
 [e = _PORTB _value ]
 [; ;lcd_8bitsA.c: 80: flip_EN();
 "80
 [e ( _flip_EN ..  ]
-[; ;lcd_8bitsA.c: 81: RD7 = 0;
+[; ;lcd_8bitsA.c: 81: RD6 = 0;
 "81
-[e = _RD7 -> -> 0 `i `b ]
+[e = _RD6 -> -> 0 `i `b ]
 [; ;lcd_8bitsA.c: 82: return;
 "82
 [e $UE 148  ]

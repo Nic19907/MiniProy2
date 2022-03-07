@@ -5,8 +5,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "62
 [v _setup `(v ~T0 @X0 0 ef ]
-"52 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h
-[v _i2c_MW `(v ~T0 @X0 0 ef2`uc`uc ]
+"54 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.h
+[v _i2c_MR `(v ~T0 @X0 0 ef2`uc`*uc ]
 [v F1258 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1258 ~T0 @X0 0 e ]
@@ -1635,15 +1635,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "92
 [e :U 141 ]
 {
-[; ;main.c: 93: i2c_MW(0x50, data.send);
-"93
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-[; ;main.c: 94: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"94
+[; ;main.c: 98: i2c_MR(0x50, &data.read);
+"98
+[e ( _i2c_MR (2 , -> -> 80 `i `uc &U . _data 1 ]
+[; ;main.c: 99: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"99
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 100: PORTA++;
-"100
-[e ++ _PORTA -> -> 1 `i `uc ]
+[; ;main.c: 101: PORTA = data.read;
+"101
+[e = _PORTA . _data 1 ]
 "102
 }
 [e :U 140 ]

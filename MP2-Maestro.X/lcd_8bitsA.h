@@ -16,9 +16,9 @@
 #define _XTAL_FREQ 4000000
 
 //puertos y pines a utilizar
-#define LCD_RS RD7
+#define LCD_RS RD6
 
-#define LCD_EN RD6
+#define LCD_EN RD7
 
 #define LCD_PORT    PORTB
 

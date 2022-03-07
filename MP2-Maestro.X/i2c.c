@@ -13,7 +13,7 @@ void i2c_MasterInit (unsigned long freq){
     SSPCONbits.SSPEN = 1;
     SSPCONbits.SSPM = 0b1000;
     
-    SSPCON2 = 0;
+    SSPCON2 = 0b1;
     
     SSPADD = (_XTAL_FREQ/(4*freq))-1;
     

@@ -2641,7 +2641,9 @@ void config_clock (void);
 
 # 70
 void __interrupt() isr(void){
-if(PIR1bits.SSPIF == 1){
+PORTA++;
+
+if(PIR1bits.SSPIF){
 
 SSPCONbits.CKP = 0;
 
@@ -2656,10 +2658,13 @@ if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 
 trash = SSPBUF;
 
+
+
 PIR1bits.SSPIF = 0;
 SSPCONbits.CKP = 1;
 while(!SSPSTATbits.BF);
-data.read = SSPBUF;
+PORTD = SSPBUF;
+
 _delay((unsigned long)((250)*(4000000/4000000.0)));
 
 }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2675,18 +2680,18 @@ PIR1bits.SSPIF = 0;
 }
 }
 
-# 118
+# 123
 void main(void) {
 setup();
-
+data.send = 1;
 while (1){
-PORTD = data.read;
+
 
 }
 return;
 }
 
-# 134
+# 139
 void setup (void){
 config_io();
 config_clock();
@@ -2699,8 +2704,11 @@ void config_io (void) {
 ANSEL = 0;
 ANSELH = 0;
 
+TRISA = 0;
 TRISD = 0;
 
+
+PORTA = 0;
 PORTD = 0;
 
 
