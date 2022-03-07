@@ -34,24 +34,24 @@ void i2c_MasterStop (void);
 
 
 //funcion para seleccionar el esclavo
-void i2c_MasterSS (uint8_t address);
+void i2c_MasterSS (unsigned address);
 
 
 
 //funcion para escribir al esclavo
-void i2c_MasterWrite (uint8_t dato);
+void i2c_MasterWrite (unsigned dato);
 
 
 
 
 
 //funcion para leer del esclavo
-unsigned short i2c_MasterRead (unsigned short d);
+unsigned short i2c_MasterRead (unsigned short secuence);
 
 //funcion para escribir ya simplificada
 void i2c_MW (uint8_t address, uint8_t messege);//incluir un delay al final
 
 void i2c_MR (uint8_t address, uint8_t *value);
 //funcion para inciar el eslcavo
-void i2c_SlaveInit(unsigned char address);
+void i2c_SlaveInit(uint8_t address);
 #endif

@@ -2592,40 +2592,50 @@ void i2c_MasterStop (void);
 
 
 
-void i2c_MasterSS (uint8_t address);
+void i2c_MasterSS (unsigned address);
 
 
 
 
-void i2c_MasterWrite (uint8_t dato);
+void i2c_MasterWrite (unsigned dato);
 
 # 49
-unsigned short i2c_MasterRead (unsigned short d);
+unsigned short i2c_MasterRead (unsigned short secuence);
 
 
 void i2c_MW (uint8_t address, uint8_t messege);
 
 void i2c_MR (uint8_t address, uint8_t *value);
 
-void i2c_SlaveInit(unsigned char address);
+void i2c_SlaveInit(uint8_t address);
 
 # 10 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
 void i2c_MasterInit (unsigned long freq){
-SSPSTAT = 0b10000000;
-
-SSPCONbits.SSPEN = 1;
-SSPCONbits.SSPM = 0b1000;
-
-SSPCON2 = 0b1;
-
-SSPADD = (4000000/(4*freq))-1;
 
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
+
+SSPSTAT = 0;
+SSPSTATbits.SMP = 0;
+
+SSPCON = 0x28;
+
+SSPCON2 = 0;
+
+SSPADD = (4000000/(4*freq))-1;
+
+# 38
 }
 
 void i2c_MasterWait (void){
-while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+
+
+while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)){
+PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
+
+}
+
+
 }
 
 void i2c_MasterStart (){
@@ -2643,12 +2653,12 @@ i2c_MasterWait();
 SSPCON2bits.PEN = 1;
 }
 
-void i2c_MasterSS(uint8_t address) {
+void i2c_MasterSS(unsigned address) {
 i2c_MasterWait();
 SSPBUF = address;
 }
 
-void i2c_MasterWrite(uint8_t dato) {
+void i2c_MasterWrite(unsigned dato) {
 i2c_MasterWait();
 SSPBUF = dato;
 }
@@ -2656,7 +2666,7 @@ SSPBUF = dato;
 
 
 
-unsigned short i2c_MasterRead (unsigned short d){
+unsigned short i2c_MasterRead (unsigned short secuence){
 unsigned short temp;
 i2c_MasterWait();
 SSPCON2bits.RCEN = 1;
@@ -2665,7 +2675,7 @@ i2c_MasterWait();
 temp = SSPBUF;
 
 i2c_MasterWait();
-if (d){
+if (secuence==1){
 SSPCON2bits.ACKDT = 0;
 }
 
@@ -2694,11 +2704,21 @@ i2c_MasterStop();
 }
 
 
-void i2c_SlaveInit(unsigned char address){
-SSPADD = address;
-SSPCON = 0x36;
-SSPSTAT = 0x80;
-SSPCON2 = 0x01;
+void i2c_SlaveInit(uint8_t address){
+
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
+
+SSPADD = address;
+
+SSPSTAT = 0x80;
+SSPSTATbits.SMP = 0;
+
+SSPCONbits.SSPEN = 1;
+SSPCONbits.CKP = 1;
+SSPCONbits.SSPM = 0b0110;
+
+SSPCON2bits.SEN = 1;
+
+# 150
 }

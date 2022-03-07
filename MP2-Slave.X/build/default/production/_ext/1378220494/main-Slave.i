@@ -1,6 +1,23 @@
 
 # 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c"
 
+
+# 10
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -2592,109 +2609,90 @@ void i2c_MasterStop (void);
 
 
 
-void i2c_MasterSS (uint8_t address);
+void i2c_MasterSS (unsigned address);
 
 
 
 
-void i2c_MasterWrite (uint8_t dato);
+void i2c_MasterWrite (unsigned dato);
 
 # 49
-unsigned short i2c_MasterRead (unsigned short d);
+unsigned short i2c_MasterRead (unsigned short secuence);
 
 
 void i2c_MW (uint8_t address, uint8_t messege);
 
 void i2c_MR (uint8_t address, uint8_t *value);
 
-void i2c_SlaveInit(unsigned char address);
+void i2c_SlaveInit(uint8_t address);
 
-
-# 19 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-# 48
+# 52 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c"
 struct informacion {
 uint8_t send;
 uint8_t read;
 }data;
 
-uint8_t trash;
+uint8_t trash =0;
 
-# 61
+# 65
 void setup (void);
 void config_io (void);
 void config_clock (void);
+void config_ie (void);
 
-# 70
+# 75
 void __interrupt() isr(void){
-PORTA++;
 
-if(PIR1bits.SSPIF){
-
+if(PIR1bits.SSPIF == 1){
 SSPCONbits.CKP = 0;
 
+
 if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-trash = SSPBUF;
+SSPSTATbits.BF=0;
 SSPCONbits.SSPOV = 0;
 SSPCONbits.WCOL = 0;
 SSPCONbits.CKP = 1;
+
 }
+
+
 
 if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
-trash = SSPBUF;
-
-
-
-PIR1bits.SSPIF = 0;
-SSPCONbits.CKP = 1;
 while(!SSPSTATbits.BF);
-PORTD = SSPBUF;
-
-_delay((unsigned long)((250)*(4000000/4000000.0)));
-
-}else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 trash = SSPBUF;
-BF = 0;
-SSPBUF = data.send;
+
 SSPCONbits.CKP = 1;
-_delay((unsigned long)((250)*(4000000/4000000.0)));
-while(SSPSTATbits.BF);
 }
 
+if(SSPSTATbits.D_nA && !SSPSTATbits.R_nW){
+while(!SSPSTATbits.BF);
+PORTA = SSPBUF;
+
+
+SSPCONbits.CKP = 1;
+}
+
+# 117
 PIR1bits.SSPIF = 0;
 }
 }
 
-# 123
+# 134
 void main(void) {
 setup();
-data.send = 1;
+PORTB = 0X0F;
 while (1){
-
-
+PORTB = ~PORTB;
+_delay((unsigned long)((200)*(4000000/4000.0)));
 }
 return;
 }
 
-# 139
+# 150
 void setup (void){
 config_io();
 config_clock();
+config_ie();
 
 i2c_SlaveInit(0x50);
 }
@@ -2705,10 +2703,12 @@ ANSEL = 0;
 ANSELH = 0;
 
 TRISA = 0;
+TRISB = 0;
 TRISD = 0;
 
 
 PORTA = 0;
+PORTB = 0;
 PORTD = 0;
 
 
@@ -2724,4 +2724,5 @@ INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
 
 PIE1bits.SSPIE = 1;
+PIR1bits.SSPIF = 0;
 }

@@ -1,6 +1,23 @@
 
 # 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
 
+
+# 11
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -2611,77 +2628,106 @@ void i2c_MasterStop (void);
 
 
 
-void i2c_MasterSS (uint8_t address);
+void i2c_MasterSS (unsigned address);
 
 
 
 
-void i2c_MasterWrite (uint8_t dato);
+void i2c_MasterWrite (unsigned dato);
 
 # 49
-unsigned short i2c_MasterRead (unsigned short d);
+unsigned short i2c_MasterRead (unsigned short secuence);
 
 
 void i2c_MW (uint8_t address, uint8_t messege);
 
 void i2c_MR (uint8_t address, uint8_t *value);
 
-void i2c_SlaveInit(unsigned char address);
+void i2c_SlaveInit(uint8_t address);
 
+# 56 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
+uint8_t semaforo;
 
-# 20 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/main.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-# 51
 struct informacion {
 uint8_t send;
 uint8_t read;
 }data;
 
-# 62
+# 69
 void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
 
-# 87
+# 94
 void main(void) {
 setup();
-data.send = 0x15;
 
 
 while (1){
+switch (semaforo) {
+case 0:
+data.send = 0b001;
+LCD_setCursor (2,9);
+LCD_writeString ("Verde ");
+i2c_MW(0x50, data.send);
 
-# 98
-i2c_MR(0x50, &data.read);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
+semaforo = 1;
+break;
 
-PORTA = data.read;
+case 1:
+data.send = 0b010;
+LCD_setCursor (2,9);
+LCD_writeString ("Yellow");
+
+
+i2c_MasterStart();
+i2c_MasterSS(0x50);
+i2c_MasterWrite(data.send);
+i2c_MasterStop();
+
+semaforo = 2;
+break;
+
+case 2:
+data.send = 0b100;
+LCD_setCursor (2,9);
+LCD_writeString ("Rojo   ");
+
+i2c_MW(0x50, data.send);
+
+semaforo = 0;
+break;
+
+default:
+data.send = 0b111;
+LCD_setCursor (2,9);
+LCD_writeString ("Error ");
+
+i2c_MW(0x50, data.send);
+
+semaforo = 1;
+break;
+
+}
+
+
+_delay((unsigned long)((200)*(4000000/4000.0)));
+
+# 154
 }
 return;
 }
 
-# 112
+# 164
 void setup (void){
 config_io();
 config_clock();
 config_lcd();
 
 
-i2c_MasterInit(100000);
+i2c_MasterInit(400000);
+return;
 }
 
 void config_io (void) {

@@ -6,15 +6,6 @@
  * Created on 6 de marzo de 2022, 02:51 PM
  */
 
-//librerias de C
-#include <xc.h>
-#include <pic16f887.h>
-#include <stdint.h>
-
-
-//librerias personalizadas
-#include "lcd_8bitsA.h"
-#include "i2c.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -32,6 +23,20 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+/*
+--------------------------------------------------------------------------------
+ *                              Librerias
+--------------------------------------------------------------------------------
+ */
+//librerias de C
+#include <xc.h>
+#include <pic16f887.h>
+#include <stdint.h>
+
+
+//librerias personalizadas
+#include "lcd_8bitsA.h"
+#include "i2c.h"
 
 /*
 --------------------------------------------------------------------------------
@@ -47,6 +52,8 @@
  *                              Variables
 --------------------------------------------------------------------------------
  */
+
+uint8_t semaforo;
 
 struct informacion {
     uint8_t send;
@@ -86,19 +93,64 @@ void config_lcd     (void);
  */
 void main(void) {
     setup();
-    data.send = 0x15;
     
     
     while (1){ //loop
-        //i2c_MW(PICslave, data.send);
-        //__delay_ms(1000);
-        //PORTA++;
+        switch (semaforo) {
+            case 0://verde
+                data.send = 0b001;
+                LCD_setCursor (2,9);
+                LCD_writeString ("Verde ");
+                i2c_MW(PICslave, data.send);
+                
+                semaforo = 1;
+                break;
+                
+            case 1://amarillo
+                data.send = 0b010;
+                LCD_setCursor (2,9);
+                LCD_writeString ("Yellow");
+                
+                
+                i2c_MasterStart();
+                i2c_MasterSS(PICslave);
+                i2c_MasterWrite(data.send);
+                i2c_MasterStop();
+                
+                semaforo = 2;
+                break;
+                
+            case 2://rojo
+                data.send = 0b100;
+                LCD_setCursor (2,9);
+                LCD_writeString ("Rojo   ");
+                
+                i2c_MW(PICslave, data.send);
+                
+                semaforo = 0;
+                break;
+                     
+            default://verde
+                data.send = 0b111;
+                LCD_setCursor (2,9);
+                LCD_writeString ("Error ");
+                
+                i2c_MW(PICslave, data.send);
+                
+                semaforo = 1;
+                break;
+         
+        }
+    
+
+        __delay_ms(200);
+
+        
         
         //leer solo para el sensor
-        i2c_MR(PICslave, &data.read);
-        __delay_ms(1000);
+        //i2c_MR(PICslave, &PORTA);
+        //__delay_ms(1000);
         
-        PORTA = data.read;
     }
     return;
 }
@@ -115,7 +167,8 @@ void setup (void){
     config_lcd();
     
     //steup del idc
-    i2c_MasterInit(100000);    //la comunicacion es de 100,000Hz
+    i2c_MasterInit(400000);    //la comunicacion es de 100,000Hz
+    return;
 }
 
 void config_io (void) {

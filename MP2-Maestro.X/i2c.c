@@ -8,21 +8,44 @@
 #include "i2c.h"
 
 void i2c_MasterInit (unsigned long freq){
-    SSPSTAT = 0b10000000;
-    
-    SSPCONbits.SSPEN = 1;
-    SSPCONbits.SSPM = 0b1000;
-    
-    SSPCON2 = 0b0;
-    
-    SSPADD = (_XTAL_FREQ/(4*freq))-1;
     
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
+    
+    SSPSTAT = 0;
+    SSPSTATbits.SMP = 0;
+    
+    SSPCON = 0x28; // 0b0010 1000
+    
+    SSPCON2 = 0;
+    
+    SSPADD = (_XTAL_FREQ/(4*freq))-1;
+    /*
+
+    //Se configuran SDA y SCL como salidas
+    TRISCbits.TRISC3=1;
+    TRISCbits.TRISC4=1;
+    //Se enciende el SSPEN
+    SSPCONbits.SSPEN = 1;
+    //Se configura el modulo SSP en MASTER
+    //SSPCONbits.SSPM = 0b1000;
+    SSPCONbits.SSPM = 0b1000;
+    //Se configura la frecuencia del SCL
+    SSPADD = (_XTAL_FREQ/(4*freq))-1;
+    //Se configura el slewrate para 100kHz
+    SSPSTATbits.SMP = 1;
+     */
 }
 
 void i2c_MasterWait (void){
-    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+    //PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
+
+    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)){
+        PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
+        //PORTA++;
+    }
+    //PORTA++;
+
 }
 
 void i2c_MasterStart (){
@@ -40,12 +63,12 @@ void i2c_MasterStop() {
     SSPCON2bits.PEN = 1;    //detiene la comunicacion i2c
 }
 
-void i2c_MasterSS(uint8_t address) {
+void i2c_MasterSS(unsigned address) {
     i2c_MasterWait();   //espera
     SSPBUF = address;
 }
 
-void i2c_MasterWrite(uint8_t dato) {
+void i2c_MasterWrite(unsigned dato) {
     i2c_MasterWait();   //espera
     SSPBUF = dato;
 }
@@ -53,7 +76,7 @@ void i2c_MasterWrite(uint8_t dato) {
 
 
 
-unsigned short i2c_MasterRead (unsigned short d){
+unsigned short i2c_MasterRead (unsigned short secuence){
     unsigned short temp;
     i2c_MasterWait();   //espera
     SSPCON2bits.RCEN = 1;
@@ -62,7 +85,7 @@ unsigned short i2c_MasterRead (unsigned short d){
     temp = SSPBUF;
     
     i2c_MasterWait();   //espera
-    if (d==1){
+    if (secuence==1){
         SSPCON2bits.ACKDT = 0;
     }
     
@@ -91,11 +114,37 @@ void i2c_MR (uint8_t address, uint8_t *value){
 }
 
 
-void i2c_SlaveInit(unsigned char address){
-    SSPADD = address;
-    SSPCON = 0x36;      // 0b0011 0110
-    SSPSTAT = 0x80;     // 0b10000000
-    SSPCON2 = 0x01;     // 0b00000001
+void i2c_SlaveInit(uint8_t address){
+    
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
+    
+    SSPADD = address;
+    
+    SSPSTAT = 0x80;     // 0b1000 0000
+    SSPSTATbits.SMP = 0;
+    
+    SSPCONbits.SSPEN = 1;
+    SSPCONbits.CKP = 1;
+    SSPCONbits.SSPM = 0b0110;
+    
+    SSPCON2bits.SEN = 1;
+
+     /*
+    //Se configuran SCL y SDA como entradas
+    TRISCbits.TRISC3=1;
+    TRISCbits.TRISC4=1;
+    //Se setea la direccion del dispositivo
+    SSPADD = address;
+    //Se vuelve a encender el SSPEN para terminar la configuracion
+    SSPCONbits.SSPEN = 1;
+    //Se configura el SSP en el modo I2C esclavo con dirección de 7-bits
+    SSPCONbits.SSPM = 0b0110;
+    //SCL se mantiene en cero para que los datos lleguen integros
+    SSPCONbits.CKP = 1;
+    //Se configura el slewrate para 100kHz
+    SSPSTATbits.SMP = 1;
+    //Se habilita el Clock Stretch
+    SSPCON2bits.SEN = 1;
+      */
 }
