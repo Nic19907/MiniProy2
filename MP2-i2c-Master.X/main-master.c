@@ -47,6 +47,8 @@
 #define _XTAL_FREQ 4000000
 
 #define PICslave 0x50
+#define SensorTemp 0x90 //1001 000?
+//los datos del sensor son /2
 
 /*
 --------------------------------------------------------------------------------
@@ -61,6 +63,11 @@ struct informacion {
     uint8_t read;
 }data;
 
+struct sensor {
+    uint8_t dec;
+    uint8_t uni;
+}temp;
+
 /*
 --------------------------------------------------------------------------------
  *                       Prototipo de funciones
@@ -73,7 +80,9 @@ void config_clock   (void);
 void config_lcd     (void);
 
 //trabajos
+void colores (void);
 
+void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades);
 
 /*
 --------------------------------------------------------------------------------
@@ -86,6 +95,58 @@ void config_lcd     (void);
  *                                 Funciones
 --------------------------------------------------------------------------------
  */
+void colores (void) {
+    switch (semaforo) {
+        case 0://verde
+            data.send = 0b001;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Verde ");
+            i2c_MW(PICslave, data.send);
+
+            semaforo = 1;
+            break;
+
+        case 1://amarillo
+            data.send = 0b010;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Yellow");
+
+
+            i2c_MasterStart();
+            i2c_MasterSS(PICslave);
+            i2c_MasterWrite(data.send);
+            i2c_MasterStop();
+
+            semaforo = 2;
+            break;
+
+        case 2://rojo
+            data.send = 0b100;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Rojo   ");
+
+            i2c_MW(PICslave, data.send);
+
+            semaforo = 0;
+            break;
+
+        default://verde
+            data.send = 0b111;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Error ");
+
+            i2c_MW(PICslave, data.send);
+
+            semaforo = 1;
+            break;
+    }
+}
+
+
+void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades){
+    *decadas = value/10;
+    *unidades = value%10;
+}
 
 /*
 --------------------------------------------------------------------------------
@@ -97,60 +158,25 @@ void main(void) {
     
     
     while (1){ //loop
-        switch (semaforo) {
-            case 0://verde
-                data.send = 0b001;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Verde ");
-                i2c_MW(PICslave, data.send);
-                
-                semaforo = 1;
-                break;
-                
-            case 1://amarillo
-                data.send = 0b010;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Yellow");
-                
-                
-                i2c_MasterStart();
-                i2c_MasterSS(PICslave);
-                i2c_MasterWrite(data.send);
-                i2c_MasterStop();
-                
-                semaforo = 2;
-                break;
-                
-            case 2://rojo
-                data.send = 0b100;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Rojo   ");
-                
-                i2c_MW(PICslave, data.send);
-                
-                semaforo = 0;
-                break;
-                     
-            default://verde
-                data.send = 0b111;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Error ");
-                
-                i2c_MW(PICslave, data.send);
-                
-                semaforo = 1;
-                break;
-         
-        }
-    
-
+        
+        
+        colores();
         __delay_ms(200);
-
         
+        //lectura del sensor de temperatura
+        i2c_MasterStart();
+        i2c_MasterSS(0x91);
+        data.read = i2c_MasterRead(0);
+        i2c_MasterStop();
         
-        //leer solo para el sensor
-        //i2c_MR(PICslave, &PORTA);
-        //__delay_ms(1000);
+        PORTA = data.read;
+        decadas(data.read, &temp.dec, &temp.uni);
+        
+        LCD_setCursor (2,1);
+        LCD_write (temp.dec + 48);       
+        LCD_write (temp.uni + 48);       
+                
+        __delay_ms(200);
         
     }
     return;
@@ -197,7 +223,7 @@ void config_lcd (void){
     LCD_START();
     
     LCD_setCursor (1,1);
-    LCD_writeString ("Gesto");
+    LCD_writeString ("Temp");
     
     LCD_setCursor (1,9);
     LCD_writeString ("Semaforo");

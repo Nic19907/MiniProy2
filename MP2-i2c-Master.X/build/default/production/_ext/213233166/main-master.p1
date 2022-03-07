@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"59 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 59: struct informacion {
+"61 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 61: struct informacion {
 [s S138 `uc 1 `uc 1 ]
 [n S138 informacion send read ]
-[p mainexit ]
-"70
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 70: void setup (void);
-[v _setup `(v ~T0 @X0 0 ef ]
+"66
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 66: struct sensor {
+[s S139 `uc 1 `uc 1 ]
+[n S139 sensor dec uni ]
 "38 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/lcd_8bitsA.h
 [; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/lcd_8bitsA.h: 38: void LCD_setCursor (char fila, char columna);
 [v _LCD_setCursor `(v ~T0 @X0 0 ef2`uc`uc ]
@@ -28,18 +28,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33
 [; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/i2c.h: 33: void i2c_MasterStop (void);
 [v _i2c_MasterStop `(v ~T0 @X0 0 ef ]
+[p mainexit ]
+"77 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 77: void setup (void);
+[v _setup `(v ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"71 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 71: void config_io (void);
+"49 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/i2c.h
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/i2c.h: 49: unsigned short i2c_MasterRead (unsigned short secuence);
+[v _i2c_MasterRead `(us ~T0 @X0 0 ef1`us ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"40 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/lcd_8bitsA.h
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/lcd_8bitsA.h: 40: void LCD_write (char value);
+[v _LCD_write `(v ~T0 @X0 0 ef1`uc ]
+"78 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 78: void config_io (void);
 [v _config_io `(v ~T0 @X0 0 ef ]
-"72
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 72: void config_clock (void);
+"79
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 79: void config_clock (void);
 [v _config_clock `(v ~T0 @X0 0 ef ]
-"73
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 73: void config_lcd (void);
+"80
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 80: void config_lcd (void);
 [v _config_lcd `(v ~T0 @X0 0 ef ]
 "23 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/i2c.h
 [; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/i2c.h: 23: void i2c_MasterInit(unsigned long freq);
@@ -59,9 +72,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"166
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "228
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
@@ -344,251 +354,316 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"57 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 57: uint8_t semaforo;
+"59 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 59: uint8_t semaforo;
 [v _semaforo `uc ~T0 @X0 1 e ]
-"62
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 62: }data;
+"64
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 64: }data;
 [v _data `S138 ~T0 @X0 1 e ]
+"69
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 69: }temp;
+[v _temp `S139 ~T0 @X0 1 e ]
+"98
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 98: void colores (void) {
+[v _colores `(v ~T0 @X0 1 ef ]
+{
+[e :U _colores ]
+[f ]
+"99
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 99:     switch (semaforo) {
+[e $U 142  ]
+{
+"100
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 100:         case 0:
+[e :U 143 ]
+"101
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 101:             data.send = 0b001;
+[e = . _data 0 -> -> 1 `i `uc ]
+"102
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 102:             LCD_setCursor (2,9);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+"103
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 103:             LCD_writeString ("Verde ");
+[e ( _LCD_writeString (1 :s 1C ]
+"104
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 104:             i2c_MW(0x50, data.send);
+[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
+"106
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 106:             semaforo = 1;
+[e = _semaforo -> -> 1 `i `uc ]
+"107
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 107:             break;
+[e $U 141  ]
+"109
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 109:         case 1:
+[e :U 144 ]
+"110
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 110:             data.send = 0b010;
+[e = . _data 0 -> -> 2 `i `uc ]
+"111
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 111:             LCD_setCursor (2,9);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+"112
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 112:             LCD_writeString ("Yellow");
+[e ( _LCD_writeString (1 :s 2C ]
+"115
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 115:             i2c_MasterStart();
+[e ( _i2c_MasterStart ..  ]
+"116
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 116:             i2c_MasterSS(0x50);
+[e ( _i2c_MasterSS (1 -> -> 80 `i `ui ]
+"117
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 117:             i2c_MasterWrite(data.send);
+[e ( _i2c_MasterWrite (1 -> . _data 0 `ui ]
+"118
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 118:             i2c_MasterStop();
+[e ( _i2c_MasterStop ..  ]
+"120
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 120:             semaforo = 2;
+[e = _semaforo -> -> 2 `i `uc ]
+"121
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 121:             break;
+[e $U 141  ]
+"123
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 123:         case 2:
+[e :U 145 ]
+"124
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 124:             data.send = 0b100;
+[e = . _data 0 -> -> 4 `i `uc ]
+"125
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 125:             LCD_setCursor (2,9);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+"126
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 126:             LCD_writeString ("Rojo   ");
+[e ( _LCD_writeString (1 :s 3C ]
+"128
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 128:             i2c_MW(0x50, data.send);
+[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
+"130
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 130:             semaforo = 0;
+[e = _semaforo -> -> 0 `i `uc ]
+"131
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 131:             break;
+[e $U 141  ]
+"133
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 133:         default:
+[e :U 146 ]
+"134
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 134:             data.send = 0b111;
+[e = . _data 0 -> -> 7 `i `uc ]
+"135
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 135:             LCD_setCursor (2,9);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+"136
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 136:             LCD_writeString ("Error ");
+[e ( _LCD_writeString (1 :s 4C ]
+"138
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 138:             i2c_MW(0x50, data.send);
+[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
+"140
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 140:             semaforo = 1;
+[e = _semaforo -> -> 1 `i `uc ]
+"141
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 141:             break;
+[e $U 141  ]
+"142
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 142:     }
+}
+[e $U 141  ]
+[e :U 142 ]
+[e [\ -> _semaforo `i , $ -> 0 `i 143
+ , $ -> 1 `i 144
+ , $ -> 2 `i 145
+ 146 ]
+[e :U 141 ]
+"143
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 143: }
+[e :UE 140 ]
+}
+"146
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 146: void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades){
+[v _decadas `(v ~T0 @X0 1 ef3`uc`*uc`*uc ]
+{
+[e :U _decadas ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[v _decadas `*uc ~T0 @X0 1 r2 ]
+[v _unidades `*uc ~T0 @X0 1 r3 ]
+[f ]
+"147
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 147:     *decadas = value/10;
+[e = *U _decadas -> / -> _value `i -> 10 `i `uc ]
+"148
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 148:     *unidades = value%10;
+[e = *U _unidades -> % -> _value `i -> 10 `i `uc ]
+"149
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 149: }
+[e :UE 147 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"95
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 95: void main(void) {
+"156
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 156: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"96
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 96:     setup();
-[e ( _setup ..  ]
-"99
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 99:     while (1){
-[e :U 141 ]
-{
-"100
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 100:         switch (semaforo) {
-[e $U 144  ]
-{
-"101
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 101:             case 0:
-[e :U 145 ]
-"102
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 102:                 data.send = 0b001;
-[e = . _data 0 -> -> 1 `i `uc ]
-"103
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 103:                 LCD_setCursor (2,9);
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-"104
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 104:                 LCD_writeString ("Verde ");
-[e ( _LCD_writeString (1 :s 1C ]
-"105
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 105:                 i2c_MW(0x50, data.send);
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-"107
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 107:                 semaforo = 1;
-[e = _semaforo -> -> 1 `i `uc ]
-"108
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 108:                 break;
-[e $U 143  ]
-"110
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 110:             case 1:
-[e :U 146 ]
-"111
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 111:                 data.send = 0b010;
-[e = . _data 0 -> -> 2 `i `uc ]
-"112
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 112:                 LCD_setCursor (2,9);
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-"113
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 113:                 LCD_writeString ("Yellow");
-[e ( _LCD_writeString (1 :s 2C ]
-"116
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 116:                 i2c_MasterStart();
-[e ( _i2c_MasterStart ..  ]
-"117
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 117:                 i2c_MasterSS(0x50);
-[e ( _i2c_MasterSS (1 -> -> 80 `i `ui ]
-"118
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 118:                 i2c_MasterWrite(data.send);
-[e ( _i2c_MasterWrite (1 -> . _data 0 `ui ]
-"119
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 119:                 i2c_MasterStop();
-[e ( _i2c_MasterStop ..  ]
-"121
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 121:                 semaforo = 2;
-[e = _semaforo -> -> 2 `i `uc ]
-"122
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 122:                 break;
-[e $U 143  ]
-"124
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 124:             case 2:
-[e :U 147 ]
-"125
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 125:                 data.send = 0b100;
-[e = . _data 0 -> -> 4 `i `uc ]
-"126
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 126:                 LCD_setCursor (2,9);
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-"127
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 127:                 LCD_writeString ("Rojo   ");
-[e ( _LCD_writeString (1 :s 3C ]
-"129
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 129:                 i2c_MW(0x50, data.send);
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-"131
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 131:                 semaforo = 0;
-[e = _semaforo -> -> 0 `i `uc ]
-"132
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 132:                 break;
-[e $U 143  ]
-"134
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 134:             default:
-[e :U 148 ]
-"135
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 135:                 data.send = 0b111;
-[e = . _data 0 -> -> 7 `i `uc ]
-"136
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 136:                 LCD_setCursor (2,9);
-[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-"137
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 137:                 LCD_writeString ("Error ");
-[e ( _LCD_writeString (1 :s 4C ]
-"139
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 139:                 i2c_MW(0x50, data.send);
-[e ( _i2c_MW (2 , -> -> 80 `i `uc . _data 0 ]
-"141
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 141:                 semaforo = 1;
-[e = _semaforo -> -> 1 `i `uc ]
-"142
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 142:                 break;
-[e $U 143  ]
-"144
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 144:         }
-}
-[e $U 143  ]
-[e :U 144 ]
-[e [\ -> _semaforo `i , $ -> 0 `i 145
- , $ -> 1 `i 146
- , $ -> 2 `i 147
- 148 ]
-[e :U 143 ]
-"147
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 147:         _delay((unsigned long)((200)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"155
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 155:     }
-}
-[e :U 140 ]
-[e $U 141  ]
-[e :U 142 ]
-"156
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 156:     return;
-[e $UE 139  ]
 "157
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 157: }
-[e :UE 139 ]
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 157:     setup();
+[e ( _setup ..  ]
+"160
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 160:     while (1){
+[e :U 150 ]
+{
+"163
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 163:         colores();
+[e ( _colores ..  ]
+"164
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 164:         _delay((unsigned long)((200)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"167
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 167:         i2c_MasterStart();
+[e ( _i2c_MasterStart ..  ]
+"168
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 168:         i2c_MasterSS(0x91);
+[e ( _i2c_MasterSS (1 -> -> 145 `i `ui ]
+"169
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 169:         data.read = i2c_MasterRead(0);
+[e = . _data 1 -> ( _i2c_MasterRead (1 -> -> 0 `i `us `uc ]
+"170
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 170:         i2c_MasterStop();
+[e ( _i2c_MasterStop ..  ]
+"172
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 172:         PORTA = data.read;
+[e = _PORTA . _data 1 ]
+"173
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 173:         decadas(data.read, &temp.dec, &temp.uni);
+[e ( _decadas (3 , , . _data 1 &U . _temp 0 &U . _temp 1 ]
+"175
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 175:         LCD_setCursor (2,1);
+[e ( _LCD_setCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"176
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 176:         LCD_write (temp.dec + 48);
+[e ( _LCD_write (1 -> + -> . _temp 0 `i -> 48 `i `uc ]
+"177
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 177:         LCD_write (temp.uni + 48);
+[e ( _LCD_write (1 -> + -> . _temp 1 `i -> 48 `i `uc ]
+"179
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 179:         _delay((unsigned long)((200)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"181
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 181:     }
 }
-"165
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 165: void setup (void){
+[e :U 149 ]
+[e $U 150  ]
+[e :U 151 ]
+"182
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 182:     return;
+[e $UE 148  ]
+"183
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 183: }
+[e :UE 148 ]
+}
+"191
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 191: void setup (void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"166
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 166:     config_io();
+"192
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 192:     config_io();
 [e ( _config_io ..  ]
-"167
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 167:     config_clock();
+"193
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 193:     config_clock();
 [e ( _config_clock ..  ]
-"168
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 168:     config_lcd();
+"194
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 194:     config_lcd();
 [e ( _config_lcd ..  ]
-"171
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 171:     i2c_MasterInit(400000);
+"197
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 197:     i2c_MasterInit(400000);
 [e ( _i2c_MasterInit (1 -> -> 400000 `l `ul ]
-"172
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 172:     return;
-[e $UE 149  ]
-"173
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 173: }
-[e :UE 149 ]
+"198
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 198:     return;
+[e $UE 152  ]
+"199
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 199: }
+[e :UE 152 ]
 }
-"175
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 175: void config_io (void) {
+"201
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 201: void config_io (void) {
 [v _config_io `(v ~T0 @X0 1 ef ]
 {
 [e :U _config_io ]
 [f ]
-"176
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 176:     ANSEL = 0;
+"202
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 202:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"177
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 177:     ANSELH = 0;
+"203
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 203:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"179
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 179:     TRISA = 0;
+"205
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 205:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"180
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 180:     TRISB = 0;
+"206
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 206:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"181
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 181:     TRISD = 0;
+"207
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 207:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"183
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 183:     PORTA = 0;
+"209
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 209:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"184
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 184:     PORTB = 0;
+"210
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 210:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"185
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 185:     PORTD = 0;
+"211
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 211:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"188
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 188: }
-[e :UE 150 ]
+"214
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 214: }
+[e :UE 153 ]
 }
-"190
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 190: void config_clock (void){
+"216
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 216: void config_clock (void){
 [v _config_clock `(v ~T0 @X0 1 ef ]
 {
 [e :U _config_clock ]
 [f ]
-"191
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 191:     OSCCONbits.IRCF = 0b110;
+"217
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 217:     OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-"192
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 192:     OSCCONbits.SCS = 1;
+"218
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 218:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"193
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 193: }
-[e :UE 151 ]
+"219
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 219: }
+[e :UE 154 ]
 }
-"196
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 196: void config_lcd (void){
+"222
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 222: void config_lcd (void){
 [v _config_lcd `(v ~T0 @X0 1 ef ]
 {
 [e :U _config_lcd ]
 [f ]
-"197
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 197:     LCD_START();
+"223
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 223:     LCD_START();
 [e ( _LCD_START ..  ]
-"199
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 199:     LCD_setCursor (1,1);
+"225
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 225:     LCD_setCursor (1,1);
 [e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"200
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 200:     LCD_writeString ("Gesto");
+"226
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 226:     LCD_writeString ("Temp");
 [e ( _LCD_writeString (1 :s 5C ]
-"202
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 202:     LCD_setCursor (1,9);
+"228
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 228:     LCD_setCursor (1,9);
 [e ( _LCD_setCursor (2 , -> -> 1 `i `uc -> -> 9 `i `uc ]
-"203
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 203:     LCD_writeString ("Semaforo");
+"229
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 229:     LCD_writeString ("Semaforo");
 [e ( _LCD_writeString (1 :s 6C ]
-"204
-[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 204: }
-[e :UE 152 ]
+"230
+[; ;C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c: 230: }
+[e :UE 155 ]
 }
 [a 2C 89 101 108 108 111 119 0 ]
-[a 5C 71 101 115 116 111 0 ]
+[a 5C 84 101 109 112 0 ]
 [a 6C 83 101 109 97 102 111 114 111 0 ]
 [a 4C 69 114 114 111 114 32 0 ]
 [a 1C 86 101 114 100 101 32 0 ]

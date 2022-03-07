@@ -2718,13 +2718,18 @@ void i2c_MR (uint8_t address, uint8_t *value);
 
 void i2c_SlaveInit(uint8_t address);
 # 39 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c" 2
-# 57 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
+# 59 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
 uint8_t semaforo;
 
 struct informacion {
     uint8_t send;
     uint8_t read;
 }data;
+
+struct sensor {
+    uint8_t dec;
+    uint8_t uni;
+}temp;
 
 
 
@@ -2736,66 +2741,94 @@ void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
-# 95 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
+
+
+void colores (void);
+
+void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades);
+# 98 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
+void colores (void) {
+    switch (semaforo) {
+        case 0:
+            data.send = 0b001;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Verde ");
+            i2c_MW(0x50, data.send);
+
+            semaforo = 1;
+            break;
+
+        case 1:
+            data.send = 0b010;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Yellow");
+
+
+            i2c_MasterStart();
+            i2c_MasterSS(0x50);
+            i2c_MasterWrite(data.send);
+            i2c_MasterStop();
+
+            semaforo = 2;
+            break;
+
+        case 2:
+            data.send = 0b100;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Rojo   ");
+
+            i2c_MW(0x50, data.send);
+
+            semaforo = 0;
+            break;
+
+        default:
+            data.send = 0b111;
+            LCD_setCursor (2,9);
+            LCD_writeString ("Error ");
+
+            i2c_MW(0x50, data.send);
+
+            semaforo = 1;
+            break;
+    }
+}
+
+
+void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades){
+    *decadas = value/10;
+    *unidades = value%10;
+}
+
+
+
+
+
+
 void main(void) {
     setup();
 
 
     while (1){
-        switch (semaforo) {
-            case 0:
-                data.send = 0b001;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Verde ");
-                i2c_MW(0x50, data.send);
-
-                semaforo = 1;
-                break;
-
-            case 1:
-                data.send = 0b010;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Yellow");
 
 
-                i2c_MasterStart();
-                i2c_MasterSS(0x50);
-                i2c_MasterWrite(data.send);
-                i2c_MasterStop();
-
-                semaforo = 2;
-                break;
-
-            case 2:
-                data.send = 0b100;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Rojo   ");
-
-                i2c_MW(0x50, data.send);
-
-                semaforo = 0;
-                break;
-
-            default:
-                data.send = 0b111;
-                LCD_setCursor (2,9);
-                LCD_writeString ("Error ");
-
-                i2c_MW(0x50, data.send);
-
-                semaforo = 1;
-                break;
-
-        }
-
-
+        colores();
         _delay((unsigned long)((200)*(4000000/4000.0)));
 
 
+        i2c_MasterStart();
+        i2c_MasterSS(0x91);
+        data.read = i2c_MasterRead(0);
+        i2c_MasterStop();
 
+        PORTA = data.read;
+        decadas(data.read, &temp.dec, &temp.uni);
 
+        LCD_setCursor (2,1);
+        LCD_write (temp.dec + 48);
+        LCD_write (temp.uni + 48);
 
-
+        _delay((unsigned long)((200)*(4000000/4000.0)));
 
     }
     return;
@@ -2842,7 +2875,7 @@ void config_lcd (void){
     LCD_START();
 
     LCD_setCursor (1,1);
-    LCD_writeString ("Gesto");
+    LCD_writeString ("Temp");
 
     LCD_setCursor (1,9);
     LCD_writeString ("Semaforo");
