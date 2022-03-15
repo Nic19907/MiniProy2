@@ -17,11 +17,10 @@
 //   - Adafruit Metro M4 Express AirLift Lite ->
 //   https://www.adafruit.com/product/4000
 //   - Adafruit AirLift Breakout -> https://www.adafruit.com/product/4201
-//   - Adafruit AirLift Shield -> https://www.adafruit.com/product/4285
-//   - Adafruit AirLift FeatherWing -> https://www.adafruit.com/product/4264
 
-#define WIFI_SSID "Camperonix"
-#define WIFI_PASS "123456789"
+#define WIFI_SSID "CasaU"
+#define WIFI_PASS "5721685FB6" 
+
 
 #include "AdafruitIO_WiFi.h"
 

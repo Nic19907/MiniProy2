@@ -2503,7 +2503,7 @@ void LCD_CLR (void);
 void LCD_setCursor (char fila, char columna);
 
 void LCD_write (char value);
-void LCD_writeString (char text[]);
+void LCD_writeString (char *text[]);
 
 
 void LCD_shiftR (void);
@@ -2594,7 +2594,7 @@ void LCD_write (char value){
 }
 
 
-void LCD_writeString (char text[]) {
+void LCD_writeString (char *text[]) {
     int i;
     for (i = 0; text[i] != '\0'; i++){
         LCD_write(text[i]);

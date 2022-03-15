@@ -2623,8 +2623,6 @@ SSPCON = 0x28;
 SSPCON2 = 0;
 
 SSPADD = (4000000/(4*freq))-1;
-
-# 38
 }
 
 void i2c_MasterWait (void){
@@ -2719,6 +2717,4 @@ SSPCONbits.CKP = 1;
 SSPCONbits.SSPM = 0b0110;
 
 SSPCON2bits.SEN = 1;
-
-# 150
 }

@@ -38,7 +38,7 @@ void LCD_CLR    (void);     //limpia la lcd
 void LCD_setCursor (char fila, char columna); //donde colocar el cursor
 
 void LCD_write (char value); //escribir un dato char
-void LCD_writeString (char text[]); //escribir un string
+void LCD_writeString (char *text[]); //escribir un string
 
 
 void LCD_shiftR (void); //mover a la derecha

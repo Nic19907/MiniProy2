@@ -2693,13 +2693,9 @@ void i2c_MasterInit (unsigned long freq){
 }
 
 void i2c_MasterWait (void){
-
-
     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)){
-        PORTA = (SSPCON2 & 0x1F) + (SSPSTATbits.R_nW<<6);
 
     }
-
 
 }
 

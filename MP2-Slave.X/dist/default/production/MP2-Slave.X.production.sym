@@ -149,7 +149,7 @@ intentry 8 18D CODE 8 0
 cstackCOMMON 70 79 COMMON 70 1
 %locals
 dist/default/production\MP2-Slave.X.production.o
-C:\Users\nicou\AppData\Local\Temp\xcAs2sg.s
+C:\Users\nicou\AppData\Local\Temp\xcAsh3s.s
 631 F 0 CODE 0
 634 F 0 CODE 0
 648 F 0 CODE 0
@@ -171,17 +171,17 @@ C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slav
 155 8A 0 CODE 0
 156 90 0 CODE 0
 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c
-117 91 0 CODE 0
-119 92 0 CODE 0
-120 95 0 CODE 0
-122 96 0 CODE 0
-124 98 0 CODE 0
-125 9A 0 CODE 0
-127 9B 0 CODE 0
-128 9E 0 CODE 0
-129 9F 0 CODE 0
-131 A3 0 CODE 0
-150 A6 0 CODE 0
+102 91 0 CODE 0
+104 92 0 CODE 0
+105 95 0 CODE 0
+107 96 0 CODE 0
+109 98 0 CODE 0
+110 9A 0 CODE 0
+112 9B 0 CODE 0
+113 9E 0 CODE 0
+114 9F 0 CODE 0
+116 A3 0 CODE 0
+117 A6 0 CODE 0
 C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Slave.X/main-Slave.c
 159 A7 0 CODE 0
 160 A7 0 CODE 0

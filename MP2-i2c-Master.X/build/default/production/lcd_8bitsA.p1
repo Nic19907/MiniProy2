@@ -438,11 +438,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 148 ]
 }
 "86
-[; ;lcd_8bitsA.c: 86: void LCD_writeString (char text[]) {
-[v _LCD_writeString `(v ~T0 @X0 1 ef1`*uc ]
+[; ;lcd_8bitsA.c: 86: void LCD_writeString (char *text[]) {
+[v _LCD_writeString `(v ~T0 @X0 1 ef1`**uc ]
 {
 [e :U _LCD_writeString ]
-[v _text `*uc ~T0 @X0 1 r1 ]
+[v _text `**uc ~T0 @X0 1 r1 ]
 [f ]
 "87
 [; ;lcd_8bitsA.c: 87:     int i;
@@ -456,13 +456,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "89
 [; ;lcd_8bitsA.c: 89:         LCD_write(text[i]);
-[e ( _LCD_write (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
+[e ( _LCD_write (1 -> *U + _text * -> _i `x -> -> # *U _text `i `x `uc ]
 "90
 [; ;lcd_8bitsA.c: 90:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 153 ]
-[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 150  ]
+[e $ != *U + _text * -> _i `x -> -> # *U _text `i `x -> -> 0 `ui `*uc 150  ]
 [e :U 151 ]
 }
 "91

@@ -5,9 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>lcd_8bitsA.h</itemPath>
-      <itemPath>UART.h</itemPath>
       <itemPath>C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/APDS9960.h</itemPath>
       <itemPath>i2c.h</itemPath>
+      <itemPath>UART2.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,6 +20,7 @@
       <itemPath>C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c</itemPath>
       <itemPath>C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/APDS9960.c</itemPath>
       <itemPath>i2c.c</itemPath>
+      <itemPath>UART2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

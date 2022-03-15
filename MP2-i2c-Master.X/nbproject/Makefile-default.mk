@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=lcd_8bitsA.c C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c i2c.c
+SOURCEFILES_QUOTED_IF_SPACED=lcd_8bitsA.c C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c i2c.c UART2.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd_8bitsA.p1 ${OBJECTDIR}/_ext/213233166/main-master.p1 ${OBJECTDIR}/i2c.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/lcd_8bitsA.p1.d ${OBJECTDIR}/_ext/213233166/main-master.p1.d ${OBJECTDIR}/i2c.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd_8bitsA.p1 ${OBJECTDIR}/_ext/213233166/main-master.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/UART2.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/lcd_8bitsA.p1.d ${OBJECTDIR}/_ext/213233166/main-master.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/UART2.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/lcd_8bitsA.p1 ${OBJECTDIR}/_ext/213233166/main-master.p1 ${OBJECTDIR}/i2c.p1
+OBJECTFILES=${OBJECTDIR}/lcd_8bitsA.p1 ${OBJECTDIR}/_ext/213233166/main-master.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/UART2.p1
 
 # Source Files
-SOURCEFILES=lcd_8bitsA.c C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c i2c.c
+SOURCEFILES=lcd_8bitsA.c C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c i2c.c UART2.c
 
 
 
@@ -118,6 +118,14 @@ ${OBJECTDIR}/i2c.p1: i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/i2c.d ${OBJECTDIR}/i2c.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/UART2.p1: UART2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/UART2.p1.d 
+	@${RM} ${OBJECTDIR}/UART2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART2.p1 UART2.c 
+	@-${MV} ${OBJECTDIR}/UART2.d ${OBJECTDIR}/UART2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/UART2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/lcd_8bitsA.p1: lcd_8bitsA.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -142,6 +150,14 @@ ${OBJECTDIR}/i2c.p1: i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/i2c.p1 i2c.c 
 	@-${MV} ${OBJECTDIR}/i2c.d ${OBJECTDIR}/i2c.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/UART2.p1: UART2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/UART2.p1.d 
+	@${RM} ${OBJECTDIR}/UART2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART2.p1 UART2.c 
+	@-${MV} ${OBJECTDIR}/UART2.d ${OBJECTDIR}/UART2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/UART2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

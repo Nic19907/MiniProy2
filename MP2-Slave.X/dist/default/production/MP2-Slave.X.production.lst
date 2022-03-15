@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Mar 07 11:42:11 2022
+                                                                                               Tue Mar 08 16:54:58 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -537,7 +537,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    523  0091                     __ptext2:	
    524 ;; *************** function _i2c_SlaveInit *****************
    525 ;; Defined at:
-   526 ;;		line 117 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
+   526 ;;		line 102 in file "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-Maestro.X/i2c.c"
    527 ;; Parameters:    Size  Location     Type
    528 ;;  address         1    wreg     unsigned char 
    529 ;; Auto vars:     Size  Location     Type
@@ -575,46 +575,46 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    561  0091  00F3               	movwf	i2c_SlaveInit@address
    562  0092                     l741:
    563                           
-   564                           ;i2c.c: 119: TRISCbits.TRISC3 = 1;
+   564                           ;i2c.c: 104: TRISCbits.TRISC3 = 1;
    565  0092  1683               	bsf	3,5	;RP0=1, select bank1
    566  0093  1303               	bcf	3,6	;RP1=0, select bank1
    567  0094  1587               	bsf	7,3	;volatile
    568                           
-   569                           ;i2c.c: 120: TRISCbits.TRISC4 = 1;
+   569                           ;i2c.c: 105: TRISCbits.TRISC4 = 1;
    570  0095  1607               	bsf	7,4	;volatile
    571  0096                     l743:
    572                           
-   573                           ;i2c.c: 122: SSPADD = address;
+   573                           ;i2c.c: 107: SSPADD = address;
    574  0096  0873               	movf	i2c_SlaveInit@address,w
    575  0097  0093               	movwf	19	;volatile
    576                           
-   577                           ;i2c.c: 124: SSPSTAT = 0x80;
+   577                           ;i2c.c: 109: SSPSTAT = 0x80;
    578  0098  3080               	movlw	128
    579  0099  0094               	movwf	20	;volatile
    580  009A                     l745:
    581                           
-   582                           ;i2c.c: 125: SSPSTATbits.SMP = 0;
+   582                           ;i2c.c: 110: SSPSTATbits.SMP = 0;
    583  009A  1394               	bcf	20,7	;volatile
    584  009B                     l747:
    585                           
-   586                           ;i2c.c: 127: SSPCONbits.SSPEN = 1;
+   586                           ;i2c.c: 112: SSPCONbits.SSPEN = 1;
    587  009B  1283               	bcf	3,5	;RP0=0, select bank0
    588  009C  1303               	bcf	3,6	;RP1=0, select bank0
    589  009D  1694               	bsf	20,5	;volatile
    590  009E                     l749:
    591                           
-   592                           ;i2c.c: 128: SSPCONbits.CKP = 1;
+   592                           ;i2c.c: 113: SSPCONbits.CKP = 1;
    593  009E  1614               	bsf	20,4	;volatile
    594  009F                     l751:
    595                           
-   596                           ;i2c.c: 129: SSPCONbits.SSPM = 0b0110;
+   596                           ;i2c.c: 114: SSPCONbits.SSPM = 0b0110;
    597  009F  0814               	movf	20,w	;volatile
    598  00A0  39F0               	andlw	-16
    599  00A1  3806               	iorlw	6
    600  00A2  0094               	movwf	20	;volatile
    601  00A3                     l753:
    602                           
-   603                           ;i2c.c: 131: SSPCON2bits.SEN = 1;
+   603                           ;i2c.c: 116: SSPCON2bits.SEN = 1;
    604  00A3  1683               	bsf	3,5	;RP0=1, select bank1
    605  00A4  1303               	bcf	3,6	;RP1=0, select bank1
    606  00A5  1411               	bsf	17,0	;volatile
@@ -1166,7 +1166,7 @@ DATA                 0      0       A      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Mar 07 11:42:11 2022
+Symbol Table                                                                                   Tue Mar 08 16:54:58 2022
 
          ?_i2c_SlaveInit 0070              _SSPSTATbits 0094                       l80 00C6  
                      l74 0090                       l83 00BE                       l77 00B5  

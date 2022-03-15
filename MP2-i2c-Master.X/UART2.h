@@ -13,9 +13,18 @@
 
 void uartInit (void);
 
+//para el TX
+void uart_Write (unsigned char c);
+
 void uartWrite (unsigned char *word);
 
+void uart_WString (char *text);
+
 void uartEnter (void);
+
+void uartSpace (void);
+
+//Para recepcion
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

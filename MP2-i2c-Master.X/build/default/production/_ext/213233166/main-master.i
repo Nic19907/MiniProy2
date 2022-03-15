@@ -2665,7 +2665,7 @@ void LCD_CLR (void);
 void LCD_setCursor (char fila, char columna);
 
 void LCD_write (char value);
-void LCD_writeString (char text[]);
+void LCD_writeString (char *text[]);
 
 
 void LCD_shiftR (void);
@@ -2718,17 +2718,36 @@ void i2c_MR (uint8_t address, uint8_t *value);
 
 void i2c_SlaveInit(uint8_t address);
 # 39 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c" 2
-# 59 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
+
+# 1 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/UART2.h" 1
+# 14 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/UART2.h"
+void uartInit (void);
+
+
+void uart_Write (unsigned char c);
+
+void uartWrite (unsigned char *word);
+
+void uart_WString (char *text);
+
+void uartEnter (void);
+
+void uartSpace (void);
+# 40 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c" 2
+# 60 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
 uint8_t semaforo;
 
 struct informacion {
     uint8_t send;
     uint8_t read;
+    uint8_t uart_RX;
+    uint8_t map_TX;
 }data;
 
 struct sensor {
     uint8_t dec;
     uint8_t uni;
+    uint8_t comparator;
 }temp;
 
 
@@ -2741,38 +2760,57 @@ void setup (void);
 void config_io (void);
 void config_clock (void);
 void config_lcd (void);
+void config_ie (void);
 
 
 void colores (void);
 
+void sens (void);
+
 void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades);
-# 98 "C:/Users/nicou/OneDrive/Documents/2022/1er_semestre/Digital_2/MiniProy2/MP2-i2c-Master.X/main-master.c"
+
+void uart_map (void);
+
+
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (PIR1bits.RCIF){
+        data.uart_RX = RCREG;
+        PIR1bits.RCIF = 0;
+    }
+}
+
+
+
+
+
 void colores (void) {
-    switch (semaforo) {
-        case 0:
+
+    switch (data.uart_RX) {
+        case '1':
             data.send = 0b001;
             LCD_setCursor (2,9);
             LCD_writeString ("Verde ");
             i2c_MW(0x50, data.send);
 
-            semaforo = 1;
+
             break;
 
-        case 1:
+        case '2':
             data.send = 0b010;
             LCD_setCursor (2,9);
             LCD_writeString ("Yellow");
 
 
-            i2c_MasterStart();
-            i2c_MasterSS(0x50);
-            i2c_MasterWrite(data.send);
-            i2c_MasterStop();
+            i2c_MW(0x50, data.send);
 
-            semaforo = 2;
+
             break;
 
-        case 2:
+        case '4':
             data.send = 0b100;
             LCD_setCursor (2,9);
             LCD_writeString ("Rojo   ");
@@ -2794,12 +2832,127 @@ void colores (void) {
     }
 }
 
+void sens (void){
+
+
+    i2c_MasterStart();
+    i2c_MasterSS(0x91);
+    data.read = i2c_MasterRead(0);
+    data.read = data.read - 4;
+    i2c_MasterStop();
+
+    if (data.read != temp.comparator){
+
+        uart_map();
+        temp.comparator = data.read;
+
+        decadas(data.read, &temp.dec, &temp.uni);
+        LCD_setCursor (2,1);
+        LCD_write (temp.dec + 48);
+        LCD_write (temp.uni + 48);
+
+
+
+        uart_Write(data.map_TX);
+
+
+    }
+}
+
 
 void decadas (uint8_t value, uint8_t *decadas, uint8_t *unidades){
     *decadas = value/10;
     *unidades = value%10;
 }
 
+void uart_map (void){
+    switch (data.read) {
+        case 15:
+            data.map_TX = '0';
+            break;
+
+        case 16:
+            data.map_TX = '1';
+            break;
+
+        case 17:
+            data.map_TX = '2';
+            break;
+
+        case 18:
+            data.map_TX = '3';
+            break;
+
+        case 19:
+            data.map_TX = '4';
+            break;
+
+        case 20:
+            data.map_TX = '5';
+            break;
+
+        case 21:
+            data.map_TX = '6';
+            break;
+
+        case 22:
+            data.map_TX = '7';
+            break;
+
+        case 23:
+            data.map_TX = '8';
+            break;
+
+        case 24:
+            data.map_TX = '9';
+            break;
+
+        case 25:
+            data.map_TX = '!';
+            break;
+
+        case 26:
+            data.map_TX = '@';
+            break;
+
+        case 27:
+            data.map_TX = '#';
+            break;
+
+        case 28:
+            data.map_TX = '$';
+            break;
+
+        case 29:
+            data.map_TX = '%';
+            break;
+
+        case 30:
+            data.map_TX = '^';
+            break;
+
+        case 31:
+            data.map_TX = '&';
+            break;
+
+        case 32:
+            data.map_TX = '*';
+            break;
+
+        case 33:
+            data.map_TX = '<';
+            break;
+
+        case 34:
+            data.map_TX = '>';
+            break;
+
+        default:
+            data.map_TX = '+';
+            break;
+
+    }
+}
 
 
 
@@ -2816,19 +2969,10 @@ void main(void) {
         _delay((unsigned long)((200)*(4000000/4000.0)));
 
 
-        i2c_MasterStart();
-        i2c_MasterSS(0x91);
-        data.read = i2c_MasterRead(0);
-        i2c_MasterStop();
-
-        PORTA = data.read;
-        decadas(data.read, &temp.dec, &temp.uni);
-
-        LCD_setCursor (2,1);
-        LCD_write (temp.dec + 48);
-        LCD_write (temp.uni + 48);
-
+        sens();
         _delay((unsigned long)((200)*(4000000/4000.0)));
+
+
 
     }
     return;
@@ -2843,10 +2987,14 @@ void main(void) {
 void setup (void){
     config_io();
     config_clock();
+    config_ie();
     config_lcd();
 
 
+    uartInit();
     i2c_MasterInit(400000);
+
+    temp.comparator = 0;
     return;
 }
 
@@ -2868,6 +3016,15 @@ void config_io (void) {
 void config_clock (void){
     OSCCONbits.IRCF = 0b110;
     OSCCONbits.SCS = 1;
+}
+
+void config_ie(void) {
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+
+
+    PIE1bits.RCIE = 1;
+    return;
 }
 
 
